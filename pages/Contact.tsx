@@ -94,12 +94,13 @@ export const Contact: React.FC = () => {
 
                   if (response.ok) {
                     alert('Thank you! Your message has been sent successfully. We will contact you soon.');
-                    e.currentTarget.reset();
+                    setTimeout(() => e.currentTarget.reset(), 0);
                   } else {
                     const error = await response.json();
                     alert(`Failed to send message: ${error.error || 'Unknown error'}. Please try again or email us directly.`);
                   }
                 } catch (error) {
+                  console.error('Form submission error:', error);
                   alert('Network error. Please check your connection and try again, or email us directly.');
                 }
               }}
