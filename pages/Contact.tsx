@@ -1,7 +1,39 @@
-import React from 'react';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, Phone, MapPin, Clock, Upload, X } from 'lucide-react';
 
 export const Contact: React.FC = () => {
+  const [attachments, setAttachments] = useState<File[]>([]);
+  const [uploading, setUploading] = useState(false);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files) return;
+
+    const fileArray = Array.from(files);
+    const maxSize = 10 * 1024 * 1024; // 10MB
+
+    // Validate file sizes
+    const validFiles = fileArray.filter((file: File) => {
+      if (file.size > maxSize) {
+        alert(`File "${file.name}" is too large. Maximum size is 10MB.`);
+        return false;
+      }
+      return true;
+    });
+
+    setAttachments(prev => [...prev, ...validFiles]);
+  };
+
+  const removeFile = (index: number) => {
+    setAttachments(prev => prev.filter((_, i) => i !== index));
+  };
+
+  const formatFileSize = (bytes: number): string => {
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+  };
+
   return (
     <div className="w-full fade-in bg-slate-50 min-h-screen">
       <div className="bg-slate-900 py-16">
@@ -82,19 +114,25 @@ export const Contact: React.FC = () => {
               name="contact"
               onSubmit={async (e) => {
                 e.preventDefault();
-                const formData = new FormData(e.currentTarget);
-                const data = Object.fromEntries(formData.entries());
+                setUploading(true);
 
                 try {
+                  const formData = new FormData(e.currentTarget);
+
+                  // Append attachments
+                  attachments.forEach((file) => {
+                    formData.append('attachments', file);
+                  });
+
                   const response = await fetch('/.netlify/functions/send-email', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data),
+                    body: formData, // Send FormData directly
                   });
 
                   if (response.ok) {
                     alert('Thank you! Your message has been sent successfully. We will contact you soon.');
-                    setTimeout(() => e.currentTarget.reset(), 0);
+                    e.currentTarget.reset();
+                    setAttachments([]);
                   } else {
                     const error = await response.json();
                     alert(`Failed to send message: ${error.error || 'Unknown error'}. Please try again or email us directly.`);
@@ -102,6 +140,8 @@ export const Contact: React.FC = () => {
                 } catch (error) {
                   console.error('Form submission error:', error);
                   alert('Network error. Please check your connection and try again, or email us directly.');
+                } finally {
+                  setUploading(false);
                 }
               }}
             >
@@ -158,11 +198,62 @@ export const Contact: React.FC = () => {
                 ></textarea>
               </div>
 
+              {/* File Upload Section */}
+              <div className="mb-6">
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  Attachments <span className="text-slate-400 font-normal">(Optional, max 10MB per file)</span>
+                </label>
+                <div className="flex items-center gap-3">
+                  <label className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg border-2 border-dashed border-slate-300 hover:border-accent cursor-pointer transition-colors bg-slate-50 hover:bg-slate-100">
+                    <Upload className="w-5 h-5 text-slate-400" />
+                    <span className="text-sm text-slate-600">Choose files or drag here</span>
+                    <input
+                      type="file"
+                      multiple
+                      onChange={handleFileChange}
+                      className="hidden"
+                      accept=".pdf,.dwg,.dxf,.stp,.step,.igs,.iges,.jpg,.jpeg,.png,.doc,.docx"
+                    />
+                  </label>
+                </div>
+
+                {/* File Preview List */}
+                {attachments.length > 0 && (
+                  <div className="mt-4 space-y-2">
+                    {attachments.map((file, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center justify-between p-3 bg-slate-50 rounded-lg border border-slate-200"
+                      >
+                        <div className="flex items-center gap-3 flex-1 min-w-0">
+                          <div className="flex-shrink-0 w-8 h-8 bg-accent/10 rounded flex items-center justify-center">
+                            <Upload className="w-4 h-4 text-accent" />
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <p className="text-sm font-medium text-slate-700 truncate">{file.name}</p>
+                            <p className="text-xs text-slate-500">{formatFileSize(file.size)}</p>
+                          </div>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => removeFile(index)}
+                          className="flex-shrink-0 p-1 hover:bg-red-100 rounded-full transition-colors"
+                          title="Remove file"
+                        >
+                          <X className="w-4 h-4 text-red-500" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               <button
                 type="submit"
-                className="w-full bg-accent hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg transition-colors shadow-md hover:shadow-lg"
+                disabled={uploading}
+                className="w-full bg-accent hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg transition-colors shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {uploading ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
