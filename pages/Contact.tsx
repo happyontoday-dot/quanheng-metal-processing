@@ -80,23 +80,31 @@ export const Contact: React.FC = () => {
             <h2 className="text-2xl font-bold text-primary mb-6">Send us a Message</h2>
             <form
               name="contact"
-              method="post"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
                 const formData = new FormData(e.currentTarget);
+                const data = Object.fromEntries(formData.entries());
 
-                fetch('/', {
-                  method: 'POST',
-                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                  body: new URLSearchParams(formData as any).toString()
-                })
-                  .then(() => alert('Thank you! Your message has been sent.'))
-                  .catch((error) => alert('Submission failed. Please try again or email us directly.'));
+                try {
+                  const response = await fetch('/.netlify/functions/send-email', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                  });
+
+                  if (response.ok) {
+                    alert('Thank you! Your message has been sent successfully. We will contact you soon.');
+                    e.currentTarget.reset();
+                  } else {
+                    const error = await response.json();
+                    alert(`Failed to send message: ${error.error || 'Unknown error'}. Please try again or email us directly.`);
+                  }
+                } catch (error) {
+                  alert('Network error. Please check your connection and try again, or email us directly.');
+                }
               }}
             >
-              <input type="hidden" name="form-name" value="contact" />
+
               <div hidden>
                 <input name="bot-field" />
               </div>
