@@ -66,27 +66,24 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-primary mb-4">Why Choose Quanheng?</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              With over 15 years of experience in metal manufacturing, we combine advanced machinery with skilled craftsmanship.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: <Settings className="w-8 h-8 text-accent" />,
-                title: "Advanced Machinery",
-                desc: "Equipped with the latest CNC punch presses, laser cutters, and bending machines."
-              },
-              {
                 icon: <Layers className="w-8 h-8 text-accent" />,
-                title: "Precision Engineering",
-                desc: "Strict tolerance control ensuring every part meets your exact specifications."
+                title: "Stable Supply Chain, Lower Costs",
+                desc: "A reliable supply chain enables us to control costs and deliver competitive pricing—helping customers significantly reduce manufacturing expenses."
               },
               {
-                icon: <Zap className="w-8 h-8 text-accent" />,
-                title: "Rapid Turnaround",
-                desc: "Optimized production workflows to deliver your prototypes and bulk orders on time."
+                icon: <Settings className="w-8 h-8 text-accent" />,
+                title: "One-Stop Metal Fabrication",
+                desc: "From stamping and bending to laser cutting and welding, we offer complete in-house processes for fast, efficient, one-stop production."
+              },
+              {
+                icon: <Truck className="w-8 h-8 text-accent" />,
+                title: "Flexible Logistics Support — Only When You Need It",
+                desc: "For customers new to international sourcing, we provide logistics assistance and door-to-door solutions when needed. If you already work with a trusted forwarder, we fully support your existing logistics arrangements."
               },
             ].map((feature, idx) => (
               <div key={idx} className="p-8 bg-slate-50 rounded-xl border border-slate-100 hover:shadow-lg transition-shadow">
