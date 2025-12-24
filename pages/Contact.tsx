@@ -48,65 +48,6 @@ export const Contact: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
-          {/* Contact Info */}
-          <div>
-            <h2 className="text-2xl font-bold text-primary mb-8">Get In Touch</h2>
-            <div className="space-y-8">
-              <div className="flex items-start">
-                <div className="bg-white p-3 rounded-lg shadow-sm border border-slate-100 mr-4">
-                  <MapPin className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-primary">Factory Location</h3>
-                  <p className="text-slate-600 mt-1">
-                    No. 123 Industrial Park Road,<br />
-                    Bao'an District, Shenzhen,<br />
-                    Guangdong Province, China
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="bg-white p-3 rounded-lg shadow-sm border border-slate-100 mr-4">
-                  <Phone className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-primary">Phone</h3>
-                  <p className="text-slate-600 mt-1">
-                    +86 123 4567 8900 (Office)<br />
-                    +86 987 6543 2100 (Sales)
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="bg-white p-3 rounded-lg shadow-sm border border-slate-100 mr-4">
-                  <Mail className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-primary">Email</h3>
-                  <p className="text-slate-600 mt-1">
-                    sales@quanheng-metal.com<br />
-                    info@quanheng-metal.com
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="bg-white p-3 rounded-lg shadow-sm border border-slate-100 mr-4">
-                  <Clock className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-primary">Business Hours</h3>
-                  <p className="text-slate-600 mt-1">
-                    Monday - Friday: 8:00 AM - 6:00 PM<br />
-                    Saturday: 9:00 AM - 12:00 PM
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Netlify Form */}
           <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
             <h2 className="text-2xl font-bold text-primary mb-6">Send us a Message</h2>
@@ -256,6 +197,65 @@ export const Contact: React.FC = () => {
                 {uploading ? 'Sending...' : 'Send Message'}
               </button>
             </form>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h2 className="text-2xl font-bold text-primary mb-8">Get In Touch</h2>
+            <div className="space-y-8">
+              <div className="flex items-start">
+                <div className="bg-white p-3 rounded-lg shadow-sm border border-slate-100 mr-4">
+                  <MapPin className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-primary">Factory Location</h3>
+                  <p className="text-slate-600 mt-1">
+                    No. 123 Industrial Park Road,<br />
+                    Bao'an District, Shenzhen,<br />
+                    Guangdong Province, China
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start">
+                <div className="bg-white p-3 rounded-lg shadow-sm border border-slate-100 mr-4">
+                  <Phone className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-primary">Phone</h3>
+                  <p className="text-slate-600 mt-1">
+                    +86 123 4567 8900 (Office)<br />
+                    +86 987 6543 2100 (Sales)
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start">
+                <div className="bg-white p-3 rounded-lg shadow-sm border border-slate-100 mr-4">
+                  <Mail className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-primary">Email</h3>
+                  <p className="text-slate-600 mt-1">
+                    sales@quanheng-metal.com<br />
+                    info@quanheng-metal.com
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start">
+                <div className="bg-white p-3 rounded-lg shadow-sm border border-slate-100 mr-4">
+                  <Clock className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-primary">Business Hours</h3>
+                  <p className="text-slate-600 mt-1">
+                    Monday - Friday: 8:00 AM - 6:00 PM<br />
+                    Saturday: 9:00 AM - 12:00 PM
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
