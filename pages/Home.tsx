@@ -37,9 +37,7 @@ export const Home: React.FC = () => {
             Custom Metal Fabrication Services
           </h1>
           <p className="text-lg md:text-xl text-slate-300 mb-4 max-w-3xl leading-relaxed">
-            We offer cost-effective, on-demand sheet metal fabrication custom services,
-            ensuring timely delivery to meet the diverse needs of our clients and achieve a
-            perfect combination of efficient production and high-quality service.
+            Quanheng delivers on-demand manufacturing solutions that help you rapidly design, prototype, and mass-produce custom metal parts with high efficiency and reliability. We work with more than 50 types of metals and plastics and support projects from one-off prototypes to full-scale production. Our core capabilities include precision CNC machining, sheet metal bending and fabrication, metal stamping, 3D printing, metal casting.
           </p>
           <p className="text-sm text-slate-400 mb-8 max-w-3xl italic">
             *With over 30 years of manufacturing experience, a stable supply chain, and streamlined production processes, we offer competitive pricing for both small and large production runs.
