@@ -13,10 +13,9 @@ const NavItem: React.FC<NavItemProps> = ({ to, children, onClick }) => (
     to={to}
     onClick={onClick}
     className={({ isActive }) =>
-      `block px-4 py-2 text-sm font-medium transition-colors duration-200 ${
-        isActive
-          ? 'text-accent border-b-2 border-accent'
-          : 'text-slate-600 hover:text-primary hover:bg-slate-50'
+      `block px-4 py-2 text-sm font-medium transition-colors duration-200 ${isActive
+        ? 'text-accent border-b-2 border-accent'
+        : 'text-slate-600 hover:text-primary hover:bg-slate-50'
       }`
     }
   >
@@ -34,7 +33,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center">
             <NavLink to="/" className="flex items-center gap-2 group">
               <div className="p-2 bg-primary rounded-lg group-hover:bg-accent transition-colors">
-                 <Settings className="w-6 h-6 text-white" />
+                <Settings className="w-6 h-6 text-white" />
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-primary tracking-tight">QUANHENG</span>
@@ -47,11 +46,12 @@ export const Navbar: React.FC = () => {
           <div className="hidden md:flex md:items-center md:space-x-4">
             <NavItem to="/">HOME</NavItem>
             <NavItem to="/about">ABOUT US</NavItem>
-            <NavItem to="/products">PRODUCTS & SERVICES</NavItem>
+            <NavItem to="/services">PRODUCTS & SERVICES</NavItem>
+            <NavItem to="/blog">BLOG</NavItem>
             <NavItem to="/contact">CONTACT</NavItem>
-            
-            <NavLink 
-              to="/contact" 
+
+            <NavLink
+              to="/contact"
               className="ml-4 px-5 py-2.5 bg-accent hover:bg-sky-700 text-white text-sm font-semibold rounded-full transition-all shadow-md hover:shadow-lg"
             >
               Get Quote
@@ -76,7 +76,8 @@ export const Navbar: React.FC = () => {
           <div className="px-2 pt-2 pb-3 space-y-1">
             <NavItem to="/" onClick={() => setIsOpen(false)}>HOME</NavItem>
             <NavItem to="/about" onClick={() => setIsOpen(false)}>ABOUT US</NavItem>
-            <NavItem to="/products" onClick={() => setIsOpen(false)}>PRODUCTS</NavItem>
+            <NavItem to="/services" onClick={() => setIsOpen(false)}>PRODUCTS</NavItem>
+            <NavItem to="/blog" onClick={() => setIsOpen(false)}>BLOG</NavItem>
             <NavItem to="/contact" onClick={() => setIsOpen(false)}>CONTACT</NavItem>
           </div>
         </div>

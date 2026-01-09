@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Upload, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Contact: React.FC = () => {
   const [attachments, setAttachments] = useState<File[]>([]);
@@ -196,6 +197,14 @@ export const Contact: React.FC = () => {
               >
                 {uploading ? 'Sending...' : 'Send Message'}
               </button>
+
+              <p className="text-xs text-slate-500 text-center mt-4">
+                By submitting this form, you agree to our{' '}
+                <Link to="/privacy" className="text-accent hover:text-sky-600 underline">
+                  Privacy Policy
+                </Link>
+                . We respect your privacy and will process your information in accordance with our privacy policy.
+              </p>
             </form>
           </div>
 
@@ -210,9 +219,9 @@ export const Contact: React.FC = () => {
                 <div>
                   <h3 className="font-semibold text-primary">Factory Location</h3>
                   <p className="text-slate-600 mt-1">
-                    No. 123 Industrial Park Road,<br />
-                    Bao'an District, Shenzhen,<br />
-                    Guangdong Province, China
+                    No. 29 Fuzhen Industrial Park,<br />
+                    Nanpi County, Cangzhou,<br />
+                    Hebei Province, China
                   </p>
                 </div>
               </div>
@@ -224,8 +233,7 @@ export const Contact: React.FC = () => {
                 <div>
                   <h3 className="font-semibold text-primary">Phone</h3>
                   <p className="text-slate-600 mt-1">
-                    +86 123 4567 8900 (Office)<br />
-                    +86 987 6543 2100 (Sales)
+                    +86 13473836059
                   </p>
                 </div>
               </div>
@@ -237,8 +245,7 @@ export const Contact: React.FC = () => {
                 <div>
                   <h3 className="font-semibold text-primary">Email</h3>
                   <p className="text-slate-600 mt-1">
-                    sales@quanheng-metal.com<br />
-                    info@quanheng-metal.com
+                    info@qumetal.com
                   </p>
                 </div>
               </div>

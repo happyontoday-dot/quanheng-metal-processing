@@ -8,6 +8,9 @@ import { About } from './pages/About';
 import { Products } from './pages/Products';
 import { ServiceDetail } from './pages/ServiceDetail';
 import { Contact } from './pages/Contact';
+import { Privacy } from './pages/Privacy';
+import { Blog } from './pages/Blog';
+import { BlogPost } from './pages/BlogPost';
 
 // Scroll to top helper
 const ScrollToTop = () => {
@@ -28,9 +31,12 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/products" element={<Products />} />
+            <Route path="/services" element={<Products />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} />
           </Routes>
         </main>
         <Footer />

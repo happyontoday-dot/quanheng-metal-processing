@@ -8,7 +8,7 @@ export const ServiceDetail: React.FC = () => {
     const service = services.find((s) => s.id === slug);
 
     if (!service) {
-        return <Navigate to="/products" replace />;
+        return <Navigate to="/services" replace />;
     }
 
     return (
@@ -24,7 +24,7 @@ export const ServiceDetail: React.FC = () => {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent z-10"></div>
                 <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-end pb-16">
-                    <Link to="/products" className="text-slate-300 hover:text-white flex items-center mb-6 transition-colors w-fit">
+                    <Link to="/services" className="text-slate-300 hover:text-white flex items-center mb-6 transition-colors w-fit">
                         <ArrowLeft className="w-4 h-4 mr-2" /> Back to Services
                     </Link>
                     <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">{service.title}</h1>
@@ -55,6 +55,46 @@ export const ServiceDetail: React.FC = () => {
                                             </li>
                                         ))}
                                     </ul>
+                                </div>
+                            )}
+
+                            {service.gallery && service.gallery.length > 0 && (
+                                <div className="mt-10">
+                                    <h3 className="text-xl font-bold text-primary mb-6">Project Gallery</h3>
+                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                        {service.gallery.map((img, idx) => (
+                                            <div key={idx} className="group relative overflow-hidden rounded-lg aspect-square bg-slate-100">
+                                                <img
+                                                    src={img}
+                                                    alt={`${service.title} - Image ${idx + 1}`}
+                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            {service.galleryWithCaptions && service.galleryWithCaptions.length > 0 && (
+                                <div className="mt-10">
+                                    <h3 className="text-xl font-bold text-primary mb-6">Surface Finishing Options</h3>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        {service.galleryWithCaptions.map((item, idx) => (
+                                            <div key={idx} className="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-300">
+                                                <div className="relative overflow-hidden aspect-square bg-slate-100">
+                                                    <img
+                                                        src={item.image}
+                                                        alt={item.title}
+                                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                    />
+                                                </div>
+                                                <div className="p-4">
+                                                    <h4 className="text-lg font-bold text-primary mb-2">{item.title}</h4>
+                                                    <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             )}
                         </div>
