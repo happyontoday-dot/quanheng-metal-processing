@@ -26,9 +26,11 @@ export const Home: React.FC = () => {
         {/* Left Side Image */}
         <div className="absolute inset-y-0 left-0 w-1/2 z-0 opacity-40">
           <img
-            src="/cases/Metal_20stamping_20parts.jpg"
+            src="/cases/Metal_20stamping_20parts.webp"
             alt="Metal Stamping Parts"
             className="h-full w-full object-cover grayscale opacity-60"
+            fetchPriority="high"
+            loading="eager"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/50 via-slate-900/80 to-slate-900"></div>
         </div>
@@ -36,9 +38,11 @@ export const Home: React.FC = () => {
         {/* Right Side Image */}
         <div className="absolute inset-y-0 right-0 w-1/2 z-0 opacity-40">
           <img
-            src="/cases/Die_20casting_20parts.jpg"
+            src="/cases/Die_20casting_20parts.webp"
             alt="Die Casting Parts"
             className="h-full w-full object-cover grayscale opacity-60"
+            fetchPriority="high"
+            loading="eager"
           />
           <div className="absolute inset-0 bg-gradient-to-l from-slate-900/50 via-slate-900/80 to-slate-900"></div>
         </div>
@@ -202,16 +206,16 @@ export const Home: React.FC = () => {
             <div className="relative group">
               <div ref={scrollContainerRef} className="flex overflow-x-auto gap-6 snap-x no-scrollbar scrolling-touch">
                 {[
-                  { name: "Aluminum Extrusion Parts", src: "/cases/Aluminum_20extrusion_20parts.jpg" },
-                  { name: "Assembled Products", src: "/cases/Assembled_20products.jpg" },
-                  { name: "Die Casting Parts", src: "/cases/Die_20casting_20parts.jpg" },
-                  { name: "Metal Stamping Parts", src: "/cases/Metal_20stamping_20parts.jpg" },
-                  { name: "Plastic Parts", src: "/cases/Plastic_20parts.jpg" },
-                  { name: "Electronics Components", src: "/cases/electronics.jpg" },
-                  { name: "Machining Parts", src: "/cases/machining parts.png" },
+                  { name: "Aluminum Extrusion Parts", src: "/cases/Aluminum_20extrusion_20parts.webp" },
+                  { name: "Assembled Products", src: "/cases/Assembled_20products.webp" },
+                  { name: "Die Casting Parts", src: "/cases/Die_20casting_20parts.webp" },
+                  { name: "Metal Stamping Parts", src: "/cases/Metal_20stamping_20parts.webp" },
+                  { name: "Plastic Parts", src: "/cases/Plastic_20parts.webp" },
+                  { name: "Electronics Components", src: "/cases/electronics.webp" },
+                  { name: "Machining Parts", src: "/cases/machining parts.webp" },
 
-                  { name: "Optoelectronic Products 1", src: "/cases/光电产品 (1).png" },
-                  { name: "Optoelectronic Products 2", src: "/cases/光电产品 (2).png" },
+                  { name: "Optoelectronic Products 1", src: "/cases/光电产品 (1).webp" },
+                  { name: "Optoelectronic Products 2", src: "/cases/光电产品 (2).webp" },
 
 
                 ].map((item, idx) => (
