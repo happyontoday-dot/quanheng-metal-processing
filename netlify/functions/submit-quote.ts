@@ -61,8 +61,8 @@ export default async (req: Request) => {
         `;
 
         const { data, error } = await resend.emails.send({
-            from: "Quanheng Metal <onboarding@resend.dev>",
-            to: [process.env.CONTACT_EMAIL || "admin@example.com"],
+            from: "Quanheng Metal <info@qumetal.com>",
+            to: [process.env.CONTACT_EMAIL || "happyontoday@gmail.com"],
             subject: `New Quote Request from ${name}`,
             html: emailHtml,
             replyTo: email,
