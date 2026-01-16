@@ -22,9 +22,10 @@ export const Home: React.FC = () => {
     <div className="flex flex-col w-full fade-in">
 
       {/* Hero Section */}
-      <section className="relative h-[600px] w-full flex items-center bg-slate-900 overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative min-h-[500px] md:h-[600px] w-full flex items-center bg-gradient-to-br from-[#002855] via-[#003B73] to-[#002046] overflow-hidden">
         {/* Left Side Image */}
-        <div className="absolute inset-y-0 left-0 w-1/2 z-0 opacity-40">
+        <div className="hidden md:block absolute inset-y-0 left-0 w-1/2 z-0 opacity-40">
           <img
             src="/cases/Metal_20stamping_20parts.webp"
             alt="Metal Stamping Parts"
@@ -32,11 +33,11 @@ export const Home: React.FC = () => {
             fetchPriority="high"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/50 via-slate-900/80 to-slate-900"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#002855]/60 via-[#003B73]/80 to-[#002046]"></div>
         </div>
 
         {/* Right Side Image */}
-        <div className="absolute inset-y-0 right-0 w-1/2 z-0 opacity-40">
+        <div className="hidden md:block absolute inset-y-0 right-0 w-1/2 z-0 opacity-40">
           <img
             src="/cases/Die_20casting_20parts.webp"
             alt="Die Casting Parts"
@@ -44,47 +45,47 @@ export const Home: React.FC = () => {
             fetchPriority="high"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-l from-slate-900/50 via-slate-900/80 to-slate-900"></div>
+          <div className="absolute inset-0 bg-gradient-to-l from-[#002855]/60 via-[#003B73]/80 to-[#002046]"></div>
         </div>
 
-        {/* Central Overlay for uniform darkness behind text - slightly reduced since side gradients handle most of it now */}
-        <div className="absolute inset-0 bg-slate-900/30 z-10"></div>
+        {/* Central Overlay for uniform darkness behind text */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#003B73]/30 to-[#002046]/50 z-10"></div>
 
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col items-start justify-start pt-24">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-0 md:h-full flex flex-col items-start justify-center">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight max-w-4xl">
             Custom Sheet Metal Fabrication
           </h1>
-          <p className="text-base md:text-lg text-slate-300 mb-3 max-w-4xl leading-relaxed">
+          <p className="text-base md:text-lg text-white mb-3 max-w-4xl leading-relaxed">
             Our advanced capabilities include shearing, precise cutting, bending, stamping, punching, welding and surface finishing of sheet metal to meet your exact specifications.
           </p>
-          <p className="text-base md:text-lg text-slate-300 mb-5 max-w-4xl leading-relaxed">
+          <p className="text-base md:text-lg text-white mb-5 max-w-4xl leading-relaxed">
             From rapid prototyping to full production runs, we deliver excellence in every project.
           </p>
 
           <div className="mb-6 max-w-4xl">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-300 text-sm md:text-base">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-white text-sm md:text-base">
               <li className="flex items-start">
-                <span className="text-accent mr-2 mt-1">*</span>
+                <span className="text-white mr-2 mt-1">✓</span>
                 <span>Small to large and heavy components</span>
               </li>
               <li className="flex items-start">
-                <span className="text-accent mr-2 mt-1">*</span>
+                <span className="text-white mr-2 mt-1">✓</span>
                 <span>Supports almost metal types</span>
               </li>
               <li className="flex items-start">
-                <span className="text-accent mr-2 mt-1">*</span>
+                <span className="text-white mr-2 mt-1">✓</span>
                 <span>Linear Dimension Tolerance: ±0.004" (0.10mm), ISO 2768-mK Standard</span>
               </li>
               <li className="flex items-start">
-                <span className="text-accent mr-2 mt-1">*</span>
+                <span className="text-white mr-2 mt-1">✓</span>
                 <span>Bend to Hole Tolerance: ±0.008" (0.20mm), ISO 2768-mK Standard</span>
               </li>
               <li className="flex items-start">
-                <span className="text-accent mr-2 mt-1">*</span>
+                <span className="text-white mr-2 mt-1">✓</span>
                 <span>Angular Tolerance: +/- 0.5 degree</span>
               </li>
               <li className="flex items-start">
-                <span className="text-accent mr-2 mt-1">*</span>
+                <span className="text-white mr-2 mt-1">✓</span>
                 <span>Multiple Finishing Options</span>
               </li>
             </ul>
@@ -92,8 +93,8 @@ export const Home: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              to="/contact"
-              className="px-8 py-3 bg-accent hover:bg-sky-600 text-white font-semibold rounded-md transition-all text-center"
+              to="/quote"
+              className="px-8 py-3 bg-[#0F7AC0] hover:bg-[#0d6ba8] text-white font-semibold rounded-md transition-all text-center shadow-lg"
             >
               Request a Quote
             </Link>
@@ -108,7 +109,7 @@ export const Home: React.FC = () => {
             <h2 className="text-3xl font-bold text-primary mb-4">Why Choose Us</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:auto-rows-fr gap-8">
             {[
               {
                 icon: <Layers className="w-12 h-12 text-accent" />,
@@ -131,7 +132,7 @@ export const Home: React.FC = () => {
                 desc: "We have certified to ISO 9001:2015, from initial production to final delivery, we maintain strict quality control to ensure compliance with customer requirements."
               },
             ].map((feature, idx) => (
-              <div key={idx} className="p-8 bg-slate-50 rounded-xl border border-slate-100 hover:shadow-lg transition-shadow flex flex-col sm:flex-row items-start gap-6">
+              <div key={idx} className="h-full p-8 bg-slate-50 rounded-xl border border-slate-100 hover:shadow-lg transition-shadow flex flex-col sm:flex-row items-start gap-6">
                 <div className="flex-shrink-0">{feature.icon}</div>
                 <div>
                   <h3 className="text-xl font-bold text-primary mb-2">{feature.title}</h3>
@@ -295,7 +296,7 @@ export const Home: React.FC = () => {
 
           <div className="text-center">
             <Link
-              to="/contact"
+              to="/quote"
               className="inline-block px-10 py-4 bg-accent hover:bg-sky-600 text-white font-bold rounded-md transition-all shadow-md"
             >
               Tell Us Your Requirements
@@ -322,7 +323,7 @@ export const Home: React.FC = () => {
                 {
                   step: "Step 1",
                   title: "Submit Your Design Files",
-                  desc: "Upload your CAD files or drawings in formats such as STEP, IGES, STL, Or PDF. Our team will review your files and provide feedback if necessary.",
+                  desc: "Upload your CAD files or drawings. If you don't have existing design files, you may also send reference images and a brief description of your requirements. We can provide a preliminary evaluation and rough cost estimate based on this information.",
                   icon: <FileUp className="w-8 h-8 text-slate-700" />
                 },
                 {
@@ -365,8 +366,8 @@ export const Home: React.FC = () => {
 
           <div className="mt-16 text-center">
             <Link
-              to="/contact"
-              className="inline-flex items-center px-8 py-3 bg-accent hover:bg-sky-600 text-white font-bold rounded-full transition-all shadow-md"
+              to="/quote"
+              className="inline-flex items-center px-8 py-3 bg-accent hover:bg-sky-600 text-white font-bold rounded-md transition-all shadow-md"
             >
               Get Instant Quote <ArrowRight className="w-4 h-4 ml-2" />
             </Link>

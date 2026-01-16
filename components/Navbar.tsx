@@ -51,7 +51,7 @@ export const Navbar: React.FC = () => {
             <NavItem to="/contact">CONTACT</NavItem>
 
             <NavLink
-              to="/contact"
+              to="/quote"
               className="ml-4 px-5 py-2.5 bg-accent hover:bg-sky-700 text-white text-sm font-semibold rounded-full transition-all shadow-md hover:shadow-lg"
             >
               Get Quote

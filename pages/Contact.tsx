@@ -11,12 +11,12 @@ export const Contact: React.FC = () => {
     if (!files) return;
 
     const fileArray = Array.from(files);
-    const maxSize = 10 * 1024 * 1024; // 10MB
+    const maxSize = 15 * 1024 * 1024; // 15MB
 
     // Validate file sizes
     const validFiles = fileArray.filter((file: File) => {
       if (file.size > maxSize) {
-        alert(`File "${file.name}" is too large. Maximum size is 10MB.`);
+        alert(`File "${file.name}" is too large. Maximum size is 15MB.`);
         return false;
       }
       return true;
@@ -143,7 +143,7 @@ export const Contact: React.FC = () => {
               {/* File Upload Section */}
               <div className="mb-6">
                 <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Attachments <span className="text-slate-400 font-normal">(Optional, max 10MB per file)</span>
+                  Attachments <span className="text-slate-400 font-normal">(Optional, max 15MB per file)</span>
                 </label>
                 <div className="flex items-center gap-3">
                   <label className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg border-2 border-dashed border-slate-300 hover:border-accent cursor-pointer transition-colors bg-slate-50 hover:bg-slate-100">

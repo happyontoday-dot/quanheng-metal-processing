@@ -7,44 +7,47 @@ export const About: React.FC = () => {
       {/* Header */}
       <div className="bg-slate-100 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-primary mb-4">About Quanheng</h1>
+          <h1 className="text-4xl font-bold text-primary mb-4">About Quanheng Metals</h1>
           <p className="text-slate-500 max-w-2xl mx-auto text-lg">
             Dedicated to precision, quality, and innovation in metal manufacturing since 1993.
           </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
-          <div className="lg:w-1/2">
-            <GeminiImage
-              prompt="Modern clean metal processing factory workshop, organized shelving, workers in safety gear, wide angle 8k"
-              fallbackSrc="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200"
-              alt="Factory Workshop"
-              className="rounded-lg shadow-2xl h-96 w-full"
-            />
-          </div>
-          <div className="lg:w-1/2">
-            <h2 className="text-3xl font-bold text-primary mb-6">Who We Are</h2>
-            <p className="text-slate-600 mb-6 leading-relaxed">
-              Quanheng Metals Ltd was founded in 1993 with a focus on delivering tailored manufacturing solutions. Our goal is to assist you in the development and efficient production of custom metal parts and custom sheet metal components. We specialize in working with a wide variety of materials, including over 50 types of metals and plastics.
-            </p>
-            <p className="text-slate-600 mb-6 leading-relaxed">
-              Our team of experts possesses extensive knowledge and experience in custom sheet metal parts and custom metal parts manufacturing.
-            </p>
-            <p className="text-slate-600 mb-6 leading-relaxed">
-              We are committed to providing comprehensive technical support services, helping you achieve the best possible value for your products through the development of prototypes and manufacturing solutions. Our commitment to delivering 100% qualified products, with a focus on punctuality, efficiency, and reliability, makes us the ideal partner for your custom metal parts and custom sheet metal parts manufacturing needs.
-            </p>
-            <div className="grid grid-cols-2 gap-4 mt-8">
-              <div className="border-l-4 border-accent pl-4">
-                <span className="block text-3xl font-bold text-primary">30+</span>
-                <span className="text-sm text-slate-500">Years Experience</span>
-              </div>
-              <div className="border-l-4 border-accent pl-4">
-                <span className="block text-3xl font-bold text-primary">50+</span>
-                <span className="text-sm text-slate-500">Material Types</span>
-              </div>
+      {/* Who We Are - Sketch-based Wrap Layout */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="prose prose-slate max-w-none">
+          <div className="relative">
+            {/* Title and Text */}
+            <h2 className="text-3xl font-bold text-primary mb-8">Who We Are</h2>
+
+            <div className="text-slate-600 leading-relaxed text-lg space-y-6">
+              <p className="text-xl text-primary/80 font-medium">
+                Founded in 1993, <strong>Quanheng Metals Ltd</strong> is a professional metal manufacturing factory located in Cangzhou, China—one of the country’s most important industrial hubs for metal processing and fabrication.
+              </p>
+
+              <p>
+                Cangzhou is home to thousands of metalworking and manufacturing enterprises, forming a highly mature and efficient industrial ecosystem. This region brings together a large number of skilled technicians, experienced engineers, and specialized suppliers, enabling fast collaboration, stable production capacity, and strong cost control. Being deeply rooted in this manufacturing cluster allows us to offer our customers competitive pricing, flexible production, and proven manufacturing expertise.
+              </p>
+
+              <p>
+                With over 30 years of hands-on experience, we focus on providing custom metal parts and custom sheet metal components, supporting projects from early-stage prototyping to mass production. We work with more than 50 types of metals and plastics, including steel, stainless steel, aluminum, copper, and other engineering materials, to meet diverse industry requirements.
+              </p>
+
+              <p>
+                Our engineering and production teams have extensive practical experience in design optimization, process selection, and manufacturability improvement. We do not simply produce parts—we help our customers reduce costs, improve performance, and accelerate time to market through practical engineering support and efficient manufacturing solutions.
+              </p>
+
+              <p>
+                Serving customers across Europe, North America, the Middle East, Asia, and Russia, we actively seek long-term partnerships with companies around the world. We understand the different technical standards, quality expectations, and business practices of international markets, and we are committed to providing clear communication, reliable delivery, and consistent product quality for global clients.
+              </p>
+
+              <p>
+                From prototype development to large-scale production, we are committed to delivering 100% qualified products with consistent quality, reliable lead times, and responsive communication. Leveraging the strengths of China’s manufacturing supply chain and Cangzhou’s industrial concentration, Quanheng Metals Ltd is a trusted partner for customers seeking high-quality, cost-effective, and scalable metal fabrication solutions worldwide.
+              </p>
             </div>
+
+            <div className="clear-both"></div>
           </div>
         </div>
       </div>
@@ -61,49 +64,39 @@ export const About: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                img: "/about/imgi_14_HWZ_7447.jpg",
+                img: "/about/Metal Stamping floor.jpg",
                 title: "Metal Stamping floor",
                 desc: "High-capacity stamping workshop with precision equipment for mass production"
               },
               {
-                img: "/about/imgi_17_HWZ_7497.jpg",
+                img: "/about/Tooling Production.jpg",
                 title: "Tooling Production",
                 desc: "Professional mold and tooling manufacturing center for custom tooling solutions"
               },
               {
-                img: "/about/imgi_19_HWZ_8531.jpg",
+                img: "/about/CNC Machining Centres.jpg",
                 title: "CNC Machining Centres",
                 desc: "Advanced CNC machining capabilities for high-precision components"
               },
               {
-                img: "/about/imgi_2_HWZ_8572-edited.jpg",
+                img: "/about/Auto-lathe production.jpg",
                 title: "Auto-lathe production",
                 desc: "Automated lathe production line for efficient high-volume manufacturing"
               },
               {
-                img: "/about/imgi_3_HWZ_7926.jpg",
-                title: "EDM Machining",
-                desc: "Electrical discharge machining facility for complex geometries and hard materials"
+                img: "/about/Laser Cutting machine.jpg",
+                title: "Laser Cutting machine",
+                desc: "High-precision laser cutting equipment for clean, accurate cuts"
               },
               {
-                img: "/about/imgi_4_HWZ_7680.jpg",
+                img: "/about/Wire-cutting machine.jpg",
                 title: "Wire-cutting machine",
                 desc: "Wire EDM cutting capabilities for intricate designs and tight tolerances"
               },
               {
-                img: "/about/imgi_5_HWZ_8252.jpg",
+                img: "/about/Die-casting products machining.jpg",
                 title: "Die-casting products machining",
                 desc: "Die-casting machining operations for precision metal components"
-              },
-              {
-                img: "/about/imgi_8_HWZ_7782.jpg",
-                title: "Die-casting products - polishing",
-                desc: "Professional polishing and finishing for superior surface quality"
-              },
-              {
-                img: "/about/imgi_9_HWZ_7581-edited.jpg",
-                title: "Laser Cutting machine",
-                desc: "High-precision laser cutting equipment for clean, accurate cuts"
               }
             ].map((facility, i) => (
               <div key={i} className="group cursor-pointer">

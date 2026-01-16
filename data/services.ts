@@ -10,12 +10,28 @@ export interface Service {
         title: string;
         description: string;
     }[];
+    specifications?: string[];
+    process?: {
+        title: string;
+        description: string;
+    }[];
+    types?: {
+        title: string;
+        description: string;
+    }[];
 }
 
 export const services: Service[] = [
     {
         id: "custom-stamping",
         title: "Custom Sheet Metal Stamping Services",
+        description: "Our advanced stamping technology and experienced team ensure precision and reliability in every project, whether it's for small or large production runs. Our services are adaptable to various materials, including aluminum, stainless steel, copper, brass, nickel and more. From custom die design to specific material requirements, we can accommodate various customization requests to align with your project’s unique needs.",
+        specifications: [
+            "Maximum 400 Tons Press Rating",
+            "0.004\" ~ 0.47\" (0.1mm ~ 12mm) Metal Thickness",
+            "±0.01\" (0.25mm) Tight Tolerance",
+            "Custom Dies & Punches for Your Designs"
+        ],
         features: [
             "Free evaluation of drawings before order",
             "Flexible order volume: from 10 pcs to 5,000,000 pcs",
@@ -23,6 +39,33 @@ export const services: Service[] = [
             "Factory-direct pricing, no middlemen markups",
             "Fast worldwide delivery – 3000+ global customers served"
         ],
+        process: [
+            {
+                title: "Send Your Drawings",
+                description: "Begin by providing detailed drawings or CAD files of the part you need to be stamped. This helps us accurately understand the design and requirements."
+            },
+            {
+                title: "Design & Engineering Support",
+                description: "Our engineering team reviews the drawings, and provides feedback. Then, specialized tools and dies are created based on the final proven design."
+            },
+            {
+                title: "Sheet Metal Preparation",
+                description: "Prepare the sheet metal for stamping by cutting it into the appropriate size and ensuring it is free of defects."
+            },
+            {
+                title: "Stamping Press",
+                description: "Applying force to the metal to form the desired shape. It can include processes such as blanking, punching, bending, or coining."
+            },
+            {
+                title: "Post-Processing",
+                description: "After stamping, the parts may require additional processing, such as trimming excess material, deburring, or adjusting dimensions to ensure they meet specifications."
+            },
+            {
+                title: "Surface Finishing",
+                description: "Finally, the stamped parts are finished with surface treatments like painting, plating, or coating to enhance durability, appearance, or corrosion resistance."
+            }
+        ],
+
         image: "/image/Custom Sheet Metal Stamping Services.jpg",
         gallery: [
             "/metal stamping/imgi_7_202505081145439144.jpg",
@@ -34,9 +77,71 @@ export const services: Service[] = [
         ]
     },
     {
+        id: "metal-punching",
+        title: "Custom Metal Punching",
+        description: "We specialize in high-precision metal punching services, delivering customized solutions for a wide range of applications. Equipped with advanced CNC turret punching machines, we handle various metals including aluminum, stainless steel, galvanized steel, titanium, brass, bronze, and copper. Our capabilities include punching holes in diverse shapes and sizes, tailored to meet exact customer specifications.",
+        specifications: [
+            "Single & Turret Punching",
+            "Precision CNC Punching",
+            "Support Almost All Metals",
+            "Custom Hole Shape & Size",
+            "Rapid Prototyping & Mass Production"
+        ],
+        features: [
+            "Precision: High precision in punching patterns, holes, and cut-outs",
+            "Automation: CNC-controlled for automated and rapid production",
+            "Variety of Shapes: Circles, squares, rectangles, and custom designs",
+            "Efficiency: Suitable for medium to high-volume production runs"
+        ],
+        process: [
+            {
+                title: "CNC Turret Punching Technique",
+                description: "Our CNC punching machine consists of a rotating turret loaded with a variety of punch tools that correspond to different shapes and sizes."
+            },
+            {
+                title: "Precision Punching Process",
+                description: "When the sheet metal is fed into the press, the turret selects the appropriate punch tool to make precise holes according to the programmed design."
+            }
+        ],
+        image: "/image/Custom-Metal-Punching.jpg",
+        gallery: [
+            "/punching/imgi_9_Round-Hole-Metal-Sheets.jpg",
+            "/punching/imgi_10_Square-Hole-Metal-Sheets.jpg",
+            "/punching/imgi_11_Hexagon-Hole-Metal-Sheets.jpg",
+            "/punching/imgi_12_Rectangle-Hole-Metal-Sheets.jpg",
+            "/punching/imgi_13_Oval-Hole-Metal-Sheets.jpg",
+            "/punching/imgi_14_Heart-Hole-Metal-Sheets.jpg"
+        ]
+    },
+    {
         id: "metal-cutting",
         title: "Custom Metal Cutting",
-        description: "Every part we cut tells a story of precision and reliability. Our clients across the globe rely on us for consistent, high-quality results that fit their needs — no surprises, just performance.",
+        description: "Sheet metal cutting is a subtractive process, where material is removed to create parts with desired shapes and dimensions. Our cutting ability ranges from mechanical cutting to thermal and waterjet cutting, suitable for various metal sheets and plates, with following post-cutting process and strict quality controls.",
+        specifications: [
+            "Various Cutting Methods",
+            "High Quality Post-cutting Process",
+            "Strict Quality Controls",
+            "Suitable for Almost All Metals"
+        ],
+        features: [
+            "Laser Cutting: Best for thin to medium materials (20mm max), clean edges, extremely precise with 0.1~0.3mm kerf",
+            "Plasma Cutting: Best for thick metal plates (50mm max), moderate precision with 1~3mm kerf",
+            "Waterjet Cutting: Best for thick (>200mm) or heat-sensitive metals, smooth edge, high precision with 0.5~1mm kerf"
+        ],
+        process: [
+            {
+                title: "Material Inspection",
+                description: "Ensure that the sheet metal material matches the specified type, grade, and thickness. Check for defects such as warping, cracks, or surface contamination before cutting."
+            },
+            {
+                title: "Dimensional Accuracy",
+                description: "Verify the cut dimensions align with design specifications using micrometers and CMMs. Maintain tolerances according to industry standards like ISO 2768 or custom specifications."
+            },
+            {
+                title: "Equipment Calibration",
+                description: "Calibrate cutting equipment, such as CNC laser cutters and plasma cutters to ensure precision. Perform trial cuts to confirm equipment settings before large-scale production."
+            }
+        ],
         image: "/image/Custom Metal Cutting .jpg",
         gallery: [
             "/metal Cutting/imgi_7_202508011450163894.jpg",
@@ -48,26 +153,40 @@ export const services: Service[] = [
         ]
     },
     {
-        id: "fabrication-services",
-        title: "Professional Sheet Metal Fabrication Services",
-        features: [
-            "Rapid Prototyping: Turnaround in as fast as 1 day",
-            "Flexible Volumes: From 1 unit to 500,000+ units",
-            "Real Factory Prices: Competitive, direct-from-workshop pricing",
-            "Trusted by 3,000+ Clients: From automotive to aerospace industries",
-            "Global Reach: Efficient delivery to over 30 countries"
-        ],
-        image: "/image/Professional Sheet Metal Fabrication Services.jpg"
-    },
-    {
         id: "metal-bending",
         title: "Metal Bending Services",
+        description: "Sheet metal bending is an essential process in metal fabrication, the goal is to change the geometry of the metal sheet by applying force, creating angular or curved features. We specialize in bending metal sheets and plates into V, U, Z and custom shapes using a range of advanced bending techniques with minimized springback and optimized bend radius.",
+        specifications: [
+            "Various Bending Techniques",
+            "Strict Quality Control Processes",
+            "Maximum 60mm Bending Thickness",
+            "Maximum 1000 Tons Bending Capacity",
+            "±0.01\" (0.25mm) Linear Tolerance",
+            "±1 Degree Angular Tolerance"
+        ],
         features: [
-            "Quick Prototyping In 24 Hours",
-            "Excellent Quality & Beautiful Surface",
-            "Fast Operation & One-Stop Services",
-            "Real Factory Quote",
-            "1pc - 100,000 Pc High-Volume Processing Capacity"
+            "Press Brake: High precision bending with die and punch setup, capable of bending up to 12mm or more",
+            "Roll Bender: Creates large radius bends and curves, ideal for pipes, tubes, and coils",
+            "Air Bending: Highly versatile, achieving different bend angles with the same tooling",
+            "Bottom Bending: Accurate and consistent bends with tighter angle control"
+        ],
+        process: [
+            {
+                title: "V Bending",
+                description: "The sheet is pressed into the die, creating a precise V-shape. High precision and repeatability. Commonly used for brackets, channels, and enclosures."
+            },
+            {
+                title: "U Bending",
+                description: "The sheet is bent over a U-shaped die. Provides consistent bend radius. Used for parts requiring strong structural integrity."
+            },
+            {
+                title: "Z Bending",
+                description: "Bending the sheet into a zigzag pattern. Allows for multiple bends. Used in architectural components and decorative panels."
+            },
+            {
+                title: "Roll Bending",
+                description: "Feeding sheet metal through rollers to achieve curved shapes. Ideal for large-radius bends, cylindrical shapes, and curved panels."
+            }
         ],
         gallery: [
             "/Bending/imgi_7_1012253507_8402.jpg",

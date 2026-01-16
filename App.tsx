@@ -11,6 +11,7 @@ import { Contact } from './pages/Contact';
 import { Privacy } from './pages/Privacy';
 import { Blog } from './pages/Blog';
 import { BlogPost } from './pages/BlogPost';
+import { Quote } from './pages/Quote';
 
 // Scroll to top helper
 const ScrollToTop = () => {
@@ -36,6 +37,7 @@ const App: React.FC = () => {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/quote" element={<Quote />} />
             <Route path="/privacy" element={<Privacy />} />
           </Routes>
         </main>
