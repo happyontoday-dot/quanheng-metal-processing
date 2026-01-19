@@ -20,14 +20,20 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-slate-200">Quick Links</h4>
             <ul className="space-y-2">
-              {['Home', 'About Us', 'Products', 'Contact'].map((item) => (
-                <li key={item}>
+              {[
+                { name: 'Home', path: '/' },
+                { name: 'About Us', path: '/about' },
+                { name: 'Services', path: '/services' },
+                { name: 'Blog', path: '/blog' },
+                { name: 'Contact', path: '/contact' },
+              ].map((item) => (
+                <li key={item.name}>
                   <Link
-                    to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
+                    to={item.path}
                     className="text-slate-400 hover:text-accent transition-colors text-sm flex items-center group"
                   >
                     <ChevronRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -37,12 +43,24 @@ export const Footer: React.FC = () => {
           {/* Services */}
           <div>
             <h4 className="text-lg font-semibold mb-4 text-slate-200">Our Capabilities</h4>
-            <ul className="space-y-2 text-sm text-slate-400">
-              <li className="hover:text-white transition-colors cursor-default">Metal Stamping</li>
-              <li className="hover:text-white transition-colors cursor-default">Laser Cutting</li>
-              <li className="hover:text-white transition-colors cursor-default">CNC Punching</li>
-              <li className="hover:text-white transition-colors cursor-default">Bending & Forming</li>
-              <li className="hover:text-white transition-colors cursor-default">Surface Finishing</li>
+            <ul className="space-y-2">
+              {[
+                { name: 'Metal Stamping', slug: 'custom-stamping' },
+                { name: 'Metal Cutting', slug: 'metal-cutting' },
+                { name: 'CNC Punching', slug: 'metal-punching' },
+                { name: 'Bending & Forming', slug: 'metal-bending' },
+                { name: 'Surface Finishing', slug: 'surface-finishing' },
+              ].map((service) => (
+                <li key={service.slug}>
+                  <Link
+                    to={`/services/${service.slug}`}
+                    className="text-slate-400 hover:text-white transition-colors text-sm flex items-center group"
+                  >
+                    <ChevronRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

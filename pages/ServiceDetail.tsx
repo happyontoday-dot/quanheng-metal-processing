@@ -88,6 +88,8 @@ export const ServiceDetail: React.FC = () => {
                                                 <img
                                                     src={img}
                                                     alt={`${service.title} - Image ${idx + 1}`}
+                                                    loading="lazy"
+                                                    decoding="async"
                                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                                 />
                                             </div>
@@ -106,6 +108,8 @@ export const ServiceDetail: React.FC = () => {
                                                     <img
                                                         src={item.image}
                                                         alt={item.title}
+                                                        loading="lazy"
+                                                        decoding="async"
                                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                                     />
                                                 </div>
