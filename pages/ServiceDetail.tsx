@@ -122,6 +122,45 @@ export const ServiceDetail: React.FC = () => {
                                     </div>
                                 </div>
                             )}
+
+                            {service.sections && service.sections.length > 0 && (
+                                <div className="mt-8 space-y-12">
+                                    {service.sections.map((section, sIdx) => (
+                                        <div key={sIdx}>
+                                            <h3 className="text-2xl font-bold text-primary mb-2">{section.title}</h3>
+                                            {section.description && (
+                                                <p className="text-lg text-slate-600 mb-6 leading-relaxed">{section.description}</p>
+                                            )}
+
+                                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                                {section.items.map((item, iIdx) => (
+                                                    <div key={iIdx} className="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+                                                        {item.image && (
+                                                            <div className="relative overflow-hidden h-48 bg-slate-100 flex-shrink-0">
+                                                                <img
+                                                                    src={item.image}
+                                                                    alt={item.title}
+                                                                    loading="lazy"
+                                                                    decoding="async"
+                                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                                />
+                                                            </div>
+                                                        )}
+                                                        <div className="p-5 flex flex-col flex-grow">
+                                                            <h4 className="text-lg font-bold text-primary mb-2 relative inline-block">
+                                                                {item.title}
+                                                            </h4>
+                                                            <p className="text-sm text-slate-600 leading-relaxed flex-grow">
+                                                                {item.description}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     </div>
 
@@ -133,7 +172,7 @@ export const ServiceDetail: React.FC = () => {
                                 Contact us today for a free quote. Our engineering team is ready to review your specifications.
                             </p>
                             <Link
-                                to="/contact"
+                                to="/quote"
                                 className="block w-full py-4 bg-accent hover:bg-sky-600 text-white font-bold rounded-xl text-center transition-all shadow-lg hover:shadow-sky-900/50"
                             >
                                 Request a Quote

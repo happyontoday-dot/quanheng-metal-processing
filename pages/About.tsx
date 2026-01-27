@@ -1,29 +1,33 @@
 import React from 'react';
-import { GeminiImage } from '../components/GeminiImage';
 
 export const About: React.FC = () => {
   return (
     <div className="w-full fade-in bg-white">
       {/* Header */}
-      <div className="bg-slate-100 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-primary mb-4">About Quanheng Metals</h1>
-          <p className="text-slate-500 max-w-2xl mx-auto text-lg">
-            Dedicated to precision, quality, and innovation in metal manufacturing since 1993.
+      <section className="relative overflow-hidden bg-slate-900 py-12 md:py-16">
+        <div className="absolute inset-0 z-0 opacity-20">
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/40 via-transparent to-primary"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">About QuMetal</h1>
+          <p className="text-slate-300 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+            Leading the way in precision metal manufacturing with over three decades of excellence.
           </p>
         </div>
-      </div>
+      </section>
 
-      {/* Who We Are - Sketch-based Wrap Layout */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      {/* Who We Are */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
         <div className="prose prose-slate max-w-none">
           <div className="relative">
-            {/* Title and Text */}
-            <h2 className="text-3xl font-bold text-primary mb-8">Who We Are</h2>
+            <div className="flex items-center gap-4 mb-10">
+              <div className="h-px bg-accent/30 w-12"></div>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary tracking-tight">Who We Are</h2>
+            </div>
 
-            <div className="text-slate-600 leading-relaxed text-lg space-y-6">
-              <p className="text-xl text-primary/80 font-medium">
-                Founded in 1993, <strong>Quanheng Metals Ltd</strong> is a professional metal manufacturing factory located in Cangzhou, China—one of the country’s most important industrial hubs for metal processing and fabrication.
+            <div className="text-slate-600 leading-loose text-lg space-y-8">
+              <p className="text-xl md:text-2xl leading-relaxed border-l-4 border-accent pl-6 py-2">
+                Founded in 1993, QuMetal (Cangzhou Quanheng Metals Ltd ) is a professional metal manufacturing factory located in Cangzhou, China—one of the country’s most important industrial hubs for metal processing and fabrication.
               </p>
 
               <p>
@@ -31,34 +35,28 @@ export const About: React.FC = () => {
               </p>
 
               <p>
-                With over 30 years of hands-on experience, we focus on providing custom metal parts and custom sheet metal components, supporting projects from early-stage prototyping to mass production. We work with more than 50 types of metals and plastics, including steel, stainless steel, aluminum, copper, and other engineering materials, to meet diverse industry requirements.
+                With more than 30 years of practical experience, we specialize in custom metal parts and sheet metal fabrication, supporting projects from prototyping through full-scale production. We process over 50 types of metals and engineering materials, including steel, stainless steel, aluminum, and copper, to meet a wide range of application needs.
               </p>
 
               <p>
-                Our engineering and production teams have extensive practical experience in design optimization, process selection, and manufacturability improvement. We do not simply produce parts—we help our customers reduce costs, improve performance, and accelerate time to market through practical engineering support and efficient manufacturing solutions.
+                Our engineering and production teams focus on design optimization and manufacturability, helping customers lower costs, improve part performance, and shorten lead times through practical, production-oriented solutions.
               </p>
 
               <p>
-                Serving customers across Europe, North America, the Middle East, Asia, and Russia, we actively seek long-term partnerships with companies around the world. We understand the different technical standards, quality expectations, and business practices of international markets, and we are committed to providing clear communication, reliable delivery, and consistent product quality for global clients.
-              </p>
-
-              <p>
-                From prototype development to large-scale production, we are committed to delivering 100% qualified products with consistent quality, reliable lead times, and responsive communication. Leveraging the strengths of China’s manufacturing supply chain and Cangzhou’s industrial concentration, Quanheng Metals Ltd is a trusted partner for customers seeking high-quality, cost-effective, and scalable metal fabrication solutions worldwide.
+                We serve clients across Europe, North America, the Middle East, Asia, and Russia, with a solid understanding of international standards, quality requirements, and business practices. Clear communication, stable quality, and reliable delivery are central to how we work.
               </p>
             </div>
-
-            <div className="clear-both"></div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Manufacturing Facilities Section */}
-      <div className="bg-white py-20">
+      {/* Manufacturing Facilities */}
+      <section className="bg-slate-50 py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-primary mb-4">Our Manufacturing Facilities</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              Advanced production equipment and professional manufacturing capabilities to deliver high-quality metal parts
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 tracking-tight">Our Manufacturing Facilities</h2>
+            <p className="text-slate-500 max-w-2xl mx-auto text-lg">
+              Equipped with state-of-the-art production technology to ensure precision and efficiency at every stage of manufacturing.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -100,32 +98,34 @@ export const About: React.FC = () => {
               }
             ].map((facility, i) => (
               <div key={i} className="group cursor-pointer">
-                <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+                <div className="relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
                   <img
                     src={facility.img}
                     alt={facility.title}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <div className="mt-4">
-                  <h3 className="text-lg font-bold text-primary mb-2">{facility.title}</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">{facility.desc}</p>
+                <div className="mt-6">
+                  <h3 className="text-xl font-bold text-primary mb-2 tracking-tight">{facility.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{facility.desc}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Services Section */}
-      <div className="bg-slate-50 py-20">
+      <section className="bg-white py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-primary mb-4">Our Services</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">Comprehensive manufacturing solutions for all your metal parts needs</p>
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 tracking-tight">Our Services</h2>
+            <p className="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed">
+              Comprehensive manufacturing solutions tailored to meet the most demanding engineering requirements.
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
@@ -136,40 +136,15 @@ export const About: React.FC = () => {
               { title: "Forging Services", desc: "Cold forging and hot forging capabilities" },
               { title: "Aluminum Extrusion", desc: "Custom aluminum profiles and extrusions" }
             ].map((service, i) => (
-              <div key={i} className="bg-white p-6 rounded-lg shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
-                <h3 className="text-lg font-bold text-primary mb-3">{service.title}</h3>
-                <p className="text-slate-600 text-sm">{service.desc}</p>
+              <div key={i} className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-accent/30 hover:shadow-lg transition-all">
+                <h3 className="text-xl font-bold text-primary mb-4 tracking-tight">{service.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{service.desc}</p>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Surface Treatments Section */}
-      <div className="bg-slate-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Surface Treatments</h2>
-            <p className="text-slate-400">Professional finishing options to meet your specifications</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              "Powder Coating",
-              "Galvanized",
-              "Anodizing",
-              "Painting",
-              "Passivation",
-              "Brush",
-              "Electroplating",
-              "Special Surface Treatments"
-            ].map((treatment, i) => (
-              <div key={i} className="bg-slate-800 p-4 rounded-lg border border-slate-700 text-center">
-                <p className="text-accent font-semibold">{treatment}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

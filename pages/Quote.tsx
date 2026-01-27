@@ -139,7 +139,7 @@ export const Quote: React.FC = () => {
             {/* Header */}
             <div className="relative h-[160px] w-full overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%)' }}>
                 <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
-                    <h1 className="text-3xl md:text-4xl font-bold text-white">Online Sheet Metal Quote</h1>
+                    <h1 className="text-3xl md:text-4xl font-bold text-white">Online Quote-CNC Machining/Sheet Metal/3D Printing</h1>
                     <p className="text-slate-300 mt-2">Upload your design files and get a quote within 2-4 hours</p>
                 </div>
             </div>

@@ -19,6 +19,15 @@ export interface Service {
         title: string;
         description: string;
     }[];
+    sections?: {
+        title: string;
+        description?: string;
+        items: {
+            title: string;
+            description: string;
+            image?: string;
+        }[];
+    }[];
 }
 
 export const services: Service[] = [
@@ -266,10 +275,166 @@ export const services: Service[] = [
             }
         ]
     },
+
+    // ... (other services remain unchanged, I will use a precise TargetContent for the interface and the enclosures item)
     {
         id: "enclosures-housings",
         title: "Custom Enclosures & Housings",
-        description: "Quanheng is an expert in metal enclosure manufacturing, delivering custom solutions that typically save 30–60% of costs compared to local fabrication. We offer cold-rolled steel, galvanized steel, stainless steel 304/316, aluminum and other materials.",
-        image: "/image/Custom Sheet Metal Enclosures,.jpg"
+        description: "Quanheng is an expert in metal enclosure manufacturing, delivering custom solutions that typically save 30–60% of costs compared to local fabrication. We offer comprehensive solutions from design to assembly for various industries.",
+        image: "/enclosures/imgi_77_Metal-Enclosure-Manufacturer.jpg",
+        sections: [
+            {
+                title: "By Materials",
+                description: "We work with a wide range of materials to ensure your enclosure meets specific environmental and structural requirements.",
+                items: [
+                    {
+                        title: "Aluminum Enclosure",
+                        description: "Lightweight and corrosion-resistant, aluminum enclosures are ideal for outdoor applications, offering excellent thermal conductivity and customization options for electronic uses.",
+                        image: "/enclosures/imgi_8_Aluminum-Enclosure.jpg"
+                    },
+                    {
+                        title: "304 Stainless Steel Enclosure",
+                        description: "304 stainless steel enclosures provide outstanding corrosion resistance and strength, suitable for hygienic environments, such as food and pharmaceutical applications.",
+                        image: "/enclosures/imgi_9_304-Stainless-Steel-Enclosure.jpg"
+                    },
+                    {
+                        title: "316 Stainless Steel Enclosure",
+                        description: "With superior corrosion resistance, 316 stainless steel enclosures excel in harsh chemicals, saltwater, and extreme environments, ensuring long-lasting performance.",
+                        image: "/enclosures/imgi_10_316-Stainless-Steel-Enclosure.jpg"
+                    },
+                    {
+                        title: "Mild Steel Enclosure",
+                        description: "Cost-effective and versatile, mild steel enclosures are widely used for indoor applications where extreme corrosion resistance is not required.",
+                        image: "/enclosures/imgi_11_Mild-Steel-Enclosure.jpg"
+                    },
+                    {
+                        title: "Galvanized Steel Enclosure",
+                        description: "Zinc-coated for enhanced corrosion protection, making it a durable choice for outdoor or humid environments.",
+                        image: "/enclosures/imgi_12_Galvanized-Steel-Enclosure.jpg"
+                    },
+                    {
+                        title: "Carbon Steel Enclosure",
+                        description: "Strong and durable, carbon steel is suitable for heavy-duty industrial applications requiring high structural integrity.",
+                        image: "/enclosures/imgi_13_Carbon-Steel-Enclosure.jpg"
+                    }
+                ]
+            },
+            {
+                title: "By Installation Methods",
+                items: [
+                    {
+                        title: "Free Standing Enclosure",
+                        description: "Large, standalone units tailored for housing complex control systems and heavy equipment.",
+                        image: "/enclosures/imgi_14_Free-Standing-Enclosure.jpg"
+                    },
+                    {
+                        title: "Wall Mount Enclosure",
+                        description: "Space-saving designed to be securely mounted on walls, ideal for limited floor space.",
+                        image: "/enclosures/imgi_15_Wall-Mount-Enclosure.jpg"
+                    },
+                    {
+                        title: "Flush Mount Enclosure",
+                        description: "Recessed into the wall for a clean, low-profile appearance.",
+                        image: "/enclosures/imgi_16_Flush-Mount-Enclosure.jpg"
+                    },
+                    {
+                        title: "Rack Mount Enclosure",
+                        description: "Standardized enclosures designed to fit into 19-inch racks for server and networking equipment.",
+                        image: "/enclosures/imgi_17_Rack-Mount-Enclosure.jpg"
+                    }
+                ]
+            },
+            {
+                title: "By Applications",
+                items: [
+                    {
+                        title: "Metal Junction Box",
+                        description: "Securely houses electrical connections, protecting them from environmental factors.",
+                        image: "/enclosures/imgi_21_Metal-Junction-Box.jpg"
+                    },
+                    {
+                        title: "Electrical Cabinet",
+                        description: "Robust cabinets for industrial control panels, switchgear, and automation components.",
+                        image: "/enclosures/imgi_24_Electrical-Cabinet.jpg"
+                    },
+                    {
+                        title: "Battery Enclosure",
+                        description: "Durable and ventilated enclosures for batteries, designed to provide safety and thermal management.",
+                        image: "/enclosures/imgi_25_Battery-Enclosure.jpg"
+                    },
+                    {
+                        title: "Generators Enclosure",
+                        description: "Heavy-duty housings that reduce noise and protect backup generators from weather elements.",
+                        image: "/enclosures/imgi_20_Metal-Generator-Enclosure.jpg"
+                    },
+                    {
+                        title: "Metal Socket Box",
+                        description: "Durable metal boxes for power outlets and switches.",
+                        image: "/enclosures/imgi_18_Metal-Socket-Box.jpg"
+                    },
+                    {
+                        title: "Metal Adaptable Box",
+                        description: "Versatile enclosures for various electrical connections and terminations.",
+                        image: "/enclosures/imgi_19_Metal-Adaptable-Box.jpg"
+                    },
+                    {
+                        title: "Busbar Panel Box",
+                        description: "Specialized enclosures for housing busbar distribution systems.",
+                        image: "/enclosures/imgi_22_Busbar-Panel-Box.jpg"
+                    },
+                    {
+                        title: "MCB Metal Box",
+                        description: "Enclosures protecting Miniature Circuit Breakers in distribution boards.",
+                        image: "/enclosures/imgi_23_MCB-Metal-Box.jpg"
+                    }
+                ]
+            },
+            {
+                title: "By Manufacturing Process",
+                items: [
+                    {
+                        title: "Sheet Metal Fabricated",
+                        description: "Created by cutting, bending, and assembling metal sheets. Highly customizable.",
+                        image: "/enclosures/imgi_30_Sheet-Metal-Enclosure.jpg"
+                    },
+                    {
+                        title: "Extruded Enclosures",
+                        description: "Aluminum pushed through a mold to form continuous profiles. Ideal for PCBs.",
+                        image: "/enclosures/imgi_31_Extruded-Aluminium-Enclosure.jpg"
+                    },
+                    {
+                        title: "Die Casted Enclosures",
+                        description: "Made from aluminum or zinc alloys. Excellent for complex shapes.",
+                        image: "/enclosures/imgi_32_Die-Cast-Enclosure.jpg"
+                    }
+                ]
+            },
+            {
+                title: "By IP Ratings",
+                description: "We manufacture enclosures to meet various Ingress Protection (IP) ratings for dust and water resistance.",
+                items: [
+                    {
+                        title: "IP65 Metal Enclosure",
+                        description: "Dust-tight and protected against water jets. Suitable for general outdoor use.",
+                        image: "/enclosures/imgi_26_IP65-Metal-Enclosure.jpg"
+                    },
+                    {
+                        title: "IP66 Metal Enclosure",
+                        description: "Dust-tight and protected against heavy seas or powerful jets of water.",
+                        image: "/enclosures/imgi_27_IP66-Metal-Enclosure.jpg"
+                    },
+                    {
+                        title: "IP67 Metal Enclosure",
+                        description: "Protected against the effects of temporary immersion in water.",
+                        image: "/enclosures/imgi_28_IP67-Metal-Enclosure.jpg"
+                    },
+                    {
+                        title: "IP68 Metal Enclosure",
+                        description: "Protected against the effects of continuous immersion in water.",
+                        image: "/enclosures/imgi_29_IP68-Metal-Enclosure.jpg"
+                    }
+                ]
+            }
+        ]
     }
 ];
