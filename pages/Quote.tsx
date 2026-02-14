@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Upload, X, FileText, CheckCircle, Info } from 'lucide-react';
+import { Upload, X, FileText, CheckCircle, Info, HelpCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const Quote: React.FC = () => {
@@ -415,29 +415,33 @@ export const Quote: React.FC = () => {
                             </ul>
                         </div>
 
-                        {/* Contact Card */}
-                        <div className="bg-primary rounded-xl p-6 text-white">
-                            <h3 className="text-lg font-bold mb-3">Need Help?</h3>
-                            <p className="text-slate-300 text-sm mb-4">
-                                Our engineering team is ready to assist with your project.
-                            </p>
-                            <div className="space-y-2 text-sm">
-                                <p className="flex items-center gap-2">
-                                    <span className="text-slate-400">Email:</span>
-                                    <span>info@qumetal.com</span>
-                                </p>
-                                <p className="flex items-center gap-2">
-                                    <span className="text-slate-400">Phone:</span>
-                                    <span>+86 13473836059</span>
-                                </p>
+                        {/* FAQ Section */}
+                        <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-6">
+                            <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-2">
+                                <HelpCircle className="w-5 h-5 text-accent" />
+                                Frequently Asked Questions
+                            </h3>
+                            <div className="space-y-4">
+                                <div>
+                                    <p className="text-sm font-semibold text-slate-700 mb-1">Do you support international shipping?</p>
+                                    <p className="text-xs text-slate-500">Yes, we ship worldwide via DHL, FedEx, UPS, and Sea Freight. We handle all export documentation to ensure smooth delivery.</p>
+                                </div>
+                                <div>
+                                    <p className="text-sm font-semibold text-slate-700 mb-1">Why choose Quanheng over local shops?</p>
+                                    <p className="text-xs text-slate-500">We offer factory-direct pricing (saving up to 30-50%), massive material inventory, and advanced 12,000W laser cutting capabilities that most local shops lack.</p>
+                                </div>
+                                <div>
+                                    <p className="text-sm font-semibold text-slate-700 mb-1">How do you protect my intellectual property?</p>
+                                    <p className="text-xs text-slate-500">Your designs are only used for quoting and manufacturing. We are happy to sign NDAs and have strict internal data security protocols.</p>
+                                </div>
+                                <div>
+                                    <p className="text-sm font-semibold text-slate-700 mb-1">What are the typical lead times?</p>
+                                    <p className="text-xs text-slate-500">Prototypes usually take 3-7 days. Production orders depend on volume, but we always prioritize speed without compromising quality.</p>
+                                </div>
                             </div>
-                            <Link
-                                to="/contact"
-                                className="block w-full mt-4 py-2.5 bg-accent hover:bg-sky-600 text-white font-medium rounded-lg text-center transition-colors"
-                            >
-                                Contact Us
-                            </Link>
                         </div>
+
+
                     </div>
                 </div>
             </div>
