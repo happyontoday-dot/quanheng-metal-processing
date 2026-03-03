@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { Calendar, User, Tag, ArrowLeft } from 'lucide-react';
+import { Calendar, User, Tag, ArrowLeft, Clock, ArrowRight } from 'lucide-react';
 import { blogPosts } from '../data/blogPosts';
 import ReactMarkdown from 'react-markdown';
 
@@ -15,14 +15,18 @@ export const BlogPost: React.FC = () => {
     return (
         <div className="w-full fade-in bg-slate-50 min-h-screen">
             {/* Header */}
-            <div className="bg-slate-900 py-16">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative overflow-hidden bg-slate-900 py-16">
+                <div className="absolute inset-0">
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-primary/80"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent"></div>
+                </div>
+                <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Back Button */}
                     <Link
                         to="/blog"
                         className="inline-flex items-center gap-2 text-slate-300 hover:text-white mb-6 transition-colors"
                     >
-                        <ArrowLeft className="w-4 h-4" />
+                        <ArrowLeft className="w-4 h-4" aria-hidden="true" />
                         Back to Articles
                     </Link>
 
@@ -35,14 +39,18 @@ export const BlogPost: React.FC = () => {
                     <h1 className="text-4xl font-bold text-white mb-6">{post.title}</h1>
 
                     {/* Meta Info */}
-                    <div className="flex items-center gap-6 text-sm text-slate-300">
+                    <div className="flex flex-wrap items-center gap-4 text-sm text-slate-300">
                         <div className="flex items-center gap-2">
-                            <Calendar className="w-5 h-5" />
+                            <Calendar className="w-5 h-5" aria-hidden="true" />
                             <span>{post.date}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <User className="w-5 h-5" />
+                            <User className="w-5 h-5" aria-hidden="true" />
                             <span>{post.author}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Clock className="w-4 h-4" aria-hidden="true" />
+                            <span>{Math.max(1, Math.ceil((post.content?.split(' ').length ?? 200) / 200))} min read</span>
                         </div>
                     </div>
                 </div>
@@ -101,16 +109,35 @@ export const BlogPost: React.FC = () => {
                 </article>
 
                 {/* CTA Section */}
-                <div className="mt-12 bg-gradient-to-r from-primary to-accent p-8 rounded-2xl text-white text-center">
-                    <h3 className="text-2xl font-bold mb-3">Need Steel Materials or Processing Services?</h3>
-                    <p className="mb-6 text-slate-100">
-                        Quanheng Metal provides quality steel materials and professional processing services. Contact us for the latest quotations.
-                    </p>
-                    <Link
-                        to="/contact"
-                        className="inline-block bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-slate-100 transition-colors shadow-lg"
-                    >
-                        Contact Us Now
+                <div className="mt-12 relative overflow-hidden bg-slate-900 rounded-2xl p-8 md:p-10">
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-primary/80"></div>
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                    <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-6">
+                        <div className="flex-shrink-0 w-14 h-14 bg-accent/20 border border-accent/30 rounded-2xl flex items-center justify-center">
+                            <Tag className="w-7 h-7 text-accent" aria-hidden="true" />
+                        </div>
+                        <div className="flex-grow">
+                            <h3 className="text-2xl font-bold text-white mb-2">Need Steel Materials or Processing Services?</h3>
+                            <p className="text-slate-300 text-sm leading-relaxed">
+                                Quanheng Metal provides quality steel materials and professional processing services. Contact us for the latest quotations.
+                            </p>
+                        </div>
+                        <div className="flex-shrink-0">
+                            <Link
+                                to="/contact"
+                                className="inline-flex items-center gap-2 bg-accent hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-xl transition-all duration-200 shadow-lg cursor-pointer hover:shadow-xl whitespace-nowrap"
+                            >
+                                Contact Us <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Back to Blog */}
+                <div className="mt-8 text-center">
+                    <Link to="/blog" className="inline-flex items-center gap-2 text-slate-500 hover:text-accent transition-colors text-sm font-medium">
+                        <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+                        Back to All Articles
                     </Link>
                 </div>
             </div>

@@ -10,8 +10,24 @@ export const Footer: React.FC = () => {
 
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4 tracking-wider">QUANHENG</h3>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6">
+            <Link to="/" className="flex items-center gap-2 mb-6 group w-fit">
+              <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-slate-800 shadow-md border border-slate-700 transition-all duration-300 overflow-hidden group-hover:bg-slate-700">
+                <svg viewBox="0 0 24 24" className="w-6 h-6 relative z-10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L22 12L12 22L2 12L12 2Z" stroke="currentColor" className="text-accent" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M12 6V18" stroke="currentColor" className="text-slate-400" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M6 12H18" stroke="currentColor" className="text-slate-400" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <div className="flex flex-col justify-center">
+                <span className="text-2xl font-black text-white tracking-tighter leading-none flex items-baseline">
+                  QU<span className="text-accent">METAL</span><span className="w-1.5 h-1.5 rounded-full bg-accent ml-0.5 mb-0.5"></span>
+                </span>
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1 pl-0.5">
+                  Quality & Rapid Metal Processing
+                </span>
+              </div>
+            </Link>
+            <p className="text-slate-300 text-sm leading-relaxed mb-6">
               A premier partner in precision metal fabrication. We deliver excellence in stamping, laser cutting, and custom metal solutions for global industries.
             </p>
           </div>
@@ -30,9 +46,9 @@ export const Footer: React.FC = () => {
                 <li key={item.name}>
                   <Link
                     to={item.path}
-                    className="text-slate-400 hover:text-accent transition-colors text-sm flex items-center group"
+                    className="text-slate-300 hover:text-white transition-colors text-sm flex items-center group"
                   >
-                    <ChevronRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ChevronRight className="w-3 h-3 mr-2 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
                     {item.name}
                   </Link>
                 </li>
@@ -54,9 +70,9 @@ export const Footer: React.FC = () => {
                 <li key={service.slug}>
                   <Link
                     to={`/services/${service.slug}`}
-                    className="text-slate-400 hover:text-white transition-colors text-sm flex items-center group"
+                    className="text-slate-300 hover:text-white transition-colors text-sm flex items-center group"
                   >
-                    <ChevronRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ChevronRight className="w-3 h-3 mr-2 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
                     {service.name}
                   </Link>
                 </li>
@@ -68,7 +84,7 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-slate-200">Contact Us</h4>
             <div className="space-y-4">
-              <div className="flex items-start text-slate-400">
+              <div className="flex items-start text-slate-300">
                 <MapPin className="w-5 h-5 mr-3 mt-0.5 shrink-0 text-accent" />
                 <span className="text-sm">
                   No. 29 Fuzhen Industrial Park,<br />
@@ -76,11 +92,11 @@ export const Footer: React.FC = () => {
                   Hebei Province, China
                 </span>
               </div>
-              <div className="flex items-center text-slate-400">
+              <div className="flex items-center text-slate-300">
                 <Phone className="w-5 h-5 mr-3 shrink-0 text-accent" />
                 <span className="text-sm">+86 13473836059</span>
               </div>
-              <div className="flex items-center text-slate-400">
+              <div className="flex items-center text-slate-300">
                 <Mail className="w-5 h-5 mr-3 shrink-0 text-accent" />
                 <span className="text-sm">info@qumetal.com</span>
               </div>
@@ -88,11 +104,11 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+        <div className="border-t border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 mt-12">
           <p>&copy; {new Date().getFullYear()} Quanheng Metal Processing Factory. All rights reserved.</p>
-          <div className="mt-4 md:mt-0 space-x-4">
-            <Link to="/privacy" className="cursor-pointer hover:text-slate-300 transition-colors">Privacy Policy</Link>
-            <span className="cursor-pointer hover:text-slate-300">Terms of Service</span>
+          <div className="mt-4 md:mt-0 space-x-6">
+            <Link to="/privacy" className="cursor-pointer hover:text-white transition-colors">Privacy Policy</Link>
+            <span className="cursor-pointer hover:text-white transition-colors">Terms of Service</span>
           </div>
         </div>
       </div>

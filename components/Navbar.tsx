@@ -31,13 +31,22 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
-            <NavLink to="/" className="flex items-center gap-2 group">
-              <div className="p-2 bg-primary rounded-lg group-hover:bg-accent transition-colors">
-                <Settings className="w-6 h-6 text-white" />
+            <NavLink to="/" className="flex items-center gap-2 group w-fit">
+              <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 shadow-md group-hover:shadow-accent/20 border border-slate-700/50 transition-all duration-300 overflow-hidden">
+                <div className="absolute inset-0 bg-accent/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <svg viewBox="0 0 24 24" className="w-6 h-6 relative z-10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L22 12L12 22L2 12L12 2Z" stroke="currentColor" className="text-accent group-hover:text-orange-400 transition-colors duration-300" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M12 6V18" stroke="currentColor" className="text-slate-400" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M6 12H18" stroke="currentColor" className="text-slate-400" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-bold text-primary tracking-tight">QUANHENG</span>
-                <span className="text-xs text-slate-500 uppercase tracking-widest">Metal Processing</span>
+              <div className="flex flex-col ml-1 justify-center">
+                <span className="text-2xl font-black text-primary tracking-tighter leading-none flex items-baseline">
+                  QU<span className="text-accent">METAL</span><span className="w-1.5 h-1.5 rounded-full bg-accent ml-0.5 mb-0.5"></span>
+                </span>
+                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1 pl-0.5">
+                  Quality & Rapid Metal Processing
+                </span>
               </div>
             </NavLink>
           </div>
@@ -52,7 +61,7 @@ export const Navbar: React.FC = () => {
 
             <NavLink
               to="/quote"
-              className="ml-4 px-5 py-2.5 bg-accent hover:bg-sky-700 text-white text-sm font-semibold rounded-full transition-all shadow-md hover:shadow-lg"
+              className="ml-4 px-5 py-2.5 bg-accent hover:bg-orange-600 text-white text-sm font-semibold rounded-full transition-all shadow-md hover:shadow-lg"
             >
               Get Quote
             </NavLink>

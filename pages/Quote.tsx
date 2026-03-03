@@ -137,7 +137,7 @@ export const Quote: React.FC = () => {
     return (
         <div className="w-full fade-in bg-slate-100 min-h-screen">
             {/* Header */}
-            <div className="relative h-[160px] w-full overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%)' }}>
+            <div className="relative h-[160px] w-full overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
                 <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
                     <h1 className="text-3xl md:text-4xl font-bold text-white">Online Quote-CNC Machining/Sheet Metal/3D Printing</h1>
                     <p className="text-slate-300 mt-2">Upload your design files and get a quote within 2-4 hours</p>
@@ -152,20 +152,25 @@ export const Quote: React.FC = () => {
                             <form onSubmit={handleSubmit}>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                                     <div>
-                                        <label className="block text-sm font-medium text-slate-700 mb-1">Name *</label>
+                                        <label className="block text-sm font-medium text-slate-700 mb-1" htmlFor="name">Name *</label>
                                         <input
                                             type="text"
+                                            id="name"
                                             name="name"
+                                            autoComplete="name"
                                             required
                                             className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-colors"
                                             placeholder="Your name"
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-slate-700 mb-1">Email *</label>
+                                        <label className="block text-sm font-medium text-slate-700 mb-1" htmlFor="email">Email *</label>
                                         <input
                                             type="email"
+                                            id="email"
                                             name="email"
+                                            autoComplete="email"
+                                            spellCheck={false}
                                             required
                                             className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-colors"
                                             placeholder="your@email.com"
@@ -175,17 +180,20 @@ export const Quote: React.FC = () => {
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                                     <div>
-                                        <label className="block text-sm font-medium text-slate-700 mb-1">Company</label>
+                                        <label className="block text-sm font-medium text-slate-700 mb-1" htmlFor="company">Company</label>
                                         <input
                                             type="text"
+                                            id="company"
                                             name="company"
+                                            autoComplete="organization"
                                             className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-colors"
                                             placeholder="Company name"
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-slate-700 mb-1">Quantity</label>
+                                        <label className="block text-sm font-medium text-slate-700 mb-1" htmlFor="quantity">Quantity</label>
                                         <select
+                                            id="quantity"
                                             name="quantity"
                                             className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-colors bg-white"
                                         >
@@ -204,8 +212,9 @@ export const Quote: React.FC = () => {
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                                     <div>
-                                        <label className="block text-sm font-medium text-slate-700 mb-1">Material Preference</label>
+                                        <label className="block text-sm font-medium text-slate-700 mb-1" htmlFor="material">Material Preference</label>
                                         <select
+                                            id="material"
                                             name="material"
                                             className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-colors bg-white"
                                         >
@@ -220,8 +229,9 @@ export const Quote: React.FC = () => {
                                         </select>
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-slate-700 mb-1">Surface Finish</label>
+                                        <label className="block text-sm font-medium text-slate-700 mb-1" htmlFor="surface_finish">Surface Finish</label>
                                         <select
+                                            id="surface_finish"
                                             name="surface_finish"
                                             className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-colors bg-white"
                                         >
@@ -243,8 +253,9 @@ export const Quote: React.FC = () => {
                                 </div>
 
                                 <div className="mb-4">
-                                    <label className="block text-sm font-medium text-slate-700 mb-1">Additional Notes</label>
+                                    <label className="block text-sm font-medium text-slate-700 mb-1" htmlFor="message">Additional Notes</label>
                                     <textarea
+                                        id="message"
                                         name="message"
                                         rows={3}
                                         className="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-colors"
@@ -255,7 +266,7 @@ export const Quote: React.FC = () => {
                                 {/* File Upload Area */}
                                 <div className="mb-6">
                                     <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-2">
-                                        <Upload className="w-5 h-5 text-accent" />
+                                        <Upload className="w-5 h-5 text-accent" aria-hidden="true" />
                                         Upload Design Files
                                     </h3>
 
@@ -280,7 +291,7 @@ export const Quote: React.FC = () => {
                                         />
                                         <div className="flex flex-col items-center">
                                             <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4">
-                                                <Upload className="w-8 h-8 text-accent" />
+                                                <Upload className="w-8 h-8 text-accent" aria-hidden="true" />
                                             </div>
                                             <p className="text-lg font-medium text-slate-700 mb-1">
                                                 Drag & drop files here or click to browse
@@ -307,7 +318,7 @@ export const Quote: React.FC = () => {
                                                 >
                                                     <div className="flex items-center gap-3 flex-1 min-w-0">
                                                         <div className="flex-shrink-0 w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
-                                                            <FileText className="w-5 h-5 text-accent" />
+                                                            <FileText className="w-5 h-5 text-accent" aria-hidden="true" />
                                                         </div>
                                                         <div className="min-w-0 flex-1">
                                                             <p className="text-sm font-medium text-slate-700 truncate">{file.name}</p>
@@ -319,8 +330,9 @@ export const Quote: React.FC = () => {
                                                         onClick={() => removeFile(index)}
                                                         className="flex-shrink-0 p-2 hover:bg-red-100 rounded-full transition-colors"
                                                         title="Remove file"
+                                                        aria-label={`Remove ${file.name}`}
                                                     >
-                                                        <X className="w-4 h-4 text-red-500" />
+                                                        <X className="w-4 h-4 text-red-500" aria-hidden="true" />
                                                     </button>
                                                 </div>
                                             ))}
@@ -331,13 +343,13 @@ export const Quote: React.FC = () => {
                                 <button
                                     type="submit"
                                     disabled={uploading}
-                                    className="w-full bg-accent hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg transition-colors shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                    className="w-full bg-accent hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                                 >
                                     {uploading ? (
                                         <>Processing...</>
                                     ) : (
                                         <>
-                                            <CheckCircle className="w-5 h-5" />
+                                            <CheckCircle className="w-5 h-5" aria-hidden="true" />
                                             Submit Quote Request
                                         </>
                                     )}
@@ -356,26 +368,26 @@ export const Quote: React.FC = () => {
                         {/* Quote Info Card */}
                         <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-6">
                             <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-2">
-                                <Info className="w-5 h-5 text-accent" />
+                                <Info className="w-5 h-5 text-accent" aria-hidden="true" />
                                 Quote Details
                             </h3>
                             <div className="space-y-4 text-sm">
                                 <div className="flex items-start gap-3">
-                                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
                                     <div>
                                         <p className="font-medium text-slate-700">Fast Response</p>
                                         <p className="text-slate-500">Quotation within 2-4 hours (Mon-Sat, 9am-6pm GMT+8)</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3">
-                                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
                                     <div>
                                         <p className="font-medium text-slate-700">No Obligation</p>
                                         <p className="text-slate-500">Free quotes with no commitment required</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3">
-                                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
                                     <div>
                                         <p className="font-medium text-slate-700">Secure Files</p>
                                         <p className="text-slate-500">Your designs are protected and confidential</p>
@@ -418,7 +430,7 @@ export const Quote: React.FC = () => {
                         {/* FAQ Section */}
                         <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-6">
                             <h3 className="text-lg font-bold text-primary mb-4 flex items-center gap-2">
-                                <HelpCircle className="w-5 h-5 text-accent" />
+                                <HelpCircle className="w-5 h-5 text-accent" aria-hidden="true" />
                                 Frequently Asked Questions
                             </h3>
                             <div className="space-y-4">

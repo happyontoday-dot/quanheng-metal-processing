@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Settings, Layers, Zap, FileUp, Settings2, FileText, Truck, ShieldCheck } from 'lucide-react';
+import { ArrowRight, CheckCircle, Settings, Layers, Zap, FileUp, Settings2, FileText, Truck, ShieldCheck, Check } from 'lucide-react';
 
 
 export const Home: React.FC = () => {
@@ -23,70 +23,71 @@ export const Home: React.FC = () => {
 
       {/* Hero Section */}
       {/* Hero Section */}
-      <section className="relative min-h-[500px] md:h-[600px] w-full flex items-center bg-gradient-to-br from-[#002855] via-[#003B73] to-[#002046] overflow-hidden">
+      <section className="relative min-h-[500px] md:h-[600px] w-full flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
         {/* Left Side Image */}
         <div className="hidden md:block absolute inset-y-0 left-0 w-1/2 z-0 opacity-40">
           <img
             src="/cases/Metal_20stamping_20parts.webp"
-            alt="Metal Stamping Parts"
+            alt=""
+            width={800}
+            height={600}
             className="h-full w-full object-cover grayscale opacity-60"
             fetchPriority="high"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#002855]/60 via-[#003B73]/80 to-[#002046]"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-800/80 to-slate-900"></div>
         </div>
 
         {/* Right Side Image */}
         <div className="hidden md:block absolute inset-y-0 right-0 w-1/2 z-0 opacity-40">
           <img
             src="/cases/Die_20casting_20parts.webp"
-            alt="Die Casting Parts"
+            alt=""
+            width={800}
+            height={600}
             className="h-full w-full object-cover grayscale opacity-60"
             fetchPriority="high"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-l from-[#002855]/60 via-[#003B73]/80 to-[#002046]"></div>
+          <div className="absolute inset-0 bg-gradient-to-l from-slate-900/80 via-slate-800/80 to-slate-900"></div>
         </div>
 
         {/* Central Overlay for uniform darkness behind text */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#003B73]/30 to-[#002046]/50 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-800/50 to-slate-900/80 z-10"></div>
 
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-0 md:h-full flex flex-col items-start justify-center">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight max-w-4xl">
-            Custom Sheet Metal Fabrication
+            One-stop Solution For Your Precision Parts
           </h1>
-          <p className="text-base md:text-lg text-white mb-3 max-w-4xl leading-relaxed">
-            Our advanced capabilities include shearing, precise cutting, bending, stamping, punching, welding and surface finishing of sheet metal to meet your exact specifications.
-          </p>
           <p className="text-base md:text-lg text-white mb-5 max-w-4xl leading-relaxed">
-            From rapid prototyping to full production runs, we deliver excellence in every project.
+            We provide customers with comprehensive, high-quality, and economical production solutions, covering the entire industry chain from raw material control, production, testing, packaging, logistics, after-sales service, etc.
           </p>
 
           <div className="mb-6 max-w-4xl">
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-white text-sm md:text-base">
               <li className="flex items-start">
-                <span className="text-white mr-2 mt-1">✓</span>
-                <span>Small to large and heavy components</span>
+                <Check className="w-4 h-4 text-emerald-400 mr-2 mt-1 flex-shrink-0" aria-hidden="true" />
+                <span>Multiple machining processing techniques</span>
               </li>
               <li className="flex items-start">
-                <span className="text-white mr-2 mt-1">✓</span>
-                <span>Supports almost metal types</span>
+                <Check className="w-4 h-4 text-emerald-400 mr-2 mt-1 flex-shrink-0" aria-hidden="true" />
+                <span>Low Tolerance</span>
               </li>
               <li className="flex items-start">
-                <span className="text-white mr-2 mt-1">✓</span>
-                <span>Linear Dimension Tolerance: ±0.004" (0.10mm), ISO 2768-mK Standard</span>
+                <Check className="w-4 h-4 text-emerald-400 mr-2 mt-1 flex-shrink-0" aria-hidden="true" />
+                <span>Surface treatment</span>
               </li>
               <li className="flex items-start">
-                <span className="text-white mr-2 mt-1">✓</span>
-                <span>Bend to Hole Tolerance: ±0.008" (0.20mm), ISO 2768-mK Standard</span>
+                <Check className="w-4 h-4 text-emerald-400 mr-2 mt-1 flex-shrink-0" aria-hidden="true" />
+                <span>Rapid prototyping</span>
               </li>
               <li className="flex items-start">
-                <span className="text-white mr-2 mt-1">✓</span>
-                <span>Angular Tolerance: +/- 0.5 degree</span>
+                <Check className="w-4 h-4 text-emerald-400 mr-2 mt-1 flex-shrink-0" aria-hidden="true" />
+                <span>Low MOQ</span>
               </li>
               <li className="flex items-start">
-                <span className="text-white mr-2 mt-1">✓</span>
-                <span>Multiple Finishing Options</span>
+                <Check className="w-4 h-4 text-emerald-400 mr-2 mt-1 flex-shrink-0" aria-hidden="true" />
+                <span>Customization support</span>
               </li>
             </ul>
           </div>
@@ -94,7 +95,7 @@ export const Home: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               to="/quote"
-              className="px-8 py-3 bg-[#0F7AC0] hover:bg-[#0d6ba8] text-white font-semibold rounded-md transition-all text-center shadow-lg"
+              className="px-8 py-3 bg-accent hover:bg-orange-600 text-white font-semibold rounded-md transition-all duration-200 text-center shadow-lg cursor-pointer hover:shadow-xl"
             >
               Request a Quote
             </Link>
@@ -112,28 +113,28 @@ export const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 md:auto-rows-fr gap-8">
             {[
               {
-                icon: <Layers className="w-12 h-12 text-accent" />,
+                icon: <Layers className="w-12 h-12 text-accent" aria-hidden="true" />,
                 title: "Stable Supply Chain, Lower Costs",
                 desc: "A reliable supply chain enables us to control costs and deliver competitive pricing—helping customers significantly reduce manufacturing expenses."
               },
               {
-                icon: <Settings className="w-12 h-12 text-accent" />,
+                icon: <Settings className="w-12 h-12 text-accent" aria-hidden="true" />,
                 title: "One-Stop Metal Fabrication",
                 desc: "From stamping and bending to laser cutting and welding, we offer complete in-house processes for fast, efficient, one-stop production."
               },
               {
-                icon: <Truck className="w-12 h-12 text-accent" />,
+                icon: <Truck className="w-12 h-12 text-accent" aria-hidden="true" />,
                 title: "Flexible Logistics Support — Only When You Need It",
                 desc: "For customers new to international sourcing, we provide logistics assistance and door-to-door solutions when needed. If you already work with a trusted forwarder, we fully support your existing logistics arrangements."
               },
               {
-                icon: <ShieldCheck className="w-12 h-12 text-accent" />,
+                icon: <ShieldCheck className="w-12 h-12 text-accent" aria-hidden="true" />,
                 title: "Quality Assurance",
                 desc: "We have certified to ISO 9001:2015, from initial production to final delivery, we maintain strict quality control to ensure compliance with customer requirements."
               },
             ].map((feature, idx) => (
-              <div key={idx} className="h-full p-8 bg-slate-50 rounded-xl border border-slate-100 hover:shadow-lg transition-shadow flex flex-col sm:flex-row items-start gap-6">
-                <div className="flex-shrink-0">{feature.icon}</div>
+              <div key={idx} className="h-full p-8 bg-slate-50 rounded-xl border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col sm:flex-row items-start gap-6 cursor-pointer">
+                <div className="flex-shrink-0 w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center">{feature.icon}</div>
                 <div>
                   <h3 className="text-xl font-bold text-primary mb-2">{feature.title}</h3>
                   <p className="text-slate-600 leading-relaxed">{feature.desc}</p>
@@ -152,8 +153,8 @@ export const Home: React.FC = () => {
               <span className="text-accent font-semibold tracking-wider uppercase text-sm">Our Expertise</span>
               <h2 className="text-3xl font-bold text-primary mt-2">Core Competencies</h2>
             </div>
-            <Link to="/services" className="hidden md:flex items-center text-accent hover:text-sky-700 font-medium">
-              View All Services <ArrowRight className="w-4 h-4 ml-1" />
+            <Link to="/services" className="hidden md:flex items-center text-accent hover:text-orange-600 font-medium">
+              View All Services <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
             </Link>
           </div>
 
@@ -185,10 +186,12 @@ export const Home: React.FC = () => {
                 img: "/Core%20Competencies/metal%20welding%20.jpeg"
               }
             ].map((item, idx) => (
-              <div key={idx} className="group relative overflow-hidden rounded-2xl h-80">
+              <div key={idx} className="group relative overflow-hidden rounded-2xl h-80 cursor-pointer">
                 <img
                   src={item.img}
-                  alt={item.title}
+                  alt=""
+                  width={600}
+                  height={400}
                   loading="lazy"
                   decoding="async"
                   className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -223,11 +226,13 @@ export const Home: React.FC = () => {
 
                 ].map((item, idx) => (
                   <div key={idx} className="flex-none w-72 md:w-80 snap-center">
-                    <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 h-full flex flex-col">
+                    <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 h-full flex flex-col cursor-pointer">
                       <div className="h-56 w-full relative">
                         <img
                           src={item.src}
-                          alt={item.name}
+                          alt=""
+                          width={400}
+                          height={300}
                           loading="lazy"
                           decoding="async"
                           className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
@@ -243,21 +248,21 @@ export const Home: React.FC = () => {
 
               {/* Scroll indicators (optional but helpful) */}
               <div className="absolute top-1/2 -translate-y-1/2 left-2 hidden group-hover:block md:block pointer-events-none md:pointer-events-auto">
-                <button onClick={scrollLeft} className="bg-white/90 p-2 rounded-full shadow-lg border border-slate-200 text-slate-700 hover:bg-white transition-colors">
-                  <ArrowRight className="w-5 h-5 rotate-180" />
+                <button aria-label="Scroll left" onClick={scrollLeft} className="bg-white/90 p-2 rounded-full shadow-lg border border-slate-200 text-slate-700 hover:bg-white transition-colors">
+                  <ArrowRight className="w-5 h-5 rotate-180" aria-hidden="true" />
                 </button>
               </div>
               <div className="absolute top-1/2 -translate-y-1/2 right-2 hidden group-hover:block md:block pointer-events-none md:pointer-events-auto">
-                <button onClick={scrollRight} className="bg-white/90 p-2 rounded-full shadow-lg border border-slate-200 text-slate-700 hover:bg-white transition-colors">
-                  <ArrowRight className="w-5 h-5" />
+                <button aria-label="Scroll right" onClick={scrollRight} className="bg-white/90 p-2 rounded-full shadow-lg border border-slate-200 text-slate-700 hover:bg-white transition-colors">
+                  <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </button>
               </div>
             </div>
           </div>
 
           <div className="mt-8 text-center md:hidden">
-            <Link to="/services" className="inline-flex items-center text-accent hover:text-sky-700 font-medium">
-              View All Services <ArrowRight className="w-4 h-4 ml-1" />
+            <Link to="/services" className="inline-flex items-center text-accent hover:text-orange-600 font-medium">
+              View All Services <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
             </Link>
           </div>
         </div>
@@ -283,7 +288,7 @@ export const Home: React.FC = () => {
               { name: "Nickel Alloys", items: ["Inconel 600", "Inconel 625", "Monel 400", "Nickel 200", "Nickel 400"] },
               { name: "Titanium", items: ["Titanium Grade 2", "Titanium Grade 4", "Titanium 6Al-4V Grade 5"] },
             ].map((row, idx) => (
-              <div key={idx} className="flex flex-col md:flex-row border-b border-slate-100 last:border-0">
+              <div key={idx} className="flex flex-col md:flex-row border-b border-slate-100 last:border-0 hover:bg-slate-50 transition-colors duration-200">
                 <div className="bg-slate-900 text-white py-4 px-6 md:w-48 flex-shrink-0 flex items-center justify-center md:justify-start font-bold">
                   {row.name}
                 </div>
@@ -301,7 +306,7 @@ export const Home: React.FC = () => {
           <div className="text-center">
             <Link
               to="/quote"
-              className="inline-block px-10 py-4 bg-accent hover:bg-sky-600 text-white font-bold rounded-md transition-all shadow-md"
+              className="inline-block px-10 py-4 bg-accent hover:bg-orange-600 text-white font-bold rounded-md transition-all duration-200 shadow-md cursor-pointer hover:shadow-xl"
             >
               Tell Us Your Requirements
             </Link>
@@ -328,35 +333,35 @@ export const Home: React.FC = () => {
                   step: "Step 1",
                   title: "Submit Your Design Files",
                   desc: "Upload your CAD files or drawings. If you don't have existing design files, you may also send reference images and a brief description of your requirements. We can provide a preliminary evaluation and rough cost estimate based on this information.",
-                  icon: <FileUp className="w-8 h-8 text-slate-700" />
+                  icon: <FileUp className="w-8 h-8 text-slate-700" aria-hidden="true" />
                 },
                 {
                   step: "Step 2",
                   title: "Choose Materials And Processes",
                   desc: "Select the appropriate materials and manufacturing processes for your parts. Our experts can assist you in making the best choices for your project.",
-                  icon: <Settings2 className="w-8 h-8 text-slate-700" />
+                  icon: <Settings2 className="w-8 h-8 text-slate-700" aria-hidden="true" />
                 },
                 {
                   step: "Step 3",
                   title: "Get a Quote",
                   desc: "Once you have provided your design files and selected materials and processes, we will send you a detailed quotation within 24 hours.",
-                  icon: <FileText className="w-8 h-8 text-slate-700" />
+                  icon: <FileText className="w-8 h-8 text-slate-700" aria-hidden="true" />
                 },
                 {
                   step: "Step 4",
                   title: "Confirm Your Order",
                   desc: "Review the quotation and confirm your order. Our team will begin the manufacturing process upon your confirmation.",
-                  icon: <CheckCircle className="w-8 h-8 text-slate-700" />
+                  icon: <CheckCircle className="w-8 h-8 text-slate-700" aria-hidden="true" />
                 },
                 {
                   step: "Step 5",
                   title: "Production And Delivery",
                   desc: "We will manufacture your parts according to your specifications and deliver them to your specified address within the agreed timeline. Generally, samples are shipped by air, while formal orders are shipped by land or sea.",
-                  icon: <Truck className="w-8 h-8 text-slate-700" />
+                  icon: <Truck className="w-8 h-8 text-slate-700" aria-hidden="true" />
                 }
               ].map((item, idx) => (
-                <div key={idx} className="flex flex-col items-center text-center">
-                  <div className="w-24 h-24 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center mb-6 shadow-sm group-hover:border-accent transition-colors relative">
+                <div key={idx} className="flex flex-col items-center text-center group">
+                  <div className="w-24 h-24 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center mb-6 shadow-sm group-hover:border-accent group-hover:shadow-md transition-all duration-300 relative">
                     {item.icon}
                     {/* Step dot on line (Desktop) */}
                     <div className="hidden lg:block absolute -top-[50px] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-slate-300 border-4 border-white"></div>
@@ -371,9 +376,9 @@ export const Home: React.FC = () => {
           <div className="mt-16 text-center">
             <Link
               to="/quote"
-              className="inline-flex items-center px-8 py-3 bg-accent hover:bg-sky-600 text-white font-bold rounded-md transition-all shadow-md"
+              className="inline-flex items-center px-8 py-3 bg-accent hover:bg-orange-600 text-white font-bold rounded-md transition-all duration-200 shadow-md cursor-pointer hover:shadow-xl"
             >
-              Get Instant Quote <ArrowRight className="w-4 h-4 ml-2" />
+              Get Instant Quote <ArrowRight className="w-4 h-4 ml-2" aria-hidden="true" />
             </Link>
           </div>
         </div>
