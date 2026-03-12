@@ -122,53 +122,39 @@ const CNCTurning: React.FC = () => {
                     </div>
                 </section>
 
-                {/* CAPABILITIES */}
+                {/* ADVANCED TURNING CENTERS */}
                 <section className="py-24 bg-[#080c14]">
                     <div className="container mx-auto px-6">
                         <div className="text-center mb-16 reveal">
-                            <h2 className="text-4xl md:text-5xl font-display font-bold uppercase mb-4">Turning & Mill-Turn Capabilities</h2>
-                            <p className="text-slate-400 max-w-2xl mx-auto">Advanced multi-axis control for streamlined production and superior accuracy.</p>
+                            <h2 className="text-4xl md:text-5xl font-display font-bold uppercase mb-4">Our Advanced Turning Centers</h2>
+                            <p className="text-slate-400 max-w-2xl mx-auto">Our vertical and horizontal turning centers offer precise, efficient machining with single to multi-axis capabilities for complex part machining.</p>
                         </div>
 
-                        <div className="grid md:grid-cols-3 gap-8">
+                        <div className="grid md:grid-cols-2 gap-8">
                             <div className="steel-card group reveal">
-                                <div className="h-48 overflow-hidden relative border-b border-white/5">
-                                    <img src="/CNC Turning Service/imgi_9_Horizontal-Turning-Center.jpg" alt="Horizontal Turning" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                                <div className="h-64 overflow-hidden relative border-b border-white/5">
+                                    <img src="/CNC Turning Service/imgi_8_Vertical-Turning-Center.jpg" alt="Vertical Turning Center" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                                 </div>
-                                <div className="p-6">
-                                    <h3 className="text-2xl font-display font-bold uppercase mb-4">Horizontal Turning</h3>
-                                    <ul className="space-y-3 text-slate-400 text-sm">
-                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> High-speed rotating shafts</li>
-                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Superior chip evacuation</li>
-                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Long cylindrical parts</li>
+                                <div className="p-8">
+                                    <h3 className="text-3xl font-display font-bold uppercase mb-4 text-orange-500">Vertical Turning Center</h3>
+                                    <ul className="space-y-4 text-slate-300">
+                                        <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-sky-400 shrink-0" /> 2 to 4 axes (X, Y, Z, and C-axis)</li>
+                                        <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-sky-400 shrink-0" /> Vertically oriented spindle for heavy workpieces</li>
+                                        <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-sky-400 shrink-0" /> Ideal for wheels, discs, pulleys, and large diameters</li>
                                     </ul>
                                 </div>
                             </div>
 
                             <div className="steel-card group reveal" style={{ transitionDelay: '100ms' }}>
-                                <div className="h-48 overflow-hidden relative border-b border-white/5">
-                                    <img src="/CNC Turning Service/imgi_10_Y-Axis-Turning.jpg" alt="Y-Axis Turning" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                                <div className="h-64 overflow-hidden relative border-b border-white/5">
+                                    <img src="/CNC Turning Service/imgi_9_Horizontal-Turning-Center.jpg" alt="Horizontal Turning Center" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                                 </div>
-                                <div className="p-6">
-                                    <h3 className="text-2xl font-display font-bold uppercase mb-4">Y-Axis & C-Axis</h3>
-                                    <ul className="space-y-3 text-slate-400 text-sm">
-                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Off-center milling features</li>
-                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Integrated drilling operations</li>
-                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Reduced setup switching</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="steel-card group reveal" style={{ transitionDelay: '200ms' }}>
-                                <div className="h-48 overflow-hidden relative border-b border-white/5">
-                                    <img src="/CNC Turning Service/imgi_13_5-Axis-Turning.jpg" alt="5-Axis Mill-Turn" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                                </div>
-                                <div className="p-6">
-                                    <h3 className="text-2xl font-display font-bold uppercase mb-4">Mill-Turn Centers</h3>
-                                    <ul className="space-y-3 text-slate-400 text-sm">
-                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Combined turning & milling</li>
-                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Done-in-one efficiency</li>
-                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Sub-spindle mechanisms</li>
+                                <div className="p-8">
+                                    <h3 className="text-3xl font-display font-bold uppercase mb-4 text-orange-500">Horizontal Turning Center</h3>
+                                    <ul className="space-y-4 text-slate-300">
+                                        <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-sky-400 shrink-0" /> 2 to 5 axes (X, Y, Z, C, and Y-axis)</li>
+                                        <li className="flex gap-3"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0 mt-1" /> Horizontally mounted workpiece on high-precision chucks</li>
+                                        <li className="flex gap-3"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0 mt-1" /> Perfect for shafts, rods, pipes, and slender components</li>
                                     </ul>
                                 </div>
                             </div>
@@ -176,35 +162,88 @@ const CNCTurning: React.FC = () => {
                     </div>
                 </section>
 
-                {/* SHOWCASE */}
+                {/* TURNING ABILITY */}
+                <section className="py-24 bg-[#0a0f1a] border-t border-white/5">
+                    <div className="container mx-auto px-6">
+                        <div className="grid md:grid-cols-2 gap-12 items-center">
+                            <div className="reveal-left">
+                                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase mb-8">Our Turning Ability</h2>
+                                <div className="space-y-8">
+                                    <div className="p-6 bg-white/5 rounded-lg border border-white/10">
+                                        <h3 className="text-2xl font-display font-bold uppercase mb-3 text-orange-400">Y-Axis Turning</h3>
+                                        <p className="text-slate-400 leading-relaxed">The Y-axis in turning allows for off-center cutting, providing additional flexibility in machining features that are not aligned with the main axis of the workpiece.</p>
+                                    </div>
+                                    <div className="p-6 bg-white/5 rounded-lg border border-white/10">
+                                        <h3 className="text-2xl font-display font-bold uppercase mb-3 text-orange-400">C-Axis Turning</h3>
+                                        <p className="text-slate-400 leading-relaxed">In C-axis turning, the spindle rotates while the tool moves along X and Z axes, enabling additional capabilities like drilling and milling operations on the lathe.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-2 gap-4 reveal">
+                                <img src="/CNC Turning Service/imgi_10_Y-Axis-Turning.jpg" alt="Y-Axis Machining" className="rounded-lg border border-white/10 w-full h-full object-cover" />
+                                <img src="/CNC Turning Service/imgi_11_C-Axis-Turning.jpg" alt="C-Axis Machining" className="rounded-lg border border-white/10 w-full h-full object-cover" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* MATERIALS SECTION */}
+                <section className="py-24 bg-[#080c14] border-t border-white/5">
+                    <div className="container mx-auto px-6">
+                        <div className="text-center mb-16 reveal">
+                            <h2 className="text-4xl md:text-5xl font-display font-bold uppercase mb-4">Materials For CNC Turning</h2>
+                            <p className="text-slate-400 max-w-2xl mx-auto">We work with a wide range of metals and plastics to meet your specific application requirements.</p>
+                        </div>
+
+                        <div className="grid md:grid-cols-3 gap-8">
+                            <div className="steel-card p-8 reveal">
+                                <h3 className="text-2xl font-display font-bold uppercase mb-4 text-orange-500">Brass</h3>
+                                <p className="text-slate-400 mb-6">In CNC turning, brass provides fine detail and accuracy, making it ideal for applications that require both functionality and visual appeal.</p>
+                                <img src="/CNC Turning Service/imgi_14_Brass-CNC-Turning.jpg" alt="Brass Turning" className="rounded-md w-full h-40 object-cover mt-4 opacity-80" />
+                            </div>
+                            <div className="steel-card p-8 reveal" style={{ transitionDelay: '100ms' }}>
+                                <h3 className="text-2xl font-display font-bold uppercase mb-4 text-orange-500">Aluminum</h3>
+                                <p className="text-slate-400 mb-6">Excellent strength-to-weight ratio and machinability. Perfect for aerospace, automotive, and electronic components.</p>
+                                <img src="/CNC Turning Service/imgi_15_Aluminum-CNC-Turning.jpg" alt="Aluminum Turning" className="rounded-md w-full h-40 object-cover mt-4 opacity-80" />
+                            </div>
+                            <div className="steel-card p-8 reveal" style={{ transitionDelay: '200ms' }}>
+                                <h3 className="text-2xl font-display font-bold uppercase mb-4 text-orange-500">Plastics</h3>
+                                <p className="text-slate-400 mb-6">Turning plastics like acrylic, PC, and nylon allows for the production of precise parts with a smooth, consistent finish.</p>
+                                <img src="/CNC Turning Service/imgi_16_Plastic-CNC-Turning.jpg" alt="Plastic Turning" className="rounded-md w-full h-40 object-cover mt-4 opacity-80" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* SHOWCASE APPLICATIONS */}
                 <section className="py-24 border-t border-white/5">
                     <div className="container mx-auto px-6">
                         <div className="grid lg:grid-cols-2 gap-16 items-center">
                             <div className="grid grid-cols-2 gap-4 reveal">
-                                <img src="/CNC Turning Service/imgi_49_CNC-Turning-Service.jpg" alt="Metal turned part" className="rounded-lg border border-white/10 w-full h-64 object-cover" />
-                                <img src="/CNC Turning Service/imgi_14_Brass-CNC-Turning.jpg" alt="Brass component" className="rounded-lg border border-white/10 w-full h-64 object-cover mt-8" />
+                                <img src="/CNC Turning Service/imgi_50_CNC-Precision-Turning.jpg" alt="Precision turned part" className="rounded-lg border border-white/10 w-full h-64 object-cover" />
+                                <img src="/CNC Turning Service/imgi_23_Y-Axis-Turning-768x509.jpg" alt="CNC machining components" className="rounded-lg border border-white/10 w-full h-64 object-cover mt-8" />
                             </div>
                             <div className="reveal">
-                                <h2 className="text-4xl font-display font-bold uppercase mb-6 leading-tight">Advanced Turning<br />Applications</h2>
-                                <p className="text-slate-400 mb-8 leading-relaxed">From micro-turned electronic pins to large shafts for marine and energy sectors, or precision brass fittings, we deliver consistency at every scale.</p>
+                                <h2 className="text-4xl font-display font-bold uppercase mb-6 leading-tight">Beyond Simple Turning:<br />Technical Applications</h2>
+                                <p className="text-slate-400 mb-8 leading-relaxed">Our CNC turning service is optimized for the production of both small and large workpieces with high accuracy. Whether it's complex aerospace connectors or industrial shafts, our facility is equipped to handle strict requirements.</p>
 
                                 <div className="space-y-6">
                                     <div className="flex gap-4">
                                         <div className="flex-shrink-0 w-12 h-12 rounded bg-orange-500/10 flex items-center justify-center text-orange-500">
-                                            <RotateCcw className="w-6 h-6" />
+                                            <Target className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-white mb-1 uppercase tracking-wider text-sm">Prototype to Scale</h4>
-                                            <p className="text-slate-500 text-xs">Seamless transition from single-unit R&D to 10,000+ unit production runs.</p>
+                                            <h4 className="font-bold text-white mb-1 uppercase tracking-wider text-sm">ISO 2768 Standards</h4>
+                                            <p className="text-slate-500 text-xs">Adhering to international tolerance standards for consistent quality across batches.</p>
                                         </div>
                                     </div>
                                     <div className="flex gap-4">
                                         <div className="flex-shrink-0 w-12 h-12 rounded bg-orange-500/10 flex items-center justify-center text-orange-500">
-                                            <ShieldCheck className="w-6 h-6" />
+                                            <Activity className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-white mb-1 uppercase tracking-wider text-sm">Regulatory Compliance</h4>
-                                            <p className="text-slate-500 text-xs">Full traceability and material certs for medical and defense applications.</p>
+                                            <h4 className="font-bold text-white mb-1 uppercase tracking-wider text-sm">Surface Excellence</h4>
+                                            <p className="text-slate-500 text-xs">Achieving superior surface finishes that reduce the need for secondary polishing.</p>
                                         </div>
                                     </div>
                                 </div>
