@@ -174,26 +174,26 @@ const CNCMilling: React.FC = () => {
 
                         <div className="grid md:grid-cols-3 gap-8">
                             <div className="steel-card p-6 reveal">
-                                <div className="h-40 overflow-hidden relative rounded mb-6 bg-slate-900/50">
+                                <div className="h-64 overflow-hidden relative rounded mb-6 bg-slate-900/50">
                                     <img src="/cnc-milling/imgi_10_3-Axis-Milling.gif" alt="3-Axis Milling" className="w-full h-full object-contain mix-blend-lighten" />
                                 </div>
-                                <h3 className="text-xl font-display font-bold uppercase mb-4 text-orange-400">3-Axis Milling (X, Y, Z)</h3>
+                                <h3 className="text-xl font-display font-bold uppercase mb-4 text-white">3-Axis Milling (X, Y, Z)</h3>
                                 <p className="text-sm text-slate-400 leading-relaxed mb-4">The tool moves in three directions—left/right, forward/backward, and up/down. Simple to operate and suitable for low complexity parts.</p>
                             </div>
 
                             <div className="steel-card p-6 reveal" style={{ transitionDelay: '100ms' }}>
-                                <div className="h-40 overflow-hidden relative rounded mb-6 bg-slate-900/50">
+                                <div className="h-64 overflow-hidden relative rounded mb-6 bg-slate-900/50">
                                     <img src="/cnc-milling/imgi_11_4-Axis-Milling.gif" alt="4-Axis Milling" className="w-full h-full object-contain mix-blend-lighten" />
                                 </div>
-                                <h3 className="text-xl font-display font-bold uppercase mb-4">4-Axis Milling (X, Y, Z, A)</h3>
+                                <h3 className="text-xl font-display font-bold uppercase mb-4 text-white">4-Axis Milling (X, Y, Z, A)</h3>
                                 <p className="text-sm text-slate-400 leading-relaxed mb-4">Adds a rotational A-axis, allowing the workpiece to rotate around the X-axis. Reduces repositioning and is ideal for intricate shapes.</p>
                             </div>
 
                             <div className="steel-card p-6 reveal" style={{ transitionDelay: '200ms' }}>
-                                <div className="h-40 overflow-hidden relative rounded mb-6 bg-slate-900/50">
+                                <div className="h-64 overflow-hidden relative rounded mb-6 bg-slate-900/50">
                                     <img src="/cnc-milling/imgi_12_5-Axis-Milling.gif" alt="5-Axis Milling" className="w-full h-full object-contain mix-blend-lighten" />
                                 </div>
-                                <h3 className="text-xl font-display font-bold uppercase mb-4">5-Axis Milling (X, Y, Z, B, C)</h3>
+                                <h3 className="text-xl font-display font-bold uppercase mb-4 text-white">5-Axis Milling (X, Y, Z, B, C)</h3>
                                 <p className="text-sm text-slate-400 leading-relaxed mb-4">Features two additional rotational axes (B and C). Produces complex geometries with a single setup, ideal for high-precision aerospace parts.</p>
                             </div>
                         </div>
