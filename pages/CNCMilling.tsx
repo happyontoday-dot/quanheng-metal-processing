@@ -132,7 +132,7 @@ const CNCMilling: React.FC = () => {
 
                         <div className="grid md:grid-cols-2 gap-8">
                             <div className="steel-card group reveal">
-                                <div className="h-52 overflow-hidden relative border-b border-white/5">
+                                <div className="h-80 overflow-hidden relative border-b border-white/5">
                                     <img src="/cnc-milling/imgi_8_Vertical-Milling-Center.jpg" alt="Vertical Milling Center" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                                 </div>
                                 <div className="p-8">
@@ -147,7 +147,7 @@ const CNCMilling: React.FC = () => {
                             </div>
 
                             <div className="steel-card group reveal" style={{ transitionDelay: '100ms' }}>
-                                <div className="h-52 overflow-hidden relative border-b border-white/5">
+                                <div className="h-80 overflow-hidden relative border-b border-white/5">
                                     <img src="/cnc-milling/imgi_9_Horizontal-Milling-Center.jpg" alt="Horizontal Milling Center" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                                 </div>
                                 <div className="p-8">
