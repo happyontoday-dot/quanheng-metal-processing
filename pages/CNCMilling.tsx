@@ -131,40 +131,46 @@ const CNCMilling: React.FC = () => {
                         </div>
 
                         <div className="grid md:grid-cols-3 gap-8">
-                            <div className="steel-card p-8 reveal">
-                                <div className="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center text-orange-500 mb-6">
-                                    <Maximize className="w-6 h-6" />
+                            <div className="steel-card group reveal">
+                                <div className="h-48 overflow-hidden relative border-b border-white/5">
+                                    <img src="/cnc-milling/imgi_8_Vertical-Milling-Center.jpg" alt="VMC" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                                 </div>
-                                <h3 className="text-2xl font-display font-bold uppercase mb-4">Milling Centers</h3>
-                                <ul className="space-y-3 text-slate-400 text-sm">
-                                    <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Vertical Machining Centers (VMC)</li>
-                                    <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Horizontal Machining Centers (HMC)</li>
-                                    <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> High-Speed Gantry Centers</li>
-                                </ul>
+                                <div className="p-6">
+                                    <h3 className="text-2xl font-display font-bold uppercase mb-4">Vertical Milling</h3>
+                                    <ul className="space-y-3 text-slate-400 text-sm">
+                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Ideal for most 2.5D and 3D parts</li>
+                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> High-speed spindle operation</li>
+                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Cost-effective prototype runs</li>
+                                    </ul>
+                                </div>
                             </div>
 
-                            <div className="steel-card p-8 reveal" style={{ transitionDelay: '100ms' }}>
-                                <div className="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center text-orange-500 mb-6">
-                                    <Rotate3d className="w-6 h-6" />
+                            <div className="steel-card group reveal" style={{ transitionDelay: '100ms' }}>
+                                <div className="h-48 overflow-hidden relative border-b border-white/5 bg-slate-900">
+                                    <img src="/cnc-milling/imgi_11_4-Axis-Milling.gif" alt="4-Axis Machining" className="w-full h-full object-contain p-2 mix-blend-screen transition-transform duration-700 group-hover:scale-105" />
                                 </div>
-                                <h3 className="text-2xl font-display font-bold uppercase mb-4">Geometric Complexity</h3>
-                                <ul className="space-y-3 text-slate-400 text-sm">
-                                    <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> 3-Axis standard component milling</li>
-                                    <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> 4-Axis rotational part indexing</li>
-                                    <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> 5-Axis complex aerospace contours</li>
-                                </ul>
+                                <div className="p-6">
+                                    <h3 className="text-2xl font-display font-bold uppercase mb-4">4-Axis Indexing</h3>
+                                    <ul className="space-y-3 text-slate-400 text-sm">
+                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Rotational A-axis manipulation</li>
+                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Multiple faces in single setup</li>
+                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Excellent concentricity</li>
+                                    </ul>
+                                </div>
                             </div>
 
-                            <div className="steel-card p-8 reveal" style={{ transitionDelay: '200ms' }}>
-                                <div className="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center text-orange-500 mb-6">
-                                    <Box className="w-6 h-6" />
+                            <div className="steel-card group reveal" style={{ transitionDelay: '200ms' }}>
+                                <div className="h-48 overflow-hidden relative border-b border-white/5 bg-slate-900">
+                                    <img src="/cnc-milling/imgi_12_5-Axis-Milling.gif" alt="5-Axis Machining" className="w-full h-full object-contain p-2 mix-blend-screen transition-transform duration-700 group-hover:scale-105" />
                                 </div>
-                                <h3 className="text-2xl font-display font-bold uppercase mb-4">Advanced Solutions</h3>
-                                <ul className="space-y-3 text-slate-400 text-sm">
-                                    <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> PCB Routing & Micro-drilling</li>
-                                    <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Mold & Die surface finishing</li>
-                                    <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> High-volume production automation</li>
-                                </ul>
+                                <div className="p-6">
+                                    <h3 className="text-2xl font-display font-bold uppercase mb-4">5-Axis Continuous</h3>
+                                    <ul className="space-y-3 text-slate-400 text-sm">
+                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Complex aerospace geometries</li>
+                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Impeller and blade machining</li>
+                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Unmatched surface finishes</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>

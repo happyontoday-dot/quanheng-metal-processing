@@ -131,40 +131,46 @@ const CNCTurning: React.FC = () => {
                         </div>
 
                         <div className="grid md:grid-cols-3 gap-8">
-                            <div className="steel-card p-8 reveal">
-                                <div className="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center text-orange-500 mb-6">
-                                    <Target className="w-6 h-6" />
+                            <div className="steel-card group reveal">
+                                <div className="h-48 overflow-hidden relative border-b border-white/5">
+                                    <img src="/CNC Turning Service/imgi_9_Horizontal-Turning-Center.jpg" alt="Horizontal Turning" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                                 </div>
-                                <h3 className="text-2xl font-display font-bold uppercase mb-4">Turning Centers</h3>
-                                <ul className="space-y-3 text-slate-400 text-sm">
-                                    <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Horizontal Turning Centers</li>
-                                    <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Vertical Turret Lathes (VTL)</li>
-                                    <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Multi-Spindle Tooling</li>
-                                </ul>
+                                <div className="p-6">
+                                    <h3 className="text-2xl font-display font-bold uppercase mb-4">Horizontal Turning</h3>
+                                    <ul className="space-y-3 text-slate-400 text-sm">
+                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> High-speed rotating shafts</li>
+                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Superior chip evacuation</li>
+                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Long cylindrical parts</li>
+                                    </ul>
+                                </div>
                             </div>
 
-                            <div className="steel-card p-8 reveal" style={{ transitionDelay: '100ms' }}>
-                                <div className="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center text-orange-500 mb-6">
-                                    <LayoutGrid className="w-6 h-6" />
+                            <div className="steel-card group reveal" style={{ transitionDelay: '100ms' }}>
+                                <div className="h-48 overflow-hidden relative border-b border-white/5">
+                                    <img src="/CNC Turning Service/imgi_10_Y-Axis-Turning.jpg" alt="Y-Axis Turning" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                                 </div>
-                                <h3 className="text-2xl font-display font-bold uppercase mb-4">Control Options</h3>
-                                <ul className="space-y-3 text-slate-400 text-sm">
-                                    <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Y-Axis for off-center features</li>
-                                    <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> C-Axis for live tool milling</li>
-                                    <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Dual-axis sub-spindle systems</li>
-                                </ul>
+                                <div className="p-6">
+                                    <h3 className="text-2xl font-display font-bold uppercase mb-4">Y-Axis & C-Axis</h3>
+                                    <ul className="space-y-3 text-slate-400 text-sm">
+                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Off-center milling features</li>
+                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Integrated drilling operations</li>
+                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Reduced setup switching</li>
+                                    </ul>
+                                </div>
                             </div>
 
-                            <div className="steel-card p-8 reveal" style={{ transitionDelay: '200ms' }}>
-                                <div className="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center text-orange-500 mb-6">
-                                    <Cpu className="w-6 h-6" />
+                            <div className="steel-card group reveal" style={{ transitionDelay: '200ms' }}>
+                                <div className="h-48 overflow-hidden relative border-b border-white/5">
+                                    <img src="/CNC Turning Service/imgi_13_5-Axis-Turning.jpg" alt="5-Axis Mill-Turn" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                                 </div>
-                                <h3 className="text-2xl font-display font-bold uppercase mb-4">Material Specialization</h3>
-                                <ul className="space-y-3 text-slate-400 text-sm">
-                                    <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Hardened Steels & alloys</li>
-                                    <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Aerospace Titanium alloys</li>
-                                    <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Medical grade Thermoplastics</li>
-                                </ul>
+                                <div className="p-6">
+                                    <h3 className="text-2xl font-display font-bold uppercase mb-4">Mill-Turn Centers</h3>
+                                    <ul className="space-y-3 text-slate-400 text-sm">
+                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Combined turning & milling</li>
+                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Done-in-one efficiency</li>
+                                        <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" /> Sub-spindle mechanisms</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
