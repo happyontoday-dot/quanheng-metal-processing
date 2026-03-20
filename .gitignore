@@ -28,3 +28,13 @@ dist-ssr
 .agent/
 skills/
 skills-lock.json
+
+# Next.js
+qumetal-landing/.next/
+.next/
+.server/
+.cache/
+.turbo/
+build/
+.env*
+!.env.example

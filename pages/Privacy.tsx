@@ -17,7 +17,7 @@ const sections = [
 export const Privacy: React.FC = () => {
     return (
         <div className="w-full fade-in bg-slate-50 min-h-screen">
-            <div className="relative overflow-hidden bg-slate-900 py-16">
+            <div className="relative overflow-hidden bg-slate-900 pt-24 pb-16 md:pt-32 md:pb-24">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-primary/80"></div>
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-4xl font-bold text-white mb-4">Privacy Policy</h1>

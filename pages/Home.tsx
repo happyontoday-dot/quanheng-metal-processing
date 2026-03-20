@@ -22,84 +22,64 @@ export const Home: React.FC = () => {
     <div className="flex flex-col w-full fade-in">
 
       {/* Hero Section */}
-      {/* Hero Section */}
-      <section className="relative min-h-[500px] md:h-[600px] w-full flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
-        {/* Left Side Image */}
-        <div className="hidden md:block absolute inset-y-0 left-0 w-1/2 z-0 opacity-40">
-          <img
-            src="/cases/Metal_20stamping_20parts.webp"
-            alt=""
-            width={800}
-            height={600}
-            className="h-full w-full object-cover grayscale opacity-60"
-            fetchPriority="high"
-            loading="eager"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-800/80 to-slate-900"></div>
-        </div>
+      <section className="relative min-h-[90vh] w-full flex items-center justify-center bg-[#050B14] overflow-hidden pt-20">
 
-        {/* Right Side Image */}
-        <div className="hidden md:block absolute inset-y-0 right-0 w-1/2 z-0 opacity-40">
-          <img
-            src="/cases/Die_20casting_20parts.webp"
-            alt=""
-            width={800}
-            height={600}
-            className="h-full w-full object-cover grayscale opacity-60"
-            fetchPriority="high"
-            loading="eager"
-          />
-          <div className="absolute inset-0 bg-gradient-to-l from-slate-900/80 via-slate-800/80 to-slate-900"></div>
-        </div>
+        {/* Dynamic Abstract Background Elements */}
+        {/* Deep radial glow behind the text */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/20 rounded-full blur-[120px] opacity-60 pointer-events-none"></div>
 
-        {/* Central Overlay for uniform darkness behind text */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-800/50 to-slate-900/80 z-10"></div>
+        {/* Subtle grid pattern overlay */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik00MCAwaC0xdjQwaDFWMHoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPgo8cGF0aCBkPSJNMCAzOWh0NDB2MWgtNDB2LTF6IiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4KPC9zdmc+')] opacity-20 z-0"></div>
 
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-0 md:h-full flex flex-col items-start justify-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight max-w-4xl">
-            One-stop Solution For Your Precision Parts
+        {/* Diagonal Light Slashes / Reflections */}
+        <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[150%] bg-gradient-to-b from-white/5 to-transparent rotate-[30deg] blur-3xl pointer-events-none transform -translate-y-1/2"></div>
+        <div className="absolute -bottom-[20%] -left-[10%] w-[50%] h-[150%] bg-gradient-to-t from-accent/10 to-transparent rotate-[30deg] blur-3xl pointer-events-none transform translate-y-1/2"></div>
+
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col items-center justify-center text-center">
+
+          {/* Top Badge */}
+          <div className="inline-flex items-center px-4 py-2 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm mb-8 animate-fade-in-up opacity-0-init">
+            <span className="w-2 h-2 rounded-full bg-accent mr-3 animate-pulse"></span>
+            <span className="text-slate-300 text-sm font-semibold tracking-wide uppercase">Professional Precision Metal Fabrication</span>
+          </div>
+
+          {/* Massive Typography Headline */}
+          <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black text-white mb-6 leading-[1.1] tracking-tight font-display max-w-5xl">
+            <span className="block animate-fade-in-up opacity-0-init animate-delay-100">
+              One-stop Solution
+            </span>
+            <span className="block animate-fade-in-up opacity-0-init animate-delay-200 text-transparent bg-clip-text bg-gradient-to-r from-slate-200 via-white to-slate-400">
+              For Precision Parts
+            </span>
           </h1>
-          <p className="text-base md:text-lg text-white mb-5 max-w-4xl leading-relaxed">
-            We provide customers with comprehensive, high-quality, and economical production solutions, covering the entire industry chain from raw material control, production, testing, packaging, logistics, after-sales service, etc.
+
+          {/* Subtitle */}
+          <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-3xl leading-relaxed animate-fade-in-up opacity-0-init animate-delay-300">
+            Comprehensive production solutions from raw material control to after-sales service.
+            Engineering excellence designed for the modern industrial era.
           </p>
 
-          <div className="mb-6 max-w-4xl">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-white text-sm md:text-base">
-              <li className="flex items-start">
-                <Check className="w-4 h-4 text-emerald-400 mr-2 mt-1 flex-shrink-0" aria-hidden="true" />
-                <span>Multiple machining processing techniques</span>
-              </li>
-              <li className="flex items-start">
-                <Check className="w-4 h-4 text-emerald-400 mr-2 mt-1 flex-shrink-0" aria-hidden="true" />
-                <span>Low Tolerance</span>
-              </li>
-              <li className="flex items-start">
-                <Check className="w-4 h-4 text-emerald-400 mr-2 mt-1 flex-shrink-0" aria-hidden="true" />
-                <span>Surface treatment</span>
-              </li>
-              <li className="flex items-start">
-                <Check className="w-4 h-4 text-emerald-400 mr-2 mt-1 flex-shrink-0" aria-hidden="true" />
-                <span>Rapid prototyping</span>
-              </li>
-              <li className="flex items-start">
-                <Check className="w-4 h-4 text-emerald-400 mr-2 mt-1 flex-shrink-0" aria-hidden="true" />
-                <span>Low MOQ</span>
-              </li>
-              <li className="flex items-start">
-                <Check className="w-4 h-4 text-emerald-400 mr-2 mt-1 flex-shrink-0" aria-hidden="true" />
-                <span>Customization support</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4">
+          {/* Action Area */}
+          <div className="flex flex-col sm:flex-row gap-6 items-center justify-center animate-fade-in-up opacity-0-init animate-delay-500 w-full">
             <Link
               to="/quote"
-              className="px-8 py-3 bg-accent hover:bg-orange-600 text-white font-semibold rounded-md transition-all duration-200 text-center shadow-lg cursor-pointer hover:shadow-xl"
+              className="relative inline-flex items-center justify-center px-10 py-4 text-lg font-bold text-white transition-all duration-300 bg-accent rounded-full hover:bg-orange-500 shadow-[0_0_30px_rgba(234,88,12,0.3)] hover:shadow-[0_0_40px_rgba(234,88,12,0.6)] hover:-translate-y-1 overflow-hidden group w-full sm:w-auto"
             >
-              Request a Quote
+              <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
+              <span className="relative flex items-center">
+                Request Instant Quote
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
+
+            <Link
+              to="/services"
+              className="inline-flex items-center justify-center px-10 py-4 text-lg font-semibold text-white transition-all duration-300 border border-slate-700 bg-slate-800/50 backdrop-blur-sm rounded-full hover:bg-slate-700 hover:text-white w-full sm:w-auto group"
+            >
+              Explore Capabilities
             </Link>
           </div>
+
         </div>
       </section>
 
@@ -158,49 +138,54 @@ export const Home: React.FC = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                title: "Laser Cutting",
-                desc: "High-precision cutting for steel, aluminum, and copper.",
-                img: "/Core%20Competencies/laser%20cutting.jpeg"
+                title: "Sheet Metal Fabrication",
+                desc: "Comprehensive sheet metal processing including cutting, bending, stamping, and welding.",
+                img: "/Core%20Competencies/metal%20bending.jpeg",
+                link: "/sheet-metal-fabrication"
               },
               {
-                title: "Metal Bending",
-                desc: "Complex forming capabilities for intricate metal components.",
-                img: "/Core%20Competencies/metal%20bending.jpeg"
+                title: "CNC Machining",
+                desc: "High-precision CNC milling and turning for complex metal and plastic parts.",
+                img: "/Core%20Competencies/imgi_8_CNC-Machining.jpg",
+                link: "/cnc-machining"
               },
               {
-                title: "Metal Stamping",
-                desc: "High-volume, precision metal stamping for various industries.",
-                img: "/Core%20Competencies/metal%20stamping.jpeg"
+                title: "3D Printing",
+                desc: "Rapid prototyping and additive manufacturing for complex geometries.",
+                img: "/Core%20Competencies/3d%20printing.jpeg",
+                link: "/services"
               },
               {
-                title: "Metal Punching",
-                desc: "Precision sheet metal punching for holes, slots, and custom patterns.",
-                img: "/Core%20Competencies/Sheet-Metal-Punching.jpg"
-              },
-              {
-                title: "Metal Welding",
-                desc: "Professional welding services for durable and clean joints.",
-                img: "/Core%20Competencies/metal%20welding%20.jpeg"
+                title: "Surface Finishing",
+                desc: "Professional surface treatments including anodizing, powder coating, and plating.",
+                img: "/Core%20Competencies/imgi_73_Surface-Finishes-768x509.jpg",
+                link: "/services/surface-finishing"
               }
             ].map((item, idx) => (
-              <div key={idx} className="group relative overflow-hidden rounded-2xl h-80 cursor-pointer">
+              <Link to={item.link} key={idx} className="group relative overflow-hidden rounded-2xl h-[400px] block cursor-pointer border border-slate-200/50 hover:border-accent/50 transition-colors duration-500 shadow-sm hover:shadow-xl hover:-translate-y-1">
                 <img
                   src={item.img}
-                  alt=""
+                  alt={item.title}
                   width={600}
                   height={400}
                   loading="lazy"
                   decoding="async"
-                  className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="absolute inset-0 h-full w-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-all duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
-                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-slate-200 text-sm">{item.desc}</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent flex flex-col justify-end p-6 opacity-90 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                    <p className="text-slate-300 text-sm mb-4 leading-relaxed line-clamp-2 md:line-clamp-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{item.desc}</p>
+                    <div className="flex items-center text-accent font-semibold text-sm tracking-widest uppercase">
+                      <span>Explore Service</span>
+                      <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-300" aria-hidden="true" />
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 

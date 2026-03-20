@@ -137,9 +137,9 @@ export const Quote: React.FC = () => {
     return (
         <div className="w-full fade-in bg-slate-100 min-h-screen">
             {/* Header */}
-            <div className="relative h-[160px] w-full overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+            <div className="relative h-auto md:h-[220px] w-full overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-28 pb-10 md:pt-20 md:pb-0">
                 <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
-                    <h1 className="text-3xl md:text-4xl font-bold text-white">Online Quote-CNC Machining/Sheet Metal/3D Printing</h1>
+                    <h1 className="text-3xl md:text-4xl font-bold text-white font-display">Online Quote-CNC Machining/Sheet Metal/3D Printing</h1>
                     <p className="text-slate-300 mt-2">Upload your design files and get a quote within 2-4 hours</p>
                 </div>
             </div>

@@ -15,7 +15,7 @@ export const BlogPost: React.FC = () => {
     return (
         <div className="w-full fade-in bg-slate-50 min-h-screen">
             {/* Header */}
-            <div className="relative overflow-hidden bg-slate-900 py-16">
+            <div className="relative overflow-hidden bg-slate-900 pt-24 pb-16 md:pt-32 md:pb-24">
                 <div className="absolute inset-0">
                     <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-primary/80"></div>
                     <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent"></div>

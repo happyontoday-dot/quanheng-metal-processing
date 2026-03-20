@@ -14,180 +14,289 @@ export const ServiceDetail: React.FC = () => {
     return (
         <div className="w-full fade-in bg-slate-50 min-h-screen">
             {/* Hero Section */}
-            <div className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent"></div>
-                <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-end pb-12 pt-16">
-                    <Link to="/services" className="text-slate-200 hover:text-white flex items-center mb-4 transition-colors w-fit">
-                        <ArrowLeft className="w-4 h-4 mr-2" aria-hidden="true" /> Back to Services
-                    </Link>
-                    <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">{service.title}</h1>
+            <div className="relative min-h-[40vh] flex items-center pt-28 pb-16 overflow-hidden bg-[#0a0f1a]">
+                <div className="absolute inset-0 z-0">
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f1a] via-[#0a0f1a]/80 to-transparent z-10"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1a] via-transparent to-transparent z-10"></div>
+                    <div className="absolute inset-0 bg-blue-500/5 mix-blend-overlay"></div>
+                </div>
+
+                <div className="container mx-auto px-4 relative z-20">
+                    <div className="max-w-4xl">
+                        <Link to="/services" className="inline-flex items-center gap-2 text-orange-500 font-bold uppercase tracking-widest text-xs mb-6 hover:text-orange-400 transition-colors group">
+                            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Services
+                        </Link>
+                        <h1 className="text-4xl md:text-7xl font-display font-black uppercase text-white leading-none tracking-tighter mb-6">
+                            {service.title}
+                        </h1>
+                    </div>
                 </div>
             </div>
 
-            {/* Content Section */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {/* Main Content */}
-                    <div className="lg:col-span-2">
-                        <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-                            <h2 className="text-2xl font-bold text-primary mb-4">Service Overview</h2>
-                            {service.description && (
-                                <p className="text-lg text-slate-600 leading-relaxed mb-6">
+            {/* Overview Section */}
+            <section className="py-20 bg-white border-b border-slate-100">
+                <div className="container mx-auto px-4">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="grid lg:grid-cols-2 gap-16 items-center">
+                            <div>
+                                <div className="inline-flex items-center gap-2 text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">
+                                    <span className="w-8 h-px bg-orange-500"></span> Service Overview
+                                </div>
+                                <h2 className="text-3xl md:text-5xl font-display font-bold uppercase text-slate-900 mb-8 leading-tight">
+                                    Precision Engineering <br />& Manufacturing
+                                </h2>
+                                <p className="text-xl text-slate-600 leading-relaxed mb-8">
                                     {service.description}
                                 </p>
-                            )}
 
-                            {service.specifications && (
-                                <div className="flex flex-wrap gap-2 mb-6">
-                                    {service.specifications.map((spec, idx) => (
-                                        <span key={idx} className="inline-flex items-center px-3 py-1.5 bg-accent/8 border border-accent/20 rounded-full text-sm font-medium text-slate-700 hover:border-accent/40 transition-colors">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-accent mr-2 flex-shrink-0"></span>
-                                            {spec}
-                                        </span>
-                                    ))}
-                                </div>
-                            )}
-
-                            {service.features && (
-                                <div className="mt-6 mb-6">
-                                    <h3 className="text-xl font-bold text-primary mb-4">Key Features & Benefits</h3>
-                                    <ul className="space-y-3">
+                                {service.features && (
+                                    <div className="grid sm:grid-cols-2 gap-4">
                                         {service.features.map((feature, idx) => (
-                                            <li key={idx} className="flex items-start bg-slate-50 border border-slate-100 rounded-xl p-3 hover:border-accent/20 transition-colors">
-                                                <CheckCircle className="w-5 h-5 text-accent mt-0.5 mr-3 flex-shrink-0" aria-hidden="true" />
-                                                <span className="text-slate-700">{feature}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
-
-                            {service.process && (
-                                <div className="mt-8 mb-8">
-                                    <h3 className="text-2xl font-bold text-primary mb-6">Our Stamping Process</h3>
-                                    <div className="space-y-4">
-                                        {service.process.map((step, idx) => (
-                                            <div key={idx} className="relative flex gap-4">
-                                                <div className="flex-shrink-0 w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center text-sm font-bold mt-1">
-                                                    {idx + 1}
-                                                </div>
-                                                <div className="bg-slate-50 rounded-xl p-4 border border-slate-100 flex-grow hover:border-accent/30 transition-colors">
-                                                    <h4 className="text-lg font-bold text-primary mb-1">{step.title}</h4>
-                                                    <p className="text-slate-600 leading-relaxed">{step.description}</p>
-                                                </div>
+                                            <div key={idx} className="flex gap-3 items-start p-3 rounded-lg bg-slate-50 border border-slate-100">
+                                                <CheckCircle className="w-5 h-5 text-orange-500 shrink-0 mt-0.5" />
+                                                <span className="text-sm font-bold text-slate-700 uppercase tracking-tight">{feature}</span>
                                             </div>
                                         ))}
                                     </div>
+                                )}
+                            </div>
+                            <div className="relative">
+                                <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-100">
+                                    {(service.gallery && service.gallery[0]) || service.image ? (
+                                        <img src={(service.gallery && service.gallery[0]) || service.image} alt={service.title} className="w-full h-full object-cover" />
+                                    ) : (
+                                        <div className="w-full h-full flex items-center justify-center bg-slate-900 text-white font-display font-bold text-2xl uppercase tracking-tighter opacity-10 italic">Industrial Excellence</div>
+                                    )}
                                 </div>
-                            )}
-
-                            {service.gallery && service.gallery.length > 0 && (
-                                <div className="mt-6">
-                                    <h3 className="text-xl font-bold text-primary mb-4">Project Gallery</h3>
-                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                                        {service.gallery.map((img, idx) => (
-                                            <div key={idx} className="group relative overflow-hidden rounded-lg aspect-square bg-slate-100 cursor-pointer">
-                                                <img
-                                                    src={img}
-                                                    alt={`${service.title} - Image ${idx + 1}`}
-                                                    loading="lazy"
-                                                    decoding="async"
-                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                                />
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
-
-                            {service.galleryWithCaptions && service.galleryWithCaptions.length > 0 && (
-                                <div className="mt-6">
-                                    <h3 className="text-xl font-bold text-primary mb-4">Surface Finishing Options</h3>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                        {service.galleryWithCaptions.map((item, idx) => (
-                                            <div key={idx} className="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-300">
-                                                <div className="relative overflow-hidden aspect-square bg-slate-100">
-                                                    <img
-                                                        src={item.image}
-                                                        alt={item.title}
-                                                        loading="lazy"
-                                                        decoding="async"
-                                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                                    />
-                                                </div>
-                                                <div className="p-4">
-                                                    <h4 className="text-lg font-bold text-primary mb-2">{item.title}</h4>
-                                                    <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
-
-                            {service.sections && service.sections.length > 0 && (
-                                <div className="mt-8 space-y-12">
-                                    {service.sections.map((section, sIdx) => (
-                                        <div key={sIdx}>
-                                            <h3 className="text-2xl font-bold text-primary mb-2">{section.title}</h3>
-                                            {section.description && (
-                                                <p className="text-lg text-slate-600 mb-6 leading-relaxed">{section.description}</p>
-                                            )}
-
-                                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                                {section.items.map((item, iIdx) => (
-                                                    <div key={iIdx} className="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col h-full">
-                                                        {item.image && (
-                                                            <div className="relative overflow-hidden h-48 bg-slate-100 flex-shrink-0">
-                                                                <img
-                                                                    src={item.image}
-                                                                    alt={item.title}
-                                                                    loading="lazy"
-                                                                    decoding="async"
-                                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                                                />
-                                                            </div>
-                                                        )}
-                                                        <div className="p-5 flex flex-col flex-grow">
-                                                            <h4 className="text-lg font-bold text-primary mb-2 relative inline-block">
-                                                                {item.title}
-                                                            </h4>
-                                                            <p className="text-sm text-slate-600 leading-relaxed flex-grow">
-                                                                {item.description}
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
-                    </div>
-
-                    {/* Sidebar */}
-                    <div className="lg:col-span-1">
-                        <div className="bg-primary rounded-2xl p-6 text-white sticky top-24">
-                            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs font-semibold text-orange-300 mb-4">ISO 9001:2015 Certified</div>
-                            <h3 className="text-2xl font-bold mb-3">Ready to Start?</h3>
-                            <p className="text-slate-300 mb-6">
-                                Contact us today for a free quote. Our engineering team is ready to review your specifications.
-                            </p>
-                            <Link
-                                to="/quote"
-                                className="block w-full py-4 bg-accent hover:bg-orange-600 text-white font-bold rounded-xl text-center transition-all duration-200 shadow-lg hover:shadow-orange-900/40/50 cursor-pointer"
-                            >
-                                Request a Quote
-                            </Link>
-                            <div className="mt-8 pt-6 border-t border-white/10">
-                                <p className="text-xs text-slate-400 mb-1">Need immediate assistance?</p>
-                                <p className="font-semibold text-sm">info@qumetal.com</p>
+                                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-orange-500/10 rounded-full blur-3xl -z-10"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+
+            {/* Key Specifications Section */}
+            {
+                service.specifications && (
+                    <section className="py-24 bg-[#0a0f1a] text-white overflow-hidden relative">
+                        <div className="absolute top-0 right-0 w-1/3 h-full bg-orange-500/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                        <div className="container mx-auto px-4 relative z-10">
+                            <div className="max-w-7xl mx-auto">
+                                <div className="text-center mb-16">
+                                    <div className="inline-flex items-center gap-2 text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">
+                                        <span className="w-8 h-px bg-orange-500"></span> Technical Authority
+                                    </div>
+                                    <h2 className="text-3xl md:text-5xl font-display font-bold uppercase text-white mb-6 tracking-tight italic">Key Capabilities & Specifications</h2>
+                                    <div className="h-1 w-24 bg-orange-500 mx-auto rounded-full"></div>
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                                    {service.specifications.map((spec, idx) => {
+                                        const parts = spec.split(':');
+                                        const label = parts[0];
+                                        const value = parts.slice(1).join(':').trim();
+                                        return (
+                                            <div key={idx} className="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-orange-500/50 transition-all duration-300 backdrop-blur-sm flex flex-col items-center text-center">
+                                                <div className="text-orange-500 font-display font-black text-2xl mb-3 group-hover:scale-110 transition-transform duration-500 tracking-tighter">
+                                                    {value || label}
+                                                </div>
+                                                <div className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.25em] leading-tight">
+                                                    {value ? label : "Feature"}
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                )
+            }
+
+            {/* Dynamic Sections (Tools, Techniques, etc.) */}
+            {
+                service.sections && service.sections.map((section, sIdx) => (
+                    <section key={sIdx} className={`py-24 ${sIdx % 2 === 0 ? 'bg-slate-50' : 'bg-white border-y border-slate-100'}`}>
+                        <div className="container mx-auto px-4">
+                            <div className="text-center mb-16 max-w-3xl mx-auto">
+                                <div className="inline-flex items-center gap-2 text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">
+                                    <span className="w-8 h-px bg-orange-500"></span> Technical Capabilities
+                                </div>
+                                <h2 className="text-3xl md:text-5xl font-display font-bold uppercase text-slate-900 mb-6">{section.title}</h2>
+                                {section.description && (
+                                    <p className="text-lg text-slate-500 leading-relaxed">{section.description}</p>
+                                )}
+                            </div>
+
+                            <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
+                                {section.items.map((item, iIdx) => (
+                                    <div key={iIdx} className="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:border-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/5 transition-all duration-500 flex flex-col h-full w-full sm:w-[calc(50%-2rem)] lg:w-[calc(25%-2rem)] min-w-[280px] max-w-[360px]">
+                                        {item.image && (
+                                            <div className="relative overflow-hidden h-56 bg-slate-100 flex-shrink-0">
+                                                <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors z-10 transition-all duration-500"></div>
+                                                <img
+                                                    src={item.image}
+                                                    alt={item.title}
+                                                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                                                />
+                                            </div>
+                                        )}
+                                        <div className="p-6 flex flex-col flex-grow">
+                                            <h4 className="text-xl font-display font-bold text-slate-900 uppercase mb-3 group-hover:text-orange-600 transition-colors italic tracking-tight">
+                                                {item.title}
+                                            </h4>
+                                            <p className="text-sm text-slate-500 leading-relaxed flex-grow font-medium">
+                                                {item.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                ))
+            }
+
+            {/* Design Guidelines Table */}
+            {
+                service.guidelines && (
+                    <section className="py-24 bg-white">
+                        <div className="container mx-auto px-4">
+                            <div className="max-w-7xl mx-auto">
+                                <div className="inline-flex items-center gap-2 text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">
+                                    <span className="w-8 h-px bg-orange-500"></span> Technical Documentation
+                                </div>
+                                <h2 className="text-3xl md:text-5xl font-display font-bold uppercase text-slate-900 mb-6">{service.guidelines.title}</h2>
+                                <p className="text-lg text-slate-600 leading-relaxed mb-12 max-w-4xl">{service.guidelines.description}</p>
+
+                                <div className="overflow-x-auto rounded-2xl border border-slate-200 shadow-xl shadow-slate-200/50">
+                                    <table className="w-full text-left border-collapse min-w-[800px]">
+                                        <thead>
+                                            <tr className="bg-slate-900 border-b border-slate-800">
+                                                <th className="px-8 py-6 text-xs font-bold uppercase tracking-[0.2em] text-orange-500 w-1/4">Design Element</th>
+                                                <th className="px-8 py-6 text-xs font-bold uppercase tracking-[0.2em] text-white w-1/3">Suggestions (Industry Standard)</th>
+                                                <th className="px-8 py-6 text-xs font-bold uppercase tracking-[0.2em] text-white">Benefits & Rationale</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className="divide-y divide-slate-100 italic-last-col">
+                                            {service.guidelines.data.map((row, idx) => (
+                                                <tr key={idx} className="hover:bg-slate-50/80 transition-all group">
+                                                    <td className="px-8 py-5 font-display font-bold text-slate-900 uppercase tracking-tight text-sm bg-slate-50/50 group-hover:text-orange-600">
+                                                        {row.element}
+                                                    </td>
+                                                    <td className="px-8 py-5 text-sm font-semibold text-slate-700">
+                                                        {row.suggestions}
+                                                    </td>
+                                                    <td className="px-8 py-5 text-sm text-slate-500 font-medium leading-relaxed">
+                                                        {row.benefits}
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                )
+            }
+
+            {/* Process Section */}
+            {
+                service.process && (
+                    <section className="py-24 bg-[#0a0f1a] text-white overflow-hidden relative">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"></div>
+                        <div className="container mx-auto px-4 relative z-10">
+                            <div className="text-center mb-16">
+                                <div className="inline-flex items-center gap-2 text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">
+                                    <span className="w-8 h-px bg-orange-500"></span> Execution Workflow
+                                </div>
+                                <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter italic">Optimized Process</h2>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto relative">
+                                {service.process.map((step, idx) => (
+                                    <div key={idx} className="relative group p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-orange-500/30 transition-all duration-300">
+                                        <div className="text-5xl font-display font-black text-white/5 absolute top-4 right-6 group-hover:text-orange-500/10 transition-colors">0{idx + 1}</div>
+                                        <div className="w-12 h-12 bg-orange-500 text-white rounded flex items-center justify-center font-display font-bold text-xl mb-6 shadow-[0_0_20px_rgba(249,115,22,0.4)]">
+                                            {idx + 1}
+                                        </div>
+                                        <h4 className="text-xl font-display font-bold uppercase mb-4 text-white tracking-widest">{step.title}</h4>
+                                        <p className="text-slate-400 text-sm leading-relaxed">{step.description}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                )
+            }
+
+            {/* Project Gallery Area */}
+            {
+                (service.gallery || service.galleryWithCaptions) && (
+                    <section className="py-24 bg-white border-t border-slate-100">
+                        <div className="container mx-auto px-4">
+                            <div className="text-center mb-16">
+                                <div className="inline-flex items-center gap-2 text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">
+                                    <span className="w-8 h-px bg-orange-500"></span> Project Showcase
+                                </div>
+                                <h2 className="text-3xl md:text-5xl font-display font-bold uppercase text-slate-900">Portfolio Highlights</h2>
+                            </div>
+
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
+                                {service.gallery && service.gallery.map((img, idx) => (
+                                    <div key={idx} className="group relative overflow-hidden rounded-xl aspect-[4/3] bg-slate-100 border border-slate-100">
+                                        <img
+                                            src={img}
+                                            alt={`${service.title} - ${idx + 1}`}
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                                            <span className="text-white font-bold text-xs uppercase tracking-widest border-b border-orange-500 pb-1">Enlarge Detail</span>
+                                        </div>
+                                    </div>
+                                ))}
+
+                                {service.galleryWithCaptions && service.galleryWithCaptions.map((item, idx) => (
+                                    <div key={`cap-${idx}`} className="group bg-slate-50 rounded-xl border border-slate-200 overflow-hidden hover:border-orange-500/20 transition-all flex flex-col">
+                                        <div className="relative overflow-hidden aspect-video">
+                                            <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                                        </div>
+                                        <div className="p-4">
+                                            <h4 className="font-display font-bold uppercase text-slate-900 mb-1">{item.title}</h4>
+                                            <p className="text-xs text-slate-500">{item.description}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                )
+            }
+
+            {/* Final Call To Action */}
+            <section className="py-32 bg-slate-900 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.1),transparent_70%)] opacity-50"></div>
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-orange-500/20"></div>
+                <div className="container mx-auto px-4 text-center relative z-10">
+                    <h2 className="text-5xl md:text-8xl font-display font-black uppercase text-white mb-8 tracking-tighter leading-none">
+                        START YOUR <br /> <span className="text-orange-500 italic">NEXT PROJECT</span>
+                    </h2>
+                    <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
+                        Connect with our engineering experts for precision sheet metal services. ISO 9001:2015 certified production with rapid global logistics.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                        <Link to="/quote" className="px-12 py-5 bg-orange-500 hover:bg-orange-600 text-white font-display font-bold text-xl uppercase tracking-widest rounded-md shadow-[0_10px_40px_rgba(249,115,22,0.3)] transition-all transform hover:-translate-y-1">
+                            Request Quote
+                        </Link>
+                        <Link to="/contact" className="px-12 py-5 border border-white/20 hover:bg-white/5 text-white font-display font-bold text-xl uppercase tracking-widest rounded-md transition-all">
+                            Talk to Engineer
+                        </Link>
+                    </div>
+                    <p className="mt-8 text-slate-500 text-sm font-bold uppercase tracking-widest italic opacity-50">
+                        * Direct Factory Pricing & Technical Review within 24 Hours
+                    </p>
+                </div>
+            </section>
+        </div >
     );
 };

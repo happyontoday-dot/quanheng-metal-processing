@@ -1,0 +1,9 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" rx="20" fill="#0f172a"/>
+  {/* Top Container (n-shape) */}
+  <path d="M20 80 L20 20 L65 20 L65 65" stroke="white" stroke-width="8" stroke-linecap="square" stroke-linejoin="miter" />
+  {/* Bottom Container (U-shape) */}
+  <path d="M35 35 L35 80 L80 80 L80 20" stroke="#94a3b8" stroke-width="8" stroke-linecap="square" stroke-linejoin="miter" />
+  {/* Tangent Tail of Q */}
+  <path d="M55 52 L82 92" stroke="#EA580C" stroke-width="10" stroke-linecap="square" />
+</svg>

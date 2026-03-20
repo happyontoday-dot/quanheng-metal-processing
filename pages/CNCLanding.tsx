@@ -100,7 +100,7 @@ const CNCLanding: React.FC = () => {
 
             <div className="cnc-page">
                 {/* HERO SECTION */}
-                <section className="relative min-h-[90vh] flex items-center pt-24 pb-16 overflow-hidden">
+                <section className="relative min-h-[90vh] flex items-center pt-28 pb-16 md:pt-36 overflow-hidden">
                     {/* Background */}
                     <div className="absolute inset-0 z-0">
                         <img
@@ -141,11 +141,11 @@ const CNCLanding: React.FC = () => {
                             {/* Visual Grid (Desktop Only) */}
                             <div className="hidden lg:grid grid-cols-2 gap-4 reveal" style={{ transitionDelay: '400ms' }}>
                                 <div className="space-y-4 pt-12">
-                                    <img src="/cases/machining%20parts.png" alt="CNC Milled Parts" className="rounded-lg object-cover h-64 w-full border border-white/10" />
-                                    <img src="/cases/Aluminum_20extrusion_20parts.jpg" alt="Metal Parts" className="rounded-lg object-cover h-48 w-full border border-white/10" />
+                                    <img src="/CNC/cnc-milling01.avif" alt="CNC Milled Parts" className="rounded-lg object-cover h-64 w-full" />
+                                    <img src="/CNC/cnc-turing04.avif" alt="Metal Parts" className="rounded-lg object-cover h-48 w-full" />
                                 </div>
                                 <div className="space-y-4">
-                                    <img src="/cases/mini_pc_chassis.png" alt="CNC Housing" className="rounded-lg object-cover h-56 w-full border border-white/10" />
+                                    <img src="/CNC/5-axis-machining-6.avif" alt="CNC Housing" className="rounded-lg object-cover h-56 w-full" />
                                     <div className="steel-card p-6 flex flex-col justify-center h-56">
                                         <div className="text-4xl font-display font-bold text-orange-500 mb-2">±0.005<span className="text-2xl">mm</span></div>
                                         <div className="text-slate-300 font-medium">Ultra-Precision Accuracy</div>
@@ -263,6 +263,71 @@ const CNCLanding: React.FC = () => {
                     </div>
                 </section>
 
+                {/* CNC MACHINING PROCESS SECTION */}
+                <section className="py-24 bg-[#0a0f1a] relative overflow-hidden border-t border-white/5">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center mb-16 reveal">
+                            <div className="inline-flex items-center gap-2 text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">
+                                <span className="w-8 h-px bg-orange-500"></span> How It Works <span className="w-8 h-px bg-orange-500"></span>
+                            </div>
+                            <h2 className="text-4xl md:text-5xl font-display font-bold uppercase text-white">Our CNC Machining Process</h2>
+                        </div>
+
+                        <div className="grid md:grid-cols-4 gap-8 relative">
+                            {/* Connecting Line */}
+                            <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent"></div>
+
+                            {/* Step 1 */}
+                            <div className="relative text-center group reveal" style={{ transitionDelay: '100ms' }}>
+                                <div className="w-24 h-24 mx-auto bg-[#0f172a] rounded-full border border-white/10 flex items-center justify-center mb-6 relative z-10 group-hover:border-orange-500/50 transition-colors">
+                                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500/20 to-transparent flex items-center justify-center text-orange-500">
+                                        <PenTool className="w-8 h-8" />
+                                    </div>
+                                    <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-orange-500 text-white font-display font-bold flex items-center justify-center text-sm shadow-lg shadow-orange-500/30">01</div>
+                                </div>
+                                <h3 className="text-xl font-display font-bold uppercase text-white mb-3">Upload CAD</h3>
+                                <p className="text-slate-400 text-sm leading-relaxed">Submit your 2D/3D files for an instant review and manufacturability check.</p>
+                            </div>
+
+                            {/* Step 2 */}
+                            <div className="relative text-center group reveal" style={{ transitionDelay: '200ms' }}>
+                                <div className="w-24 h-24 mx-auto bg-[#0f172a] rounded-full border border-white/10 flex items-center justify-center mb-6 relative z-10 group-hover:border-orange-500/50 transition-colors">
+                                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500/20 to-transparent flex items-center justify-center text-orange-500">
+                                        <Cpu className="w-8 h-8" />
+                                    </div>
+                                    <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-orange-500 text-white font-display font-bold flex items-center justify-center text-sm shadow-lg shadow-orange-500/30">02</div>
+                                </div>
+                                <h3 className="text-xl font-display font-bold uppercase text-white mb-3">Quote & DFM</h3>
+                                <p className="text-slate-400 text-sm leading-relaxed">Receive a detailed competitive quote and expert Design for Manufacturability analysis.</p>
+                            </div>
+
+                            {/* Step 3 */}
+                            <div className="relative text-center group reveal" style={{ transitionDelay: '300ms' }}>
+                                <div className="w-24 h-24 mx-auto bg-[#0f172a] rounded-full border border-white/10 flex items-center justify-center mb-6 relative z-10 group-hover:border-orange-500/50 transition-colors">
+                                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500/20 to-transparent flex items-center justify-center text-orange-500">
+                                        <Clock className="w-8 h-8" />
+                                    </div>
+                                    <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-orange-500 text-white font-display font-bold flex items-center justify-center text-sm shadow-lg shadow-orange-500/30">03</div>
+                                </div>
+                                <h3 className="text-xl font-display font-bold uppercase text-white mb-3">Rapid Prototyping</h3>
+                                <p className="text-slate-400 text-sm leading-relaxed">Get precision-machined functional samples delivered in as fast as 24 hours.</p>
+                            </div>
+
+                            {/* Step 4 */}
+                            <div className="relative text-center group reveal" style={{ transitionDelay: '400ms' }}>
+                                <div className="w-24 h-24 mx-auto bg-[#0f172a] rounded-full border border-white/10 flex items-center justify-center mb-6 relative z-10 group-hover:border-orange-500/50 transition-colors">
+                                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500/20 to-transparent flex items-center justify-center text-orange-500">
+                                        <Package className="w-8 h-8" />
+                                    </div>
+                                    <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-orange-500 text-white font-display font-bold flex items-center justify-center text-sm shadow-lg shadow-orange-500/30">04</div>
+                                </div>
+                                <h3 className="text-xl font-display font-bold uppercase text-white mb-3">Mass Production</h3>
+                                <p className="text-slate-400 text-sm leading-relaxed">Scale up smoothly with our ISO-certified quality control and smart supply chain.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* BENEFITS SECTION */}
                 <section className="py-24 bg-[#0f172a]">
                     <div className="container mx-auto px-4">
@@ -322,6 +387,117 @@ const CNCLanding: React.FC = () => {
                                         <li className="flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400 shrink-0 mt-0.5" /> Integrated logistics and localized support</li>
                                     </ul>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* MATERIALS TABLE SECTION */}
+                <section className="py-24 relative overflow-hidden bg-[#080c14] border-t border-white/5">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center mb-16 reveal">
+                            <div className="inline-flex items-center gap-2 text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">
+                                <span className="w-8 h-px bg-orange-500"></span> Material Library <span className="w-8 h-px bg-orange-500"></span>
+                            </div>
+                            <h2 className="text-4xl md:text-5xl font-display font-bold uppercase text-white">Materials For CNC Parts</h2>
+                        </div>
+
+                        <div className="reveal">
+                            <div className="overflow-x-auto">
+                                <table className="w-full border-collapse">
+                                    <thead>
+                                        <tr className="border-b border-white/10 bg-[#0f172a]">
+                                            <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-orange-500 w-1/4">Category</th>
+                                            <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-orange-500">Available Materials</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-white/5">
+                                        <tr className="hover:bg-white/[0.02] transition-colors">
+                                            <td className="px-6 py-6 font-display font-bold text-xl uppercase text-slate-200">Aluminum Alloys</td>
+                                            <td className="px-6 py-6 text-slate-400 leading-relaxed">6061, 5052, 2A12, 7075, etc. Excellent strength-to-weight ratio, highly machinable, and corrosion resistant.</td>
+                                        </tr>
+                                        <tr className="hover:bg-white/[0.02] transition-colors">
+                                            <td className="px-6 py-6 font-display font-bold text-xl uppercase text-slate-200">Stainless Steel</td>
+                                            <td className="px-6 py-6 text-slate-400 leading-relaxed">301, 303, 304, 316, 316L, 321, 420, 430, 17-4PH. Durable, heat resistant, and superior corrosion resistance for food and medical use.</td>
+                                        </tr>
+                                        <tr className="hover:bg-white/[0.02] transition-colors">
+                                            <td className="px-6 py-6 font-display font-bold text-xl uppercase text-slate-200">Alloy & Mold Steel</td>
+                                            <td className="px-6 py-6 text-slate-400 leading-relaxed">Q235, 45 Steel, Cr12, 3Cr13, GCr15, 40Cr, 65Mn, SKD11. High hardness and wear resistance, ideal for tools and structural parts.</td>
+                                        </tr>
+                                        <tr className="hover:bg-white/[0.02] transition-colors">
+                                            <td className="px-6 py-6 font-display font-bold text-xl uppercase text-slate-200">Copper & Brass</td>
+                                            <td className="px-6 py-6 text-slate-400 leading-relaxed">Brass H59/H62, Copper T2, TU2, Tin Bronze, Beryllium Copper C17200. High thermal and electrical conductivity.</td>
+                                        </tr>
+                                        <tr className="hover:bg-white/[0.02] transition-colors">
+                                            <td className="px-6 py-6 font-display font-bold text-xl uppercase text-slate-200">Other Alloys</td>
+                                            <td className="px-6 py-6 text-slate-400 leading-relaxed">Titanium Alloy TC4, Magnesium Alloy AZ91D, Pure Iron DT4C/E. For specialized high-performance applications.</td>
+                                        </tr>
+                                        <tr className="hover:bg-white/[0.02] transition-colors">
+                                            <td className="px-6 py-6 font-display font-bold text-xl uppercase text-slate-200">Engineering Plastics</td>
+                                            <td className="px-6 py-6 text-slate-400 leading-relaxed">ABS, PTFE, POM (Delrin®), PMMA, PP, PPS, PU, PVC, HDPE, Nylon PA6/66, PC, PEEK. Versatile, lightweight, and cost-effective.</td>
+                                        </tr>
+                                        <tr className="hover:bg-white/[0.02] transition-colors">
+                                            <td className="px-6 py-6 font-display font-bold text-xl uppercase text-slate-200">Advanced Materials</td>
+                                            <td className="px-6 py-6 text-slate-400 leading-relaxed">Carbon Fiber, Graphite, Epoxy Board FR4, Phenolic Board. Exceptional strength and unique physical properties.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* SURFACE FINISHES SECTION */}
+                <section className="py-24 bg-[#0a0f1a] relative">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center mb-16 reveal">
+                            <div className="inline-flex items-center gap-2 text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">
+                                <span className="w-8 h-px bg-orange-500"></span> Post-Processing <span className="w-8 h-px bg-orange-500"></span>
+                            </div>
+                            <h2 className="text-4xl md:text-5xl font-display font-bold uppercase text-white">Surface Finishes</h2>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {/* Finish 1 */}
+                            <div className="steel-card p-8 reveal" style={{ transitionDelay: '100ms' }}>
+                                <h3 className="text-2xl font-display font-bold uppercase text-white mb-2">As-Machined</h3>
+                                <div className="text-orange-500 text-sm font-bold mb-4">Ra 3.2 - 6.3 µm</div>
+                                <p className="text-slate-400 text-sm leading-relaxed">Standard finish with visible tool marks. Ideal for functional parts where aesthetics are not critical. Available for all metals and plastics.</p>
+                            </div>
+
+                            {/* Finish 2 */}
+                            <div className="steel-card p-8 reveal" style={{ transitionDelay: '200ms' }}>
+                                <h3 className="text-2xl font-display font-bold uppercase text-white mb-2">Bead Blasted</h3>
+                                <div className="text-orange-500 text-sm font-bold mb-4">Ra 1.6 - 3.2 µm</div>
+                                <p className="text-slate-400 text-sm leading-relaxed">Provides a uniform, smooth, matte appearance by brushing parts with fine abrasive media. Great for removing tool marks.</p>
+                            </div>
+
+                            {/* Finish 3 */}
+                            <div className="steel-card p-8 reveal" style={{ transitionDelay: '300ms' }}>
+                                <h3 className="text-2xl font-display font-bold uppercase text-white mb-2">Anodized (Type II/III)</h3>
+                                <div className="text-orange-500 text-sm font-bold mb-4">Ra 0.8 - 1.6 µm</div>
+                                <p className="text-slate-400 text-sm leading-relaxed">Creates a hard, durable, corrosion-resistant oxide layer. Available in various colors (Type II) or as hardcoat (Type III) for maximum durability.</p>
+                            </div>
+
+                            {/* Finish 4 */}
+                            <div className="steel-card p-8 reveal" style={{ transitionDelay: '400ms' }}>
+                                <h3 className="text-2xl font-display font-bold uppercase text-white mb-2">Powder Coated</h3>
+                                <div className="text-orange-500 text-sm font-bold mb-4">High Durability</div>
+                                <p className="text-slate-400 text-sm leading-relaxed">Applies a dry powder that is cured under heat, producing a tough, wear-resistant finish in virtually any color. Ideal for external facing metal parts.</p>
+                            </div>
+
+                            {/* Finish 5 */}
+                            <div className="steel-card p-8 reveal" style={{ transitionDelay: '500ms' }}>
+                                <h3 className="text-2xl font-display font-bold uppercase text-white mb-2">Polished</h3>
+                                <div className="text-orange-500 text-sm font-bold mb-4">Ra 0.1 - 0.4 µm</div>
+                                <p className="text-slate-400 text-sm leading-relaxed">Creates a highly reflective, mirror-like surface using progressively finer abrasives. Perfect for aesthetic parts or optical applications.</p>
+                            </div>
+
+                            {/* Finish 6 */}
+                            <div className="steel-card p-8 reveal" style={{ transitionDelay: '600ms' }}>
+                                <h3 className="text-2xl font-display font-bold uppercase text-white mb-2">Chemical Film</h3>
+                                <div className="text-orange-500 text-sm font-bold mb-4">Chromate Conversion</div>
+                                <p className="text-slate-400 text-sm leading-relaxed">Provides excellent corrosion protection for aluminum while maintaining electrical conductivity. Often used as a base for priming or painting.</p>
                             </div>
                         </div>
                     </div>

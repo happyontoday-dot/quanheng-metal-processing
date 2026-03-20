@@ -7,12 +7,13 @@
   <title>QUMETAL | Precision Stamping, Laser Cutting & Fabrication</title>
   <meta name="description"
     content="QUMETAL specializes in precision metal stamping, bending, punching, laser cutting, and surface treatment. High-quality custom metal fabrication." />
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Crect width='24' height='24' rx='6' fill='%231e293b'/%3E%3Cpath d='M12 4L20 12L12 20L4 12L12 4Z' stroke='%23f97316' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M12 8V16' stroke='%23e2e8f0' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M8 12H16' stroke='%23e2e8f0' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preload" as="image" href="/cases/Metal_20stamping_20parts.webp" fetchpriority="high" type="image/webp">
   <link rel="preload" as="image" href="/cases/Die_20casting_20parts.webp" fetchpriority="low" type="image/webp">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
@@ -22,12 +23,27 @@
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
           },
           colors: {
-            primary: '#64748B', // Slate 500 (Industrial Grey Primary)
-            secondary: '#94A3B8', // Slate 400
-            accent: '#F97316', // Orange 500 (Safety Orange CTA)
-            metal: '#334155', // Slate 700 (Dark Industrial Text)
+            primary: '#0f172a', /* slate-900 */
+            secondary: '#334155', /* slate-700 */
+            accent: '#EA580C', /* orange-600 */
+            metal: '#1e293b', /* slate-800 */
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 5px rgba(234, 88, 12, 0.2)' },
+              '100%': { boxShadow: '0 0 20px rgba(234, 88, 12, 0.6)' },
+            }
           }
         }
       }
@@ -39,9 +55,23 @@
       font-weight: 400;
     }
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .font-display {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      .fade-in {
-        animation: none;
+
+      .fade-in,
+      .animate-fade-in-up {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
       }
 
       *,
@@ -54,6 +84,26 @@
 
     .fade-in {
       animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .animate-delay-100 {
+      animation-delay: 100ms;
+    }
+
+    .animate-delay-200 {
+      animation-delay: 200ms;
+    }
+
+    .animate-delay-300 {
+      animation-delay: 300ms;
+    }
+
+    .animate-delay-500 {
+      animation-delay: 500ms;
+    }
+
+    .opacity-0-init {
+      opacity: 0;
     }
 
     @keyframes fadeIn {

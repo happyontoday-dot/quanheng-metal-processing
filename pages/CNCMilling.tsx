@@ -69,7 +69,7 @@ const CNCMilling: React.FC = () => {
 
             <div className="cnc-page">
                 {/* HERO */}
-                <section className="relative min-h-[70vh] flex items-center pt-24 pb-16 overflow-hidden">
+                <section className="relative min-h-[70vh] flex items-center pt-28 pb-16 overflow-hidden">
                     <div className="absolute inset-0 z-0">
                         <img src="/cnc-milling/imgi_47_CNC-Milling-Service.jpg" alt="Milling Center" className="w-full h-full object-cover opacity-20" />
                         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f1a] via-[#0a0f1a]/80 to-transparent"></div>

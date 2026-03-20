@@ -6,7 +6,7 @@ export const About: React.FC = () => {
   return (
     <div className="w-full fade-in bg-white">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-slate-900 py-16 md:py-24">
+      <section className="relative overflow-hidden bg-slate-900 pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-accent/30 via-transparent to-primary opacity-60"></div>
           <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"></div>

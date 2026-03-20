@@ -12,10 +12,10 @@ export const Footer: React.FC = () => {
           <div>
             <Link to="/" className="flex items-center gap-2 mb-6 group w-fit">
               <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-slate-800 shadow-md border border-slate-700 transition-all duration-300 overflow-hidden group-hover:bg-slate-700">
-                <svg viewBox="0 0 24 24" className="w-6 h-6 relative z-10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L22 12L12 22L2 12L12 2Z" stroke="currentColor" className="text-accent" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M12 6V18" stroke="currentColor" className="text-slate-400" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M6 12H18" stroke="currentColor" className="text-slate-400" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <svg viewBox="0 0 100 100" className="w-6 h-6 relative z-10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 85 L15 15 L65 15 L65 65" stroke="white" strokeWidth="8" strokeLinecap="square" strokeLinejoin="miter" />
+                  <path d="M35 35 L35 85 L85 85 L85 15" stroke="#94a3b8" strokeWidth="8" strokeLinecap="square" strokeLinejoin="miter" />
+                  <path d="M55 52 L82 95" stroke="#EA580C" strokeWidth="8" strokeLinecap="square" />
                 </svg>
               </div>
               <div className="flex flex-col justify-center">
@@ -61,15 +61,16 @@ export const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold mb-4 text-slate-200">Our Capabilities</h4>
             <ul className="space-y-2">
               {[
-                { name: 'Metal Stamping', slug: 'custom-stamping' },
-                { name: 'Metal Cutting', slug: 'metal-cutting' },
-                { name: 'CNC Punching', slug: 'metal-punching' },
-                { name: 'Bending & Forming', slug: 'metal-bending' },
-                { name: 'Surface Finishing', slug: 'surface-finishing' },
+                { name: 'Sheet Metal Fabrication', path: '/sheet-metal-fabrication' },
+                { name: 'CNC Machining', path: '/cnc-machining' },
+                { name: 'Metal Stamping', path: '/services/custom-stamping' },
+                { name: 'Metal Bending', path: '/services/metal-bending' },
+                { name: '3D Printing', path: '/services' },
+                { name: 'Surface Finishing', path: '/services/surface-finishing' },
               ].map((service) => (
-                <li key={service.slug}>
+                <li key={service.name}>
                   <Link
-                    to={`/services/${service.slug}`}
+                    to={service.path}
                     className="text-slate-300 hover:text-white transition-colors text-sm flex items-center group"
                   >
                     <ChevronRight className="w-3 h-3 mr-2 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
