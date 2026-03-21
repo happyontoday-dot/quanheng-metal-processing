@@ -45,16 +45,14 @@ export const services: Service[] = [
         title: "Industrial Metal 3D Printing",
         description: "Unlock impossible geometries and accelerate engineering with our direct metal laser melting (SLM/DMLS) services. We print high-performance, fully dense metal parts in Titanium, Aluminum, Stainless Steel, and Tool Steel for aerospace, medical, and advanced tooling applications without the need for fixed tooling.",
         features: [
+            "High Precision: Tolerances down to ±0.05mm",
+            "Materials: Ti6Al4V, AlSi10Mg, 316L, 17-4PH, Maraging Steel",
+            "Density: 99.9% relative density for forged-like strength",
+            "Post-Processing: Heat treatment, CNC machining, and surface finishing",
             "Conformal Cooling Channels: Dramatically improve mold cooling cycles",
             "Topology Optimization: Reduce weight up to 60% maintaining strength",
             "Part Consolidation: Combine complex assemblies into a single printed part",
             "Rapid Scaling: From functional prototypes to end-use metal components"
-        ],
-        specifications: [
-            "High Precision: Tolerances down to ±0.05mm",
-            "Materials: Ti6Al4V, AlSi10Mg, 316L, 17-4PH, Maraging Steel",
-            "Density: 99.9% relative density for forged-like strength",
-            "Post-Processing: Heat treatment, CNC machining, and surface finishing"
         ],
         process: [
             {
@@ -80,13 +78,11 @@ export const services: Service[] = [
         id: "custom-stamping",
         title: "Custom Sheet Metal Stamping Services",
         description: "Our advanced stamping technology and experienced team ensure precision and reliability in every project, whether it's for small or large production runs. Our services are adaptable to various materials, including aluminum, stainless steel, copper, brass, nickel and more. From custom die design to specific material requirements, we can accommodate various customization requests to align with your project’s unique needs.",
-        specifications: [
+        features: [
             "Maximum 400 Tons Press Rating",
             "0.004\" ~ 0.47\" (0.1mm ~ 12mm) Metal Thickness",
             "±0.01\" (0.25mm) Tight Tolerance",
-            "Custom Dies & Punches for Your Designs"
-        ],
-        features: [
+            "Custom Dies & Punches for Your Designs",
             "Free evaluation of drawings before order",
             "Flexible order volume: from 10 pcs to 5,000,000 pcs",
             "80–1000 Ton high-speed stamping machines in-house",
@@ -149,15 +145,13 @@ export const services: Service[] = [
         id: "metal-punching",
         title: "Custom Metal Punching",
         description: "We specialize in high-precision metal punching services, delivering customized solutions for a wide range of applications. Equipped with advanced CNC turret punching machines, we handle various metals including aluminum, stainless steel, galvanized steel, titanium, brass, bronze, and copper. Our capabilities include punching holes in diverse shapes and sizes, tailored to meet exact customer specifications.",
-        specifications: [
+        features: [
             "Tolerance: ±0.1 mm",
             "Sheet Thickness: 0.5 – 12 mm",
             "Max Sheet Size: 2500 × 1250 mm",
             "Hole Diameter: ≥ 1× Sheet Thickness",
             "Turret Stations: Up to 72 Tool Stations",
-            "Production: Prototype to Mass Run"
-        ],
-        features: [
+            "Production: Prototype to Mass Run",
             "Single & Turret CNC Punching",
             "Precision CNC Punching: ±0.1mm tolerance",
             "Supports All Common Sheet Metals",
@@ -393,14 +387,12 @@ export const services: Service[] = [
         id: "metal-bending",
         title: "Metal Bending Services",
         description: "Sheet metal bending is a fundamental fabrication process that transforms flat metal sheets into complex 3D shapes through the precise application of force. Our facility is equipped with high-tonnage CNC press brakes and universal bending tools, allowing us to achieve tight tolerances and consistent results across a wide range of materials and thicknesses. From simple brackets to complex multi-bend enclosures, we provide scalable solutions for both rapid prototyping and high-volume production.",
-        specifications: [
+        features: [
             "Maximum Bending Thickness: 20mm (Steel) / 12mm (Stainless)",
             "Maximum Bending Length: 4000mm",
             "Bending Force: Up to 1000 Tons",
             "Precision: Linear ±0.1mm / Angular ±0.5°",
-            "Material Support: Aluminum, Stainless Steel, Carbon Steel, Copper, Brass"
-        ],
-        features: [
+            "Material Support: Aluminum, Stainless Steel, Carbon Steel, Copper, Brass",
             "High Precision: CNC-controlled multi-axis backgauging for repeatable accuracy",
             "Material Versatility: Optimized bending parameters for various alloys and tempers",
             "Complex Geometries: Ability to perform multi-stage bending for intricate parts",
@@ -776,6 +768,34 @@ export const services: Service[] = [
             "Pressure Vessel & Airtight Sealing Capabilities",
             "Post-Weld Grinding & Surface Blending"
         ],
-        image: "/Core Competencies/metal welding .jpeg"
+        image: "/Core Competencies/metal welding .jpeg",
+        sections: [
+            {
+                title: "Welding Defects & Solutions",
+                description: "At Quanheng, we implement rigorous control over welding parameters to prevent common defects and ensure the structural integrity of every joint.",
+                items: [
+                    {
+                        title: "Porosity",
+                        description: "Small gas pockets trapped in the weld bead, often caused by surface contaminants or improper shielding gas flow. We solve this through meticulous pre-weld cleaning and gas flow optimization.",
+                        image: "/welding/Porosity-in-Welding.jpg"
+                    },
+                    {
+                        title: "Undercutting",
+                        description: "A groove formed at the weld edge due to excessive heat or travel speed. Our technicians use precision amperage control and weaving techniques to ensure a perfectly filled joint.",
+                        image: "/welding/Undercut-in-Welding.jpg"
+                    },
+                    {
+                        title: "Welding Cracks",
+                        description: "Structural fractures caused by internal stress or rapid cooling. We prevent cracking through scientific preheating protocols and controlled slow-cooling using thermal blankets.",
+                        image: "/welding/Welding-Cracks.jpg"
+                    },
+                    {
+                        title: "Distortion",
+                        description: "Warping caused by uneven heat distribution. We manage thermal stress using balanced welding sequences (back-stepping) and robust heavy-duty jigs and fixtures.",
+                        image: "/welding/Distortion-in-Welding.jpg"
+                    }
+                ]
+            }
+        ]
     }
 ];

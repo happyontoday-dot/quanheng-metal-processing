@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Settings, Layers, Zap, FileUp, Settings2, FileText, Truck, ShieldCheck, Check } from 'lucide-react';
-
+import { useSEO } from '../hooks/useSEO';
 
 export const Home: React.FC = () => {
+  useSEO({
+    title: "Custom Metal Fabrication & CNC Machining Services | QUMETAL",
+    description: "ISO 9001 certified precision metal manufacturing. Get one-stop solutions for custom sheet metal fabrication, CNC machining, stamping, and surface finishing."
+  });
+
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
 
   const scrollLeft = () => {
@@ -45,11 +50,11 @@ export const Home: React.FC = () => {
 
           {/* Massive Typography Headline */}
           <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black text-white mb-6 leading-[1.1] tracking-tight font-display max-w-5xl">
-            <span className="block animate-fade-in-up opacity-0-init animate-delay-100">
+            <span className="block animate-fade-in-up opacity-0-init animate-delay-100 text-3xl md:text-5xl lg:text-6xl text-slate-300 font-bold mb-4">
               One-stop Solution
             </span>
             <span className="block animate-fade-in-up opacity-0-init animate-delay-200 text-transparent bg-clip-text bg-gradient-to-r from-slate-200 via-white to-slate-400">
-              For Precision Parts
+              Custom Metal Fabrication & CNC Machining
             </span>
           </h1>
 
@@ -197,25 +202,22 @@ export const Home: React.FC = () => {
             <div className="relative group">
               <div ref={scrollContainerRef} className="flex overflow-x-auto gap-6 snap-x no-scrollbar scrolling-touch">
                 {[
-                  { name: "Aluminum Extrusion Parts", src: "/cases/Aluminum_20extrusion_20parts.webp" },
-                  { name: "Assembled Products", src: "/cases/Assembled_20products.webp" },
-                  { name: "Die Casting Parts", src: "/cases/Die_20casting_20parts.webp" },
-                  { name: "Metal Stamping Parts", src: "/cases/Metal_20stamping_20parts.webp" },
-                  { name: "Plastic Parts", src: "/cases/Plastic_20parts.webp" },
-                  { name: "Electronics Components", src: "/cases/electronics.webp" },
-                  { name: "Machining Parts", src: "/cases/machining parts.webp" },
-
-                  { name: "Optoelectronic Products 1", src: "/cases/光电产品 (1).webp" },
-                  { name: "Optoelectronic Products 2", src: "/cases/光电产品 (2).webp" },
-
-
+                  { name: "Aluminum Extrusion Parts", src: "/cases/Aluminum_20extrusion_20parts.webp", alt: "Custom aluminum extrusion profiles and manufactured parts" },
+                  { name: "Assembled Products", src: "/cases/Assembled_20products.webp", alt: "Fully assembled custom metal and plastic fabricated products" },
+                  { name: "Die Casting Parts", src: "/cases/Die_20casting_20parts.webp", alt: "High volume precision aluminum die casting parts" },
+                  { name: "Metal Stamping Parts", src: "/cases/Metal_20stamping_20parts.webp", alt: "Complex custom metal stamping and formed parts" },
+                  { name: "Plastic Parts", src: "/cases/Plastic_20parts.webp", alt: "Precision manufactured injection molded plastic parts" },
+                  { name: "Electronics Components", src: "/cases/electronics.webp", alt: "Custom metallic housings and enclosures for electronic components" },
+                  { name: "Machining Parts", src: "/cases/machining parts.webp", alt: "High precision CNC machined metal components" },
+                  { name: "Optoelectronic Products 1", src: "/cases/光电产品 (1).webp", alt: "Precision metal brackets and housings for optoelectronic products" },
+                  { name: "Optoelectronic Products 2", src: "/cases/光电产品 (2).webp", alt: "Custom CNC fabricated mounts for optical lenses and equipment" },
                 ].map((item, idx) => (
                   <div key={idx} className="flex-none w-72 md:w-80 snap-center">
                     <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 h-full flex flex-col cursor-pointer">
                       <div className="h-56 w-full relative">
                         <img
                           src={item.src}
-                          alt=""
+                          alt={item.alt}
                           width={400}
                           height={300}
                           loading="lazy"

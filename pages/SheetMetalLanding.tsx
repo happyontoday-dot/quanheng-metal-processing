@@ -1,8 +1,14 @@
 import React, { useEffect } from 'react';
 import { ChevronRight, Settings, ShieldCheck, Clock, CheckCircle2, ChevronDown, Package, PenTool } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 
 const SheetMetalLanding: React.FC = () => {
+    useSEO({
+        title: "Custom Sheet Metal Fabrication Services | ISO 9001 Factory | QUMETAL",
+        description: "Professional custom sheet metal fabrication including laser cutting, bending, punching, and welding. Fast prototyping and mass production with global delivery."
+    });
+
     // Animation observer
     useEffect(() => {
         const observerCallback: IntersectionObserverCallback = (entries) => {
@@ -309,7 +315,7 @@ const SheetMetalLanding: React.FC = () => {
                 <section className="py-24 bg-[#0f172a]">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-16 reveal">
-                            <h2 className="text-4xl md:text-5xl font-display font-bold uppercase mb-6 text-white">Why Use Sheet Metal</h2>
+                            <h2 className="text-4xl md:text-5xl font-display font-bold uppercase mb-6 text-white">Benefits of Custom Sheet Metal Prototyping</h2>
                             <p className="text-lg text-slate-400 max-w-4xl mx-auto leading-relaxed">
                                 Sheet metal can be quickly cut into 2D profile shapes and formed out of a variety of high-strength materials, making it perfect for rapid tooling. Its per-unit pricing lowers significantly in production volumes. Combined with end-use materials and high throughput, sheet metal fabrication is a well-known production method.
                             </p>
