@@ -1,8 +1,14 @@
 import React, { useState, useRef } from 'react';
 import { Upload, X, FileText, CheckCircle, Info, HelpCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 
 export const Quote: React.FC = () => {
+    useSEO({
+        title: "Get Instant Metal Fabrication Quote - CNC Machining & Sheet Metal | QUMETAL",
+        description: "Upload your CAD files for an instant quote on CNC machining, sheet metal fabrication, and 3D printing. Free DFM review. Response within 2-4 hours."
+    });
+
     const [uploading, setUploading] = useState(false);
     const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
     const [dragActive, setDragActive] = useState(false);

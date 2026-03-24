@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSEO } from '../hooks/useSEO';
 
 const sections = [
     { id: 'introduction', title: 'Introduction' },
@@ -15,6 +16,11 @@ const sections = [
 ];
 
 export const Privacy: React.FC = () => {
+    useSEO({
+        title: "Privacy Policy | QUMETAL",
+        description: "QUMETAL privacy policy - how we collect, use, and protect your personal information when you visit our website or use our manufacturing services."
+    });
+
     return (
         <div className="w-full fade-in bg-slate-50 min-h-screen">
             <div className="relative overflow-hidden bg-slate-900 pt-24 pb-16 md:pt-32 md:pb-24">

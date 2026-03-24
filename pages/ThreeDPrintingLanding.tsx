@@ -1,8 +1,14 @@
 import React, { useEffect } from 'react';
 import { ChevronRight, ShieldCheck, Zap, Cog, Layers, Hammer, Crosshair, Droplets, Shield, FileSearch, Package } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 
 const ThreeDPrintingLanding: React.FC = () => {
+    useSEO({
+        title: "Industrial Metal 3D Printing Services - SLM/DMLS | QUMETAL",
+        description: "Direct metal laser melting (SLM/DMLS) for titanium, aluminum, stainless steel, and tool steel parts. Complex geometries, conformal cooling molds, no tooling required."
+    });
+
     // Animation observer
     useEffect(() => {
         const observerCallback: IntersectionObserverCallback = (entries) => {
@@ -303,7 +309,7 @@ const ThreeDPrintingLanding: React.FC = () => {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-6 justify-center">
                             <Link to="/quote" className="btn-premium px-12 py-5 rounded-md text-xl font-bold">Upload 3D File</Link>
-                            <Link to="/contact" className="px-12 py-5 rounded-md text-xl font-display font-bold uppercase border border-white/20 hover:bg-white/5 transition-colors">Consult an Engineer</Link>
+                            <Link to="/contact" className="px-12 py-5 rounded-md text-xl font-display font-bold uppercase border border-white/20 hover:bg-white/5 transition-colors">Contact Us</Link>
                         </div>
                     </div>
                 </section>

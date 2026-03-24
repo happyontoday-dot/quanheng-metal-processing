@@ -85,16 +85,12 @@ export const Navbar: React.FC = () => {
 
             {/* Services Dropdown */}
             <div className="relative group px-3 py-2">
-              <NavLink
-                to="/services"
-                className={({ isActive }) =>
-                  `relative inline-flex items-center text-sm font-semibold tracking-wide uppercase transition-colors duration-300 font-display ${isActive ? 'text-accent' : 'text-slate-300 hover:text-white'
-                  }`
-                }
+              <span
+                className={`relative inline-flex items-center text-sm font-semibold tracking-wide uppercase transition-colors duration-300 font-display cursor-default text-slate-300 hover:text-white`}
               >
                 SERVICES <ChevronDown className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" />
                 <span className="absolute left-0 -bottom-1 h-[2px] bg-accent w-0 group-hover:w-full transition-all duration-300 ease-out"></span>
-              </NavLink>
+              </span>
 
               {/* Mega Menu Dropdown */}
               <div className="absolute top-[100%] left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
@@ -132,12 +128,6 @@ export const Navbar: React.FC = () => {
                         <li><Link to="/services/surface-finishing" className="text-slate-400 hover:text-white transition-colors text-sm hover:translate-x-1 inline-block transform duration-200">Surface Finishing</Link></li>
                       </ul>
                     </div>
-
-                    <div className="mt-8">
-                      <Link to="/services" className="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-bold text-slate-900 bg-white rounded-lg hover:bg-slate-200 transition-colors shadow-sm cursor-pointer group/all">
-                        View All Services <ArrowRight className="w-4 h-4 ml-2 transform group-hover/all:translate-x-1 transition-transform" />
-                      </Link>
-                    </div>
                   </div>
 
                 </div>
@@ -159,8 +149,17 @@ export const Navbar: React.FC = () => {
                   <ul className="space-y-2">
                     <li>
                       <Link to="/products/metal-enclosures" className="block p-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all font-medium border border-transparent hover:border-slate-700/50">
-                        <span className="block text-accent font-display tracking-widest text-xs mb-1">EQUIPMENT PROTECTION</span>
-                        Metal Enclosures & Cabinets
+                        Metal Enclosures &amp; Cabinets
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/products/bbq-grills" className="block p-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all font-medium border border-transparent hover:border-slate-700/50">
+                        BBQ Grills &amp; Accessories
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/products/laser-cut-wall-art" className="block p-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all font-medium border border-transparent hover:border-slate-700/50">
+                        Custom Laser Cut Metal Wall Art
                       </Link>
                     </li>
                   </ul>
@@ -169,7 +168,7 @@ export const Navbar: React.FC = () => {
             </div>
 
             <NavItem to="/blog">BLOG</NavItem>
-            <NavItem to="/contact">CONTACT</NavItem>
+            <NavItem to="/contact">CONTACT US</NavItem>
 
             <NavLink
               to="/quote"
@@ -210,9 +209,6 @@ export const Navbar: React.FC = () => {
 
               {/* Mobile sub-menu wrapper */}
               <div className={`mt-4 pl-4 border-l border-slate-700/50 space-y-6 overflow-hidden transition-all duration-300 ${mobileServicesOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
-
-                {/* All Services */}
-                <Link to="/services" onClick={() => setIsOpen(false)} className="block text-white font-medium hover:text-accent transition-colors">All Services</Link>
 
                 {/* Sheet Metal */}
                 <div>
@@ -269,14 +265,16 @@ export const Navbar: React.FC = () => {
               <div id="mobile-products-menu" className={`mt-2 pl-4 border-l border-slate-700/50 space-y-4 overflow-hidden transition-all duration-300`} style={{ maxHeight: 0, opacity: 0 }}>
                 <div>
                   <ul className="pl-2 space-y-3 pt-2">
-                    <li><Link to="/products/metal-enclosures" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm hover:text-white transition-colors">Metal Enclosures & Cabinets</Link></li>
+                    <li><Link to="/products/metal-enclosures" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm hover:text-white transition-colors">Metal Enclosures &amp; Cabinets</Link></li>
+                    <li><Link to="/products/bbq-grills" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm hover:text-white transition-colors">BBQ Grills &amp; Accessories</Link></li>
+                    <li><Link to="/products/laser-cut-wall-art" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm hover:text-white transition-colors">Custom Metal Wall Art</Link></li>
                   </ul>
                 </div>
               </div>
             </div>
 
             <NavItem to="/blog" onClick={() => setIsOpen(false)}>BLOG</NavItem>
-            <NavItem to="/contact" onClick={() => setIsOpen(false)}>CONTACT</NavItem>
+            <NavItem to="/contact" onClick={() => setIsOpen(false)}>CONTACT US</NavItem>
 
             <div className="pt-6 px-4">
               <NavLink

@@ -493,7 +493,7 @@ const SheetMetalLanding: React.FC = () => {
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Link to="/quote" className="btn-cta px-10 py-5 rounded-md text-xl">Upload Your Drawings</Link>
-                                <Link to="/contact" className="px-10 py-5 rounded-md text-xl font-display font-bold uppercase border border-white/20 hover:bg-white/5 transition-colors">Contact Sales</Link>
+                                <Link to="/contact" className="px-10 py-5 rounded-md text-xl font-display font-bold uppercase border border-white/20 hover:bg-white/5 transition-colors">Contact Us</Link>
                             </div>
                             <p className="mt-8 text-xs text-slate-500 italic flex items-center justify-center gap-2">
                                 <ShieldCheck className="w-4 h-4 text-orange-500/50" />

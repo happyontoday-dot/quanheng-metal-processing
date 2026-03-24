@@ -5,7 +5,6 @@ import { Footer } from './components/Footer';
 import { WhatsAppFloat } from './components/WhatsAppFloat';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
-import { Products } from './pages/Products';
 import { ServiceDetail } from './pages/ServiceDetail';
 import { Contact } from './pages/Contact';
 import { Privacy } from './pages/Privacy';
@@ -18,6 +17,8 @@ import CNCTurning from './pages/CNCTurning';
 import CNCMilling from './pages/CNCMilling';
 import ThreeDPrintingLanding from './pages/ThreeDPrintingLanding';
 import MetalEnclosuresLanding from './pages/MetalEnclosuresLanding';
+import BBQGrillLanding from './pages/BBQGrillLanding';
+import LaserCutWallArtLanding from './pages/LaserCutWallArtLanding';
 
 // Scroll to top helper
 const ScrollToTop = () => {
@@ -38,7 +39,6 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Products />} />
             <Route path="/services/cnc-turning" element={<CNCTurning />} />
             <Route path="/services/cnc-milling" element={<CNCMilling />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
@@ -46,6 +46,8 @@ const App: React.FC = () => {
             <Route path="/cnc-machining" element={<CNCLanding />} />
             <Route path="/3d-printing-service" element={<ThreeDPrintingLanding />} />
             <Route path="/products/metal-enclosures" element={<MetalEnclosuresLanding />} />
+            <Route path="/products/bbq-grills" element={<BBQGrillLanding />} />
+            <Route path="/products/laser-cut-wall-art" element={<LaserCutWallArtLanding />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />

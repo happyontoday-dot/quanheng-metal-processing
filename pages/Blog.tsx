@@ -2,8 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, User, Tag, ArrowRight, Clock } from 'lucide-react';
 import { blogPosts } from '../data/blogPosts';
+import { useSEO } from '../hooks/useSEO';
 
 export const Blog: React.FC = () => {
+    useSEO({
+        title: "Metal Fabrication Industry News & Insights | QUMETAL Blog",
+        description: "Expert articles on sheet metal fabrication, CNC machining, 3D printing, and precision manufacturing. Industry trends, technical guides, and market insights from QUMETAL."
+    });
+
     return (
         <div className="w-full fade-in bg-slate-50 min-h-screen">
             {/* Hero */}

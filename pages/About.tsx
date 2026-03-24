@@ -1,8 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Award, Users, Package, ChevronRight } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 
 export const About: React.FC = () => {
+  useSEO({
+    title: "About QUMETAL - ISO 9001 Certified Metal Fabrication Factory Since 1993",
+    description: "Founded in 1993, QUMETAL is an ISO 9001:2015 certified precision metal fabrication factory in Cangzhou, China. 30+ years of experience, 200+ global clients, 50+ material types."
+  });
+
   return (
     <div className="w-full fade-in bg-white">
       {/* Hero */}
@@ -137,7 +143,7 @@ export const About: React.FC = () => {
                 <div className="absolute top-4 right-5 text-4xl font-black text-slate-100 group-hover:text-accent/10 transition-colors select-none">{service.num}</div>
                 <h3 className="text-xl font-bold text-primary mb-3 tracking-tight relative z-10">{service.title}</h3>
                 <p className="text-slate-600 leading-relaxed text-sm relative z-10 mb-4">{service.desc}</p>
-                <Link to="/services" className="inline-flex items-center text-accent text-sm font-semibold gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <Link to="/sheet-metal-fabrication" className="inline-flex items-center text-accent text-sm font-semibold gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                   Learn More <ChevronRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>

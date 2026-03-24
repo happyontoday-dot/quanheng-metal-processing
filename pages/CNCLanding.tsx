@@ -1,8 +1,14 @@
 import React, { useEffect } from 'react';
 import { ChevronRight, Settings, ShieldCheck, Clock, CheckCircle2, ChevronDown, Package, PenTool, Cpu, Layers, RotateCcw, Activity } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 
 const CNCLanding: React.FC = () => {
+    useSEO({
+        title: "CNC Machining Services: Milling, Turning & 5-Axis | QUMETAL",
+        description: "Expert CNC machining services including 3/4/5-axis milling, precision turning, and gear cutting. ISO 9001 certified factory with 600+ machines and 1-day lead time."
+    });
+
     // Animation observer
     useEffect(() => {
         const observerCallback: IntersectionObserverCallback = (entries) => {
@@ -194,69 +200,69 @@ const CNCLanding: React.FC = () => {
                         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
                             {/* CNC Milling */}
                             <div className="steel-card group reveal" style={{ transitionDelay: '100ms' }}>
-                                <div className="h-64 overflow-hidden relative">
+                                <div className="h-80 overflow-hidden relative">
                                     <img src="/Core%20Competencies/imgi_8_CNC-Machining.jpg" alt="CNC Milling" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/20 to-transparent"></div>
                                     <h3 className="absolute bottom-4 left-6 text-3xl font-display font-bold uppercase tracking-wide">CNC Milling</h3>
                                 </div>
                                 <div className="p-6">
-                                    <p className="text-slate-400 mb-6 min-h-[72px]">High-precision, tight-tolerance parts and complex geometries in metal or plastic using 3-axis to 5-axis CNC mills. Precision components or molds for diverse industries.</p>
-                                    <div className="flex flex-wrap gap-2 mb-6">
+                                    <p className="text-slate-400 mb-3 min-h-[50px] leading-snug text-sm">High-precision, tight-tolerance parts and complex geometries in metal or plastic using 3-axis to 5-axis CNC mills. Precision components or molds for diverse industries.</p>
+                                    <div className="flex flex-wrap gap-2 mb-4">
                                         <span className="text-xs font-semibold px-2 py-1 rounded bg-[#1e293b] text-sky-400 border border-sky-400/20">3 to 5-Axis</span>
                                         <span className="text-xs font-semibold px-2 py-1 rounded bg-[#1e293b] text-sky-400 border border-sky-400/20">Metal & Plastic</span>
                                     </div>
-                                    <Link to="/services/cnc-milling" className="text-orange-500 font-bold uppercase text-sm flex items-center gap-1 hover:text-orange-400 transition-colors">Learn More <ChevronRight className="w-4 h-4" /></Link>
+                                    <Link to="/services/cnc-milling" className="text-orange-500 font-bold uppercase text-xs flex items-center gap-1 hover:text-orange-400 transition-colors">Learn More <ChevronRight className="w-4 h-4" /></Link>
                                 </div>
                             </div>
 
                             {/* CNC Turning */}
                             <div className="steel-card group reveal" style={{ transitionDelay: '200ms' }}>
-                                <div className="h-64 overflow-hidden relative">
-                                    <img src="/cases/Die_20casting_20parts.jpg" alt="CNC Turning" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                                <div className="h-80 overflow-hidden relative">
+                                    <img src="/CNC/cnc-turning-new.jpg" alt="CNC Turning" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/20 to-transparent"></div>
                                     <h3 className="absolute bottom-4 left-6 text-3xl font-display font-bold uppercase tracking-wide">CNC Turning</h3>
                                 </div>
                                 <div className="p-6">
-                                    <p className="text-slate-400 mb-6 min-h-[72px]">Receive precision turned parts from prototype to production. We machine cylindrical, square, and hexagonal materials using CNC lathes and mill-turn systems.</p>
-                                    <div className="flex flex-wrap gap-2 mb-6">
+                                    <p className="text-slate-400 mb-3 min-h-[50px] leading-snug text-sm">Receive precision turned parts from prototype to production. We machine cylindrical, square, and hexagonal materials using CNC lathes and mill-turn systems.</p>
+                                    <div className="flex flex-wrap gap-2 mb-4">
                                         <span className="text-xs font-semibold px-2 py-1 rounded bg-[#1e293b] text-sky-400 border border-sky-400/20">Mill-Turn Systems</span>
                                         <span className="text-xs font-semibold px-2 py-1 rounded bg-[#1e293b] text-sky-400 border border-sky-400/20">Shortened Lead Time</span>
                                     </div>
-                                    <Link to="/services/cnc-turning" className="text-orange-500 font-bold uppercase text-sm flex items-center gap-1 hover:text-orange-400 transition-colors">Learn More <ChevronRight className="w-4 h-4" /></Link>
+                                    <Link to="/services/cnc-turning" className="text-orange-500 font-bold uppercase text-xs flex items-center gap-1 hover:text-orange-400 transition-colors">Learn More <ChevronRight className="w-4 h-4" /></Link>
                                 </div>
                             </div>
 
                             {/* 5-Axis Machining */}
                             <div className="steel-card group reveal" style={{ transitionDelay: '300ms' }}>
-                                <div className="h-64 overflow-hidden relative">
-                                    <img src="/cases/mini_pc_chassis.png" alt="5-Axis Machining" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                                <div className="h-80 overflow-hidden relative">
+                                    <img src="/CNC/5-axis-machining-new.jpg" alt="5-Axis Machining" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/20 to-transparent"></div>
                                     <h3 className="absolute bottom-4 left-6 text-3xl font-display font-bold uppercase tracking-wide">5-Axis CNC Machining</h3>
                                 </div>
                                 <div className="p-6">
-                                    <p className="text-slate-400 mb-6 min-h-[72px]">Machine complex parts in one setup. Delivering tight tolerances, shorter lead times, and streamlined production for prototypes and full production runs.</p>
-                                    <div className="flex flex-wrap gap-2 mb-6">
+                                    <p className="text-slate-400 mb-3 min-h-[50px] leading-snug text-sm">Machine complex parts in one setup. Delivering tight tolerances, shorter lead times, and streamlined production for prototypes and full production runs.</p>
+                                    <div className="flex flex-wrap gap-2 mb-4">
                                         <span className="text-xs font-semibold px-2 py-1 rounded bg-[#1e293b] text-sky-400 border border-sky-400/20">Complex Geometries</span>
                                         <span className="text-xs font-semibold px-2 py-1 rounded bg-[#1e293b] text-sky-400 border border-sky-400/20">Metal or Plastic</span>
                                     </div>
-                                    <Link to="/quote" className="text-orange-500 font-bold uppercase text-sm flex items-center gap-1 hover:text-orange-400 transition-colors">Get Quote <ChevronRight className="w-4 h-4" /></Link>
+                                    <Link to="/quote" className="text-orange-500 font-bold uppercase text-xs flex items-center gap-1 hover:text-orange-400 transition-colors">Get Quote <ChevronRight className="w-4 h-4" /></Link>
                                 </div>
                             </div>
 
                             {/* Precision Gear Machining */}
                             <div className="steel-card group reveal" style={{ transitionDelay: '400ms' }}>
-                                <div className="h-64 overflow-hidden relative">
-                                    <img src="/cases/Assembled_20products.jpg" alt="Gear Machining" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                                <div className="h-80 overflow-hidden relative">
+                                    <img src="/CNC/Gear.webp" alt="Gear Machining" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/20 to-transparent"></div>
                                     <h3 className="absolute bottom-4 left-6 text-3xl font-display font-bold uppercase tracking-wide">Precision Gears</h3>
                                 </div>
                                 <div className="p-6">
-                                    <p className="text-slate-400 mb-6 min-h-[72px]">Dedicated gear cutting centers for spur, helical, bevel, and worm gears. Serving industries from automotive to robotics with custom gear solutions.</p>
-                                    <div className="flex flex-wrap gap-2 mb-6">
+                                    <p className="text-slate-400 mb-3 min-h-[50px] leading-snug text-sm">Dedicated gear cutting centers for spur, helical, bevel, and worm gears. Serving industries from automotive to robotics with custom gear solutions.</p>
+                                    <div className="flex flex-wrap gap-2 mb-4">
                                         <span className="text-xs font-semibold px-2 py-1 rounded bg-[#1e293b] text-sky-400 border border-sky-400/20">CNC Hobbing</span>
                                         <span className="text-xs font-semibold px-2 py-1 rounded bg-[#1e293b] text-sky-400 border border-sky-400/20">Grinding</span>
                                     </div>
-                                    <Link to="/quote" className="text-orange-500 font-bold uppercase text-sm flex items-center gap-1 hover:text-orange-400 transition-colors">Get Quote <ChevronRight className="w-4 h-4" /></Link>
+                                    <Link to="/quote" className="text-orange-500 font-bold uppercase text-xs flex items-center gap-1 hover:text-orange-400 transition-colors">Get Quote <ChevronRight className="w-4 h-4" /></Link>
                                 </div>
                             </div>
                         </div>
@@ -515,7 +521,7 @@ const CNCLanding: React.FC = () => {
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Link to="/quote" className="btn-cta px-10 py-5 rounded-md text-xl">Get Instant Quote</Link>
-                                <Link to="/contact" className="px-10 py-5 rounded-md text-xl font-display font-bold uppercase border border-white/20 hover:bg-white/5 transition-colors">Contact Sales</Link>
+                                <Link to="/contact" className="px-10 py-5 rounded-md text-xl font-display font-bold uppercase border border-white/20 hover:bg-white/5 transition-colors">Contact Us</Link>
                             </div>
                         </div>
                     </div>

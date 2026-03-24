@@ -3,10 +3,16 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { Calendar, User, Tag, ArrowLeft, Clock, ArrowRight } from 'lucide-react';
 import { blogPosts } from '../data/blogPosts';
 import ReactMarkdown from 'react-markdown';
+import { useSEO } from '../hooks/useSEO';
 
 export const BlogPost: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const post = blogPosts.find((p) => p.id === id);
+
+    useSEO({
+        title: post ? `${post.title} | QUMETAL Blog` : "Blog Post | QUMETAL Blog",
+        description: post ? post.excerpt : "Read the latest articles on metal fabrication, CNC machining, and precision manufacturing from QUMETAL."
+    });
 
     if (!post) {
         return <Navigate to="/blog" replace />;

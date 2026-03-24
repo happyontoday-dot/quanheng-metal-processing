@@ -1,8 +1,14 @@
 import React, { useEffect } from 'react';
 import { ChevronRight, ShieldCheck, Box, Hammer, Shield, Battery, Bolt, Cog, Settings, Factory, CheckCircle, LayoutGrid } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 
 const MetalEnclosuresLanding: React.FC = () => {
+    useSEO({
+        title: "Custom Metal Enclosures & Housings - IP65/IP68 Rated | QUMETAL",
+        description: "OEM custom metal enclosures from aluminum, stainless steel, and sheet metal. IP65-IP68 rated. NEMA compliant. Save 30-60% vs. local fabrication with global delivery."
+    });
+
     // Animation observer
     useEffect(() => {
         const observerCallback: IntersectionObserverCallback = (entries) => {
@@ -301,7 +307,7 @@ const MetalEnclosuresLanding: React.FC = () => {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-6 justify-center">
                             <Link to="/quote" className="btn-premium px-12 py-5 rounded-md text-xl font-bold shrink-0">Get Your Direct Quote</Link>
-                            <Link to="/contact" className="px-12 py-5 rounded-md text-xl font-display font-bold uppercase border border-white/20 hover:bg-white/5 transition-colors shrink-0 backdrop-blur-sm">Talk to an Engineer</Link>
+                            <Link to="/contact" className="px-12 py-5 rounded-md text-xl font-display font-bold uppercase border border-white/20 hover:bg-white/5 transition-colors shrink-0 backdrop-blur-sm">Contact Us</Link>
                         </div>
                     </div>
                 </section>

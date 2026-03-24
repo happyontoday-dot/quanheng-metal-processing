@@ -29,12 +29,22 @@ export const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] w-full flex items-center justify-center bg-[#050B14] overflow-hidden pt-20">
 
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/home-hero.png"
+            alt="Precision Metal Fabrication Facility"
+            className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050B14]/80 via-[#050B14]/60 to-[#050B14]"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050B14] via-transparent to-[#050B14]/30"></div>
+        </div>
+
         {/* Dynamic Abstract Background Elements */}
-        {/* Deep radial glow behind the text */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/20 rounded-full blur-[120px] opacity-60 pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/15 rounded-full blur-[120px] opacity-50 pointer-events-none z-10"></div>
 
         {/* Subtle grid pattern overlay */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik00MCAwaC0xdjQwaDFWMHoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPgo8cGF0aCBkPSJNMCAzOWh0NDB2MWgtNDB2LTF6IiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4KPC9zdmc+')] opacity-20 z-0"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik00MCAwaC0xdjQwaDFWMHoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPgo8cGF0aCBkPSJNMCAzOWh0NDB2MWgtNDB2LTF6IiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4KPC9zdmc+')] opacity-10 z-10"></div>
 
         {/* Diagonal Light Slashes / Reflections */}
         <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[150%] bg-gradient-to-b from-white/5 to-transparent rotate-[30deg] blur-3xl pointer-events-none transform -translate-y-1/2"></div>
@@ -78,7 +88,7 @@ export const Home: React.FC = () => {
             </Link>
 
             <Link
-              to="/services"
+              to="/sheet-metal-fabrication"
               className="inline-flex items-center justify-center px-10 py-4 text-lg font-semibold text-white transition-all duration-300 border border-slate-700 bg-slate-800/50 backdrop-blur-sm rounded-full hover:bg-slate-700 hover:text-white w-full sm:w-auto group"
             >
               Explore Capabilities
@@ -138,8 +148,8 @@ export const Home: React.FC = () => {
               <span className="text-accent font-semibold tracking-wider uppercase text-sm">Our Expertise</span>
               <h2 className="text-3xl font-bold text-primary mt-2">Core Competencies</h2>
             </div>
-            <Link to="/services" className="hidden md:flex items-center text-accent hover:text-orange-600 font-medium">
-              View All Services <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
+            <Link to="/sheet-metal-fabrication" className="hidden md:flex items-center text-accent hover:text-orange-600 font-medium">
+              View Sheet Metal Capabilities <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
             </Link>
           </div>
 
@@ -161,7 +171,7 @@ export const Home: React.FC = () => {
                 title: "3D Printing",
                 desc: "Rapid prototyping and additive manufacturing for complex geometries.",
                 img: "/Core%20Competencies/3d%20printing.jpeg",
-                link: "/services"
+                link: "/3d-printing-service"
               },
               {
                 title: "Surface Finishing",
@@ -248,8 +258,8 @@ export const Home: React.FC = () => {
           </div>
 
           <div className="mt-8 text-center md:hidden">
-            <Link to="/services" className="inline-flex items-center text-accent hover:text-orange-600 font-medium">
-              View All Services <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
+            <Link to="/sheet-metal-fabrication" className="inline-flex items-center text-accent hover:text-orange-600 font-medium">
+              View Sheet Metal Capabilities <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
             </Link>
           </div>
         </div>

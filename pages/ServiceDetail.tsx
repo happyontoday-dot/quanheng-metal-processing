@@ -2,14 +2,35 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { services } from '../data/services';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 
 export const ServiceDetail: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
     const service = services.find((s) => s.id === slug);
 
+    useSEO({
+        title: service ? `${service.title} Services - Precision Metal Fabrication | QUMETAL` : "Metal Fabrication Services | QUMETAL",
+        description: service ? service.description : "Professional precision metal fabrication services. ISO 9001 certified factory, fast lead times, global delivery."
+    });
+
     if (!service) {
-        return <Navigate to="/services" replace />;
+        return <Navigate to="/" replace />;
     }
+
+    const getParentCategory = (currentSlug: string) => {
+        const sheetMetalSlugs = ['custom-stamping', 'metal-punching', 'metal-cutting', 'metal-bending', 'metal-welding'];
+        const cncSlugs = ['cnc-turning', 'cnc-milling'];
+
+        if (sheetMetalSlugs.includes(currentSlug)) {
+            return { link: '/sheet-metal-fabrication', text: 'Back to Sheet Metal Fabrication' };
+        } else if (cncSlugs.includes(currentSlug)) {
+            return { link: '/cnc-machining', text: 'Back to CNC Machining' };
+        } else {
+            return { link: '/', text: 'Back to Home' };
+        }
+    };
+
+    const parentCategory = getParentCategory(slug || '');
 
     return (
         <div className="w-full fade-in bg-slate-50 min-h-screen">
@@ -23,8 +44,8 @@ export const ServiceDetail: React.FC = () => {
 
                 <div className="container mx-auto px-4 relative z-20">
                     <div className="max-w-4xl">
-                        <Link to="/services" className="inline-flex items-center gap-2 text-orange-500 font-bold uppercase tracking-widest text-xs mb-6 hover:text-orange-400 transition-colors group">
-                            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Services
+                        <Link to={parentCategory.link} className="inline-flex items-center gap-2 text-orange-500 font-bold uppercase tracking-widest text-xs mb-6 hover:text-orange-400 transition-colors group">
+                            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> {parentCategory.text}
                         </Link>
                         <h1 className="text-4xl md:text-7xl font-display font-black uppercase text-white leading-none tracking-tighter mb-6">
                             {service.title}
@@ -59,6 +80,7 @@ export const ServiceDetail: React.FC = () => {
                                         ))}
                                     </div>
                                 )}
+
                             </div>
                             <div className="relative">
                                 <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-100">
@@ -71,46 +93,13 @@ export const ServiceDetail: React.FC = () => {
                                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-orange-500/10 rounded-full blur-3xl -z-10"></div>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
             </section>
 
-            {/* Key Specifications Section */}
-            {
-                service.specifications && (
-                    <section className="py-24 bg-[#0a0f1a] text-white overflow-hidden relative">
-                        <div className="absolute top-0 right-0 w-1/3 h-full bg-orange-500/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                        <div className="container mx-auto px-4 relative z-10">
-                            <div className="max-w-7xl mx-auto">
-                                <div className="text-center mb-16">
-                                    <div className="inline-flex items-center gap-2 text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">
-                                        <span className="w-8 h-px bg-orange-500"></span> Technical Authority
-                                    </div>
-                                    <h2 className="text-3xl md:text-5xl font-display font-bold uppercase text-white mb-6 tracking-tight italic">Key Capabilities & Specifications</h2>
-                                    <div className="h-1 w-24 bg-orange-500 mx-auto rounded-full"></div>
-                                </div>
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-                                    {service.specifications.map((spec, idx) => {
-                                        const parts = spec.split(':');
-                                        const label = parts[0];
-                                        const value = parts.slice(1).join(':').trim();
-                                        return (
-                                            <div key={idx} className="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-orange-500/50 transition-all duration-300 backdrop-blur-sm flex flex-col items-center text-center">
-                                                <div className="text-orange-500 font-display font-black text-2xl mb-3 group-hover:scale-110 transition-transform duration-500 tracking-tighter">
-                                                    {value || label}
-                                                </div>
-                                                <div className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.25em] leading-tight">
-                                                    {value ? label : "Feature"}
-                                                </div>
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                )
-            }
+
 
             {/* Dynamic Sections (Tools, Techniques, etc.) */}
             {

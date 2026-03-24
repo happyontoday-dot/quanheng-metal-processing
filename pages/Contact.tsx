@@ -1,8 +1,14 @@
 import React, { useState, useRef } from 'react';
 import { Mail, Phone, MapPin, Clock, Upload, X, CheckCircle, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 
 export const Contact: React.FC = () => {
+  useSEO({
+    title: "Contact QUMETAL - Get a Custom Metal Fabrication Quote",
+    description: "Reach out to QUMETAL for custom metal fabrication quotes. Submit your drawings for a detailed quotation within 24 hours. Email, WhatsApp, and online inquiry available."
+  });
+
   const [uploading, setUploading] = useState(false);
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [dragActive, setDragActive] = useState(false);
