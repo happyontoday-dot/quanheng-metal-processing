@@ -79,7 +79,6 @@ export const services: Service[] = [
         title: "Custom Sheet Metal Stamping Services",
         description: "Our advanced stamping technology and experienced team ensure precision and reliability in every project, whether it's for small or large production runs. Our services are adaptable to various materials, including aluminum, stainless steel, copper, brass, nickel and more. From custom die design to specific material requirements, we can accommodate various customization requests to align with your project’s unique needs.",
         features: [
-            "Maximum 400 Tons Press Rating",
             "0.004\" ~ 0.47\" (0.1mm ~ 12mm) Metal Thickness",
             "±0.01\" (0.25mm) Tight Tolerance",
             "Custom Dies & Punches for Your Designs",

@@ -49,6 +49,12 @@ const BBQGrillLanding: React.FC = () => {
             image: "/bbq/smoker-grill.png",
             tags: ["Carbon Steel", "Large Capacity", "Precise Airflow"],
         },
+        {
+            title: "Foldable BBQ Grill with Grate",
+            description: "Flat-pack stainless steel foldable BBQ grill with removable cooking grate. Assembles in seconds, folds completely flat for storage and transport. Precision laser-cut interlocking panels — no tools required.",
+            image: "/bbq/foldable-grill.png",
+            tags: ["304 Stainless Steel", "Flat-Pack", "Tool-Free Assembly"],
+        },
     ];
 
     const accessories = [
@@ -312,6 +318,69 @@ const BBQGrillLanding: React.FC = () => {
 
                 <div className="bbq-divider" />
 
+                {/* ── FOLDABLE BBQ GRILL SHOWCASE ────────────────────────────── */}
+                <section className="py-24 bg-[#080c14]">
+                    <div className="container mx-auto px-4">
+                        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                            {/* Images */}
+                            <div className="bbq-reveal-left">
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="relative rounded-xl overflow-hidden border border-white/10 aspect-square">
+                                        <img
+                                            src="/bbq/foldable-grill.png"
+                                            alt="Stainless Steel Foldable BBQ Grill - Assembled"
+                                            className="w-full h-full object-cover"
+                                            onError={(e) => { e.currentTarget.style.opacity = '0.3'; }}
+                                        />
+                                        <div className="absolute bottom-2 left-2 px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-orange-500/90 text-white rounded">Assembled</div>
+                                    </div>
+                                    <div className="relative rounded-xl overflow-hidden border border-white/10 aspect-square">
+                                        <img
+                                            src="/bbq/foldable-grill-folded.png"
+                                            alt="Stainless Steel Foldable BBQ Grill - Folded Flat"
+                                            className="w-full h-full object-cover"
+                                            onError={(e) => { e.currentTarget.style.opacity = '0.3'; }}
+                                        />
+                                        <div className="absolute bottom-2 left-2 px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-700/90 text-white rounded">Folded Flat</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Content */}
+                            <div className="bbq-reveal-right">
+                                <div className="inline-flex items-center gap-2 text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">
+                                    <span className="w-8 h-px bg-orange-500" /> Featured Product <span className="w-8 h-px bg-orange-500" />
+                                </div>
+                                <h2 className="text-3xl md:text-4xl font-display font-bold uppercase text-white mb-2">Stainless Steel Foldable BBQ Grill with Grate</h2>
+                                <p className="text-slate-400 mb-8 leading-relaxed">Precision laser-cut 304 stainless steel panels interlock without tools to form a rigid, full-size BBQ grill in under 30 seconds. Folds completely flat for storage or transport — ideal for camping, tailgating, catering events, and retail distribution.</p>
+
+                                <div className="space-y-4 mb-8">
+                                    {[
+                                        { label: "Flat-Pack Design", detail: "All panels nest flat into a compact carry pouch. Total packed thickness under 25 mm." },
+                                        { label: "Tool-Free Assembly", detail: "Interlocking tab-and-slot construction — no bolts, screws, or tools needed." },
+                                        { label: "Food-Grade 304 SS", detail: "Full food-contact-safe stainless steel body and grate. Rust-proof and easy to clean." },
+                                        { label: "Removable Grate", detail: "Lift-out stainless grate with optimised bar spacing for direct grilling. Dishwasher-safe." },
+                                    ].map((feat, i) => (
+                                        <div key={i} className="flex gap-3 items-start">
+                                            <CheckCircle className="w-5 h-5 text-orange-500 shrink-0 mt-0.5" />
+                                            <div>
+                                                <span className="font-display font-bold text-white uppercase text-sm">{feat.label}</span>
+                                                <p className="text-slate-400 text-sm mt-0.5">{feat.detail}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <Link to="/quote" className="bbq-btn-primary px-8 py-4 rounded-md inline-flex items-center gap-2 text-lg">
+                                    Get Custom Quote <ChevronRight className="w-5 h-5" />
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div className="bbq-divider" />
+
                 {/* ── ACCESSORIES ──────────────────────────────────────────── */}
                 <section className="py-24 bg-[#080c14]">
                     <div className="container mx-auto px-4">
@@ -348,6 +417,92 @@ const BBQGrillLanding: React.FC = () => {
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+                </section>
+
+                <div className="bbq-divider" />
+
+                {/* ── CUSTOM METAL FIREPITS ──────────────────────────────────── */}
+                <section className="py-24">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center mb-16 bbq-reveal">
+                            <div className="inline-flex items-center gap-2 text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">
+                                <span className="w-8 h-px bg-orange-500" /> Laser-Cut Designs <span className="w-8 h-px bg-orange-500" />
+                            </div>
+                            <h2 className="text-4xl md:text-5xl font-display font-bold uppercase text-white">Custom Metal Firepit</h2>
+                            <p className="text-slate-400 mt-4 max-w-2xl mx-auto">Sheet metal fabricated fire pits with intricate laser-cut openwork patterns. Each design projects dramatic firelight through precision-cut silhouettes — turning any patio into a gathering destination.</p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                            {[
+                                {
+                                    title: "Geometric Lattice Firepit",
+                                    subtitle: "Hexagon & Diamond Cutout",
+                                    description: "A clean, square-profile sheet metal fire pit with laser-cut geometric lattice openings on all four sides. The repeating hexagon and diamond grid creates mesmerising fire-glow patterns at night while ensuring optimal airflow for clean combustion. Made from 3 mm mild steel or corten.",
+                                    image: "/firepits/geometric.png",
+                                    tags: ["Geometric", "Sheet Metal", "Square Profile"],
+                                },
+                                {
+                                    title: "Forest Scene Firepit",
+                                    subtitle: "Tree & Wildlife Silhouette",
+                                    description: "A rectangular box-form fire pit featuring laser-cut forest scenery — towering trees, deer, and birds — wrapping around all four panels. When lit, the corten steel body projects a 360° woodland shadow-play on surrounding surfaces. A statement piece for lodge-style patios.",
+                                    image: "/firepits/forest.png",
+                                    tags: ["Scenic", "Corten Steel", "Shadow Play"],
+                                },
+                                {
+                                    title: "Floral Vine Firepit",
+                                    subtitle: "Botanical Cutout Design",
+                                    description: "Delicate floral vine and leaf motifs laser-cut into a rigid square steel fire pit body. The organic pattern softens the industrial form, making it ideal for garden courtyards, boutique hotels, and residential terraces. Available in powder-coated matte black or raw corten patina.",
+                                    image: "/firepits/floral.png",
+                                    tags: ["Floral", "Garden", "Elegant"],
+                                },
+                                {
+                                    title: "Celestial Stars Firepit",
+                                    subtitle: "Star & Moon Cutout",
+                                    description: "Stars, moons, and celestial bursts cut with precision across the rectangular steel panels. When fire glows through the cutouts at night, the surrounding deck is bathed in starlight projections. A magical centrepiece for evening entertaining.",
+                                    image: "/firepits/star.png",
+                                    tags: ["Celestial", "Night Feature", "Statement"],
+                                },
+                            ].map((pit, idx) => (
+                                <div
+                                    key={idx}
+                                    className="bbq-glass-card bbq-reveal group overflow-hidden"
+                                    style={{ transitionDelay: `${idx * 100}ms` }}
+                                >
+                                    <div className="relative aspect-square overflow-hidden bg-slate-800">
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent z-10 opacity-70" />
+                                        <img
+                                            src={pit.image}
+                                            alt={pit.title}
+                                            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                                            onError={(e) => { e.currentTarget.style.opacity = '0.3'; }}
+                                        />
+                                        <div className="absolute top-4 left-4 z-20 flex flex-wrap gap-2">
+                                            {pit.tags.map((tag, ti) => (
+                                                <span key={ti} className="px-2 py-1 text-xs font-bold uppercase tracking-wide bg-orange-500/20 border border-orange-500/30 text-orange-400 rounded">{tag}</span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div className="p-7 relative z-20">
+                                        <p className="text-orange-400 text-xs font-bold uppercase tracking-widest mb-1">{pit.subtitle}</p>
+                                        <h3 className="text-2xl font-display font-bold uppercase text-white mb-3 group-hover:text-orange-400 transition-colors">{pit.title}</h3>
+                                        <p className="text-slate-400 leading-relaxed text-sm mb-5">{pit.description}</p>
+                                        <Link to="/quote" className="inline-flex items-center gap-1 text-orange-500 font-bold text-sm uppercase tracking-wider hover:text-orange-400 transition-colors group/link">
+                                            Get Custom Quote <ChevronRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                                        </Link>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="mt-12 text-center bbq-reveal">
+                            <div className="inline-flex flex-wrap justify-center items-center gap-4 md:gap-8 px-8 py-4 rounded-xl border border-white/8 bg-slate-900/40 text-sm text-slate-400">
+                                <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-orange-500" />Custom Pattern Upload</span>
+                                <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-orange-500" />3 mm Steel / Corten</span>
+                                <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-orange-500" />Powder Coat Any RAL</span>
+                                <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-orange-500" />Low MOQ from 5 pcs</span>
+                            </div>
                         </div>
                     </div>
                 </section>

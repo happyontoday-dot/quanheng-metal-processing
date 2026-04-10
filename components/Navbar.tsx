@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, ChevronRight, ArrowRight } from 'lucide-react';
 
 interface NavItemProps {
@@ -34,7 +34,14 @@ const NavItem: React.FC<NavItemProps> = ({ to, children, onClick }) => (
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  const servicePaths = ['/services/', '/sheet-metal-fabrication', '/cnc-machining', '/3d-printing-service'];
+  const isServicesActive = servicePaths.some(p => location.pathname.startsWith(p));
+
+  const isProductsActive = location.pathname.startsWith('/products/');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,10 +93,10 @@ export const Navbar: React.FC = () => {
             {/* Services Dropdown */}
             <div className="relative group px-3 py-2">
               <span
-                className={`relative inline-flex items-center text-sm font-semibold tracking-wide uppercase transition-colors duration-300 font-display cursor-default text-slate-300 hover:text-white`}
+                className={`relative inline-flex items-center text-sm font-semibold tracking-wide uppercase transition-colors duration-300 font-display cursor-default ${isServicesActive ? 'text-accent' : 'text-slate-300 hover:text-white'}`}
               >
                 SERVICES <ChevronDown className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" />
-                <span className="absolute left-0 -bottom-1 h-[2px] bg-accent w-0 group-hover:w-full transition-all duration-300 ease-out"></span>
+                <span className={`absolute left-0 -bottom-1 h-[2px] bg-accent transition-all duration-300 ease-out ${isServicesActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
               </span>
 
               {/* Mega Menu Dropdown */}
@@ -102,10 +109,10 @@ export const Navbar: React.FC = () => {
                       SHEET METAL FABRICATION
                     </Link>
                     <ul className="space-y-3">
-                      <li><Link to="/services/custom-stamping" className="text-slate-400 hover:text-white transition-colors text-sm hover:translate-x-1 inline-block transform duration-200">Metal Stamping</Link></li>
-                      <li><Link to="/services/metal-punching" className="text-slate-400 hover:text-white transition-colors text-sm hover:translate-x-1 inline-block transform duration-200">Metal Punching</Link></li>
-                      <li><Link to="/services/metal-cutting" className="text-slate-400 hover:text-white transition-colors text-sm hover:translate-x-1 inline-block transform duration-200">Metal Cutting</Link></li>
-                      <li><Link to="/services/metal-bending" className="text-slate-400 hover:text-white transition-colors text-sm hover:translate-x-1 inline-block transform duration-200">Metal Bending</Link></li>
+                      <li><Link to="/services/custom-stamping" className="text-slate-400 hover:text-white transition-colors text-sm font-display tracking-wide hover:translate-x-1 inline-block transform duration-200">Metal Stamping</Link></li>
+                      <li><Link to="/services/metal-punching" className="text-slate-400 hover:text-white transition-colors text-sm font-display tracking-wide hover:translate-x-1 inline-block transform duration-200">Metal Punching</Link></li>
+                      <li><Link to="/services/metal-cutting" className="text-slate-400 hover:text-white transition-colors text-sm font-display tracking-wide hover:translate-x-1 inline-block transform duration-200">Metal Cutting</Link></li>
+                      <li><Link to="/services/metal-bending" className="text-slate-400 hover:text-white transition-colors text-sm font-display tracking-wide hover:translate-x-1 inline-block transform duration-200">Metal Bending</Link></li>
                     </ul>
                   </div>
 
@@ -115,8 +122,8 @@ export const Navbar: React.FC = () => {
                       CNC MACHINING
                     </Link>
                     <ul className="space-y-3">
-                      <li><Link to="/services/cnc-turning" className="text-slate-400 hover:text-white transition-colors text-sm hover:translate-x-1 inline-block transform duration-200">CNC Turning</Link></li>
-                      <li><Link to="/services/cnc-milling" className="text-slate-400 hover:text-white transition-colors text-sm hover:translate-x-1 inline-block transform duration-200">CNC Milling</Link></li>
+                      <li><Link to="/services/cnc-turning" className="text-slate-400 hover:text-white transition-colors text-sm font-display tracking-wide hover:translate-x-1 inline-block transform duration-200">CNC Turning</Link></li>
+                      <li><Link to="/services/cnc-milling" className="text-slate-400 hover:text-white transition-colors text-sm font-display tracking-wide hover:translate-x-1 inline-block transform duration-200">CNC Milling</Link></li>
                     </ul>
                   </div>
 
@@ -124,8 +131,8 @@ export const Navbar: React.FC = () => {
                   <div className="flex-1 flex flex-col justify-between">
                     <div>
                       <ul className="space-y-3">
-                        <li><Link to="/3d-printing-service" className="text-slate-400 hover:text-white transition-colors text-sm hover:translate-x-1 inline-block transform duration-200">Metal 3D Printing</Link></li>
-                        <li><Link to="/services/surface-finishing" className="text-slate-400 hover:text-white transition-colors text-sm hover:translate-x-1 inline-block transform duration-200">Surface Finishing</Link></li>
+                        <li><Link to="/3d-printing-service" className="text-slate-400 hover:text-white transition-colors text-sm font-display tracking-wide hover:translate-x-1 inline-block transform duration-200">Metal 3D Printing</Link></li>
+                        <li><Link to="/services/surface-finishing" className="text-slate-400 hover:text-white transition-colors text-sm font-display tracking-wide hover:translate-x-1 inline-block transform duration-200">Surface Finishing</Link></li>
                       </ul>
                     </div>
                   </div>
@@ -137,10 +144,10 @@ export const Navbar: React.FC = () => {
             {/* Products Dropdown */}
             <div className="relative group px-3 py-2">
               <span
-                className={`relative inline-flex items-center text-sm font-semibold tracking-wide uppercase transition-colors duration-300 font-display cursor-default text-slate-300 hover:text-white`}
+                className={`relative inline-flex items-center text-sm font-semibold tracking-wide uppercase transition-colors duration-300 font-display cursor-default ${isProductsActive ? 'text-accent' : 'text-slate-300 hover:text-white'}`}
               >
                 PRODUCTS <ChevronDown className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" />
-                <span className="absolute left-0 -bottom-1 h-[2px] bg-accent w-0 group-hover:w-full transition-all duration-300 ease-out"></span>
+                <span className={`absolute left-0 -bottom-1 h-[2px] bg-accent transition-all duration-300 ease-out ${isProductsActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
               </span>
 
               {/* Products Dropdown Menu */}
@@ -148,18 +155,38 @@ export const Navbar: React.FC = () => {
                 <div className="w-[300px] bg-slate-900 border border-slate-800 shadow-2xl rounded-2xl p-4">
                   <ul className="space-y-2">
                     <li>
-                      <Link to="/products/metal-enclosures" className="block p-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all font-medium border border-transparent hover:border-slate-700/50">
+                      <Link to="/products/metal-enclosures" className="block p-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all font-display font-medium tracking-wide border border-transparent hover:border-slate-700/50">
                         Metal Enclosures &amp; Cabinets
                       </Link>
                     </li>
                     <li>
-                      <Link to="/products/bbq-grills" className="block p-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all font-medium border border-transparent hover:border-slate-700/50">
+                      <Link to="/products/bbq-grills" className="block p-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all font-display font-medium tracking-wide border border-transparent hover:border-slate-700/50">
                         BBQ Grills &amp; Accessories
                       </Link>
                     </li>
                     <li>
-                      <Link to="/products/laser-cut-wall-art" className="block p-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all font-medium border border-transparent hover:border-slate-700/50">
+                      <Link to="/products/laser-cut-wall-art" className="block p-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all font-display font-medium tracking-wide border border-transparent hover:border-slate-700/50">
                         Custom Laser Cut Metal Wall Art
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/products/metal-waste-bins" className="block p-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all font-display font-medium tracking-wide border border-transparent hover:border-slate-700/50">
+                        Metal Waste Bins &amp; Storage Bins
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/products/metal-fence" className="block p-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all font-display font-medium tracking-wide border border-transparent hover:border-slate-700/50">
+                        Metal Fence
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/products/metal-barriers" className="block p-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all font-display font-medium tracking-wide border border-transparent hover:border-slate-700/50">
+                        Metal Barriers
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/products/privacy-panels" className="block p-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all font-display font-medium tracking-wide border border-transparent hover:border-slate-700/50">
+                        Decorative Privacy Panels &amp; Gates
                       </Link>
                     </li>
                   </ul>
@@ -214,10 +241,10 @@ export const Navbar: React.FC = () => {
                 <div>
                   <Link to="/sheet-metal-fabrication" onClick={() => setIsOpen(false)} className="block text-accent font-semibold mb-3 tracking-wide">SHEET METAL FABRICATION</Link>
                   <ul className="pl-4 space-y-3">
-                    <li><Link to="/services/custom-stamping" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm hover:text-white transition-colors">Metal Stamping</Link></li>
-                    <li><Link to="/services/metal-punching" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm hover:text-white transition-colors">Metal Punching</Link></li>
-                    <li><Link to="/services/metal-cutting" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm hover:text-white transition-colors">Metal Cutting</Link></li>
-                    <li><Link to="/services/metal-bending" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm hover:text-white transition-colors">Metal Bending</Link></li>
+                    <li><Link to="/services/custom-stamping" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm font-display tracking-wide hover:text-white transition-colors">Metal Stamping</Link></li>
+                    <li><Link to="/services/metal-punching" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm font-display tracking-wide hover:text-white transition-colors">Metal Punching</Link></li>
+                    <li><Link to="/services/metal-cutting" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm font-display tracking-wide hover:text-white transition-colors">Metal Cutting</Link></li>
+                    <li><Link to="/services/metal-bending" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm font-display tracking-wide hover:text-white transition-colors">Metal Bending</Link></li>
                   </ul>
                 </div>
 
@@ -225,16 +252,16 @@ export const Navbar: React.FC = () => {
                 <div>
                   <Link to="/cnc-machining" onClick={() => setIsOpen(false)} className="block text-accent font-semibold mb-3 tracking-wide">CNC MACHINING</Link>
                   <ul className="pl-4 space-y-3">
-                    <li><Link to="/services/cnc-turning" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm hover:text-white transition-colors">CNC Turning</Link></li>
-                    <li><Link to="/services/cnc-milling" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm hover:text-white transition-colors">CNC Milling</Link></li>
+                    <li><Link to="/services/cnc-turning" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm font-display tracking-wide hover:text-white transition-colors">CNC Turning</Link></li>
+                    <li><Link to="/services/cnc-milling" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm font-display tracking-wide hover:text-white transition-colors">CNC Milling</Link></li>
                   </ul>
                 </div>
 
                 {/* Others */}
                 <div>
                   <ul className="pl-4 space-y-3">
-                    <li><Link to="/3d-printing-service" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm hover:text-white transition-colors">Metal 3D Printing</Link></li>
-                    <li><Link to="/services/surface-finishing" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm hover:text-white transition-colors">Surface Finishing</Link></li>
+                    <li><Link to="/3d-printing-service" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm font-display tracking-wide hover:text-white transition-colors">Metal 3D Printing</Link></li>
+                    <li><Link to="/services/surface-finishing" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm font-display tracking-wide hover:text-white transition-colors">Surface Finishing</Link></li>
                   </ul>
                 </div>
 
@@ -244,30 +271,23 @@ export const Navbar: React.FC = () => {
             {/* Mobile Products Accordion */}
             <div className="px-4 py-2">
               <button
-                onClick={() => {
-                  const el = document.getElementById('mobile-products-menu');
-                  if (el) {
-                    if (el.style.maxHeight) {
-                      el.style.maxHeight = null;
-                      el.style.opacity = '0';
-                    } else {
-                      el.style.maxHeight = el.scrollHeight + "px";
-                      el.style.opacity = '1';
-                    }
-                  }
-                }}
+                onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
                 className="flex items-center justify-between w-full text-left text-sm font-semibold tracking-wide uppercase font-display text-slate-300 hover:text-white transition-colors"
               >
                 PRODUCTS
               </button>
 
               {/* Mobile Products sub-menu */}
-              <div id="mobile-products-menu" className={`mt-2 pl-4 border-l border-slate-700/50 space-y-4 overflow-hidden transition-all duration-300`} style={{ maxHeight: 0, opacity: 0 }}>
+              <div className={`mt-2 pl-4 border-l border-slate-700/50 space-y-4 overflow-hidden transition-all duration-300 ${mobileProductsOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div>
                   <ul className="pl-2 space-y-3 pt-2">
-                    <li><Link to="/products/metal-enclosures" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm hover:text-white transition-colors">Metal Enclosures &amp; Cabinets</Link></li>
-                    <li><Link to="/products/bbq-grills" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm hover:text-white transition-colors">BBQ Grills &amp; Accessories</Link></li>
-                    <li><Link to="/products/laser-cut-wall-art" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm hover:text-white transition-colors">Custom Metal Wall Art</Link></li>
+                    <li><Link to="/products/metal-enclosures" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm font-display tracking-wide hover:text-white transition-colors">Metal Enclosures &amp; Cabinets</Link></li>
+                    <li><Link to="/products/bbq-grills" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm font-display tracking-wide hover:text-white transition-colors">BBQ Grills &amp; Accessories</Link></li>
+                    <li><Link to="/products/laser-cut-wall-art" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm font-display tracking-wide hover:text-white transition-colors">Custom Metal Wall Art</Link></li>
+                    <li><Link to="/products/metal-waste-bins" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm font-display tracking-wide hover:text-white transition-colors">Metal Waste Bins &amp; Storage Bins</Link></li>
+                    <li><Link to="/products/metal-fence" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm font-display tracking-wide hover:text-white transition-colors">Metal Fence</Link></li>
+                    <li><Link to="/products/metal-barriers" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm font-display tracking-wide hover:text-white transition-colors">Metal Barriers</Link></li>
+                    <li><Link to="/products/privacy-panels" onClick={() => setIsOpen(false)} className="text-slate-400 text-sm font-display tracking-wide hover:text-white transition-colors">Decorative Privacy Panels &amp; Gates</Link></li>
                   </ul>
                 </div>
               </div>

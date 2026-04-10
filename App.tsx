@@ -19,6 +19,10 @@ import ThreeDPrintingLanding from './pages/ThreeDPrintingLanding';
 import MetalEnclosuresLanding from './pages/MetalEnclosuresLanding';
 import BBQGrillLanding from './pages/BBQGrillLanding';
 import LaserCutWallArtLanding from './pages/LaserCutWallArtLanding';
+import WasteBinLanding from './pages/WasteBinLanding';
+import MetalFenceLanding from './pages/MetalFenceLanding';
+import MetalBarrierLanding from './pages/MetalBarrierLanding';
+import PrivacyPanelsLanding from './pages/PrivacyPanelsLanding';
 
 // Scroll to top helper
 const ScrollToTop = () => {
@@ -48,6 +52,10 @@ const App: React.FC = () => {
             <Route path="/products/metal-enclosures" element={<MetalEnclosuresLanding />} />
             <Route path="/products/bbq-grills" element={<BBQGrillLanding />} />
             <Route path="/products/laser-cut-wall-art" element={<LaserCutWallArtLanding />} />
+            <Route path="/products/metal-waste-bins" element={<WasteBinLanding />} />
+            <Route path="/products/metal-fence" element={<MetalFenceLanding />} />
+            <Route path="/products/metal-barriers" element={<MetalBarrierLanding />} />
+            <Route path="/products/privacy-panels" element={<PrivacyPanelsLanding />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
